@@ -23,7 +23,7 @@
 <meta name="author" content="Ryan Chen" />
 
 
-<meta name="date" content="2024-01-14" />
+<meta name="date" content="2024-01-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -77,7 +77,12 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
-<li class="chapter" data-level="2" data-path="propositions-validity-and-translation.html"><a href="propositions-validity-and-translation.html"><i class="fa fa-check"></i><b>2</b> Propositions, Validity, and Translation</a></li>
+<li class="chapter" data-level="2" data-path="propositions-validity-and-translation.html"><a href="propositions-validity-and-translation.html"><i class="fa fa-check"></i><b>2</b> Propositions, Validity, and Translation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propositions-validity-and-translation.html"><a href="propositions-validity-and-translation.html#propositions"><i class="fa fa-check"></i><b>2.1</b> Propositions</a></li>
+<li class="chapter" data-level="2.2" data-path="propositions-validity-and-translation.html"><a href="propositions-validity-and-translation.html#validity"><i class="fa fa-check"></i><b>2.2</b> Validity</a></li>
+<li class="chapter" data-level="2.3" data-path="propositions-validity-and-translation.html"><a href="propositions-validity-and-translation.html#translation"><i class="fa fa-check"></i><b>2.3</b> Translation</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -100,7 +105,135 @@
             <section class="normal" id="section-">
 <div id="propositions-validity-and-translation" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Week 2</span> Propositions, Validity, and Translation<a href="propositions-validity-and-translation.html#propositions-validity-and-translation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="propositions" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Propositions<a href="propositions-validity-and-translation.html#propositions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>What is a proposition? According to the slides, <em>a proposition is a thing we could believe or disbelieve</em>. Importantly, propositions are expressed by sentences (propositions are not sentences themselves). More importantly, propositions are expressed by a certain kind of sentence: declarative sentences. So, the question of identifying which sentences express propositions is really a question of identifying the declarative sentences.</p>
+<p>There are a number of ways to test whether or not a sentence is a declarative sentence. Here, is one given in lecture: (Step One) take the sentence you want to test and stick “I believe that…” in front of it. (Step Two) If the result of sticking “I believe that…” in front of the sentence still makes sense, then the original sentence expresses a proposition.</p>
+<p><strong>[Example One]</strong> Consider the sentence “It is raining”. (Step One) To test this sentence, I stick “I believe that…” in front of it. So, I get, “I believe that it is raining”. (Step Two) Now, I ask myself, does it make sense to say “I believe that it is raining”? It does. Therefore, “It is raining” expresses a proposition.</p>
+<p><strong>[Example Two]</strong> Consider the sentence “Coffee is tasty”. (Step One) To test this sentence, I stick “I believe that…” in front of it. So, I get, “I believe that coffee is tasty”. (Step Two) Now, I ask myself, does it make sense to say “I believe that coffee is tasty”? It does. Therefore, “Coffee is tasty” expresses a proposition. (Note: most people think that whether or not coffee is tasty is a matter of personal preference. Nonetheless, the sentence “coffee is tasty” still expresses a proposition. Just because a sentence expresses a proposition the truth (or falsity) of which depends on one’s own taste, does not mean that that sentence does not express a proposition.)</p>
+<p><strong>[Example Three]</strong> Consider the sentence “Please close the door”. (Step One) To test this sentence, I stick “I believe that…” in front of it. So, I get, “I believe that please close the door”. (Step Two) Now, I ask myself, does it make sense to say “I believe that please close the door”. It does not. Therefore, “Please close the door” does not express a proposition.</p>
+<p>From now on, I will be less wordy on these examples:</p>
+<p><strong>[Example Four]</strong> Consider the sentence “Earth is the eighth planet in the solar system”. (Step One) “I believe that Earth is the eighth planet in the solar system”. (Step Two) Does this make sense? Yes. Therefore, “Earth is the eighth planet in the solar system” expresses a proposition. (Note: Earth is of course not the eighth planet in the solar system. Nonetheless, “Earth is the eighth planet in the solar system” expresses a proposition. Just because a sentence is false does not mean it does not express a proposition.)</p>
+<p><strong>[Example Five]</strong> Consider the sentence “I believe that it will rain tomorrow”. (Step One) “I believe that I believe that it will rain tomorrow”. (Step Two) Does this make sense? Yeah (If this is not obvious to you, replace the original sentence with “John believes that it will remain tomorrow”; it should be clear to you that “I believe that John believes that it will remain tomorrow” makes sense to say. Now the original example should sound better).</p>
+<p>Now that we know what a proposition is, we can define what an argument is. <em>An argument is a list of propositions</em>. We call the last proposition, the <em>conclusion</em> of the argument. We call all the other propositions, the <em>premises</em>.</p>
+</div>
+<div id="validity" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Validity<a href="propositions-validity-and-translation.html#validity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We want to know which arguments are good arguments. To do so, we use the notion of validity. <em>An argument is valid if and only if if the premises are true then the conclusion must be true</em>. I prefer this alternative, but equivalent definition: <em>An argument is valid if and only if it is impossible for the premises to be true and the conclusion false</em>.</p>
+<p>The definition tells us how to assess whether or not an argument is valid or not. (Step One) First, we <em>suppose</em> that the premises of the argument are true. Note that this does not mean that the premises are in fact true. You suppose that the premises are true for the sake of argument. (Step Two) Now you ask, whether or not the conclusion <em>must</em> be true given the supposition that you make in step one (i.e., under the (potentially) hypothetical situation where the premises are true).</p>
+<p><strong>[Example One]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>All cats are dogs.</li>
+<li>All dogs are books.</li>
+<li>Therefore, all cats are books.</li>
+</ol>
+<p>(Step One) Let us suppose that all cats are dogs and all dogs are books. That is, we are under the hypothetical situation in which all cats are dogs and all dogs are books (never mind what such a universe would look like, just suppose they are true!). (Step Two) Under such a supposition, does it <em>necessarily</em> follow that all cats are books? Yes! For now, I hope you share my intuition on this matter; as the course progress, we will develop more and more tools to help you see why this conclusion necessarily follows. (Note: we are starting this course with propositional logic. It turns out that in propositional logic, there is no obvious way to represent the argument just given as valid. So look forward to predicate logic where we can represent such arguments)</p>
+<p><strong>[Example Two]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>If Ryan is writing these notes at 2 am then Ryan will wake up tired in the morning.</li>
+<li>If Ryan will wake up tired in the morning then Ryan will get coffee in the morning.</li>
+<li>Ryan is writing these notes at 2 am.</li>
+<li>Therefore, Ryan will get coffee in the morning.</li>
+</ol>
+<p>(Step One) Let us suppose that all the premises are true. (Step Two) Since premise three tells us that Ryan is writing these notes at 2 am then when we combine that fact with premise one, it seems that we must conclude that Ryan will wake up tired in the morning. Well, since Ryan will wake up tired in the morning, then we can combine that fact with premise two, and we must conclude that Ryan will get coffee in the morning. This shows that the argument is valid. Here, I tried to use a bit of reasoning to show you why you must arrive at the conclusion.</p>
+<p><strong>[Example Three]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>Ryan prefers cats to dogs.</li>
+<li>If water is H2O then copper conducts electricity.</li>
+<li>Copper does not conduct electricity.</li>
+<li>Therefore, water is not H2O.</li>
+</ol>
+<p>(Step One) Suppose that all the premises are true. (Step Two) Since, by premise 3, Copper does not conduct electricity, it cannot be the case that water is H2O. Why? Here’s a bit of reasoning: If water was H2O then by premise 2 I would be forced to conclude that copper conducts electrity. By premise 3, it is not the case that copper conducts electricity. Well it cannot be the case that copper conducts electricity and it does not conduct electricity; that is just absurd! We have to think to ourselves, is there a way that both premise 2 and premise 3 are true concurrently? Yes! it must then be the case that water is not H2O. Now I am not forced to conclude that copper conducts electricity and so all the premises can remain true at the same time. Therefore, the argument is valid. (Note: notice here that premise 1 is never used. All that is needed to get the conclusion are premises 2 and 3. This tells us something important: an argument may have irrelevant premises and still be valid)</p>
+<p><strong>[Example Four]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>Squirtle ate food at 4 pm four days ago.</li>
+<li>Squirtle ate food at 4 pm three days ago.</li>
+<li>Squirtle ate food at 4 pm two days ago.</li>
+<li>Squirtle ate food at 4 pm yesterday.</li>
+<li>Therefore, Squirtle will eat food at 4 pm today.</li>
+</ol>
+<p>(Step One) Suppose that all the premises are true. (Step Two) Can it be the case that even if I accept all the premises, the conclusion is false? Yes! Squirtle might be stopped from eating food at 4 pm; maybe, Squirtle just is not hungry. Hence, this argument is invalid.</p>
+<p><strong>[Example Five]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>Tom went to the mall and Jerry followed after Tom.</li>
+<li>Therefore, Jerry followed after Tom.</li>
+</ol>
+<p>(Step One) Suppose that all the premises are true. (Step Two) Well if Tom went to the mall and Jerry followed after Tom is true then it simply just followed that Jerry followed after Tom! Hence, this argument is valid.</p>
+<p><strong>[Example Six]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>Either it is the case that Tom went to the mall or Jerry went to the mall.</li>
+<li>Therefore, Tom went to the mall.</li>
+</ol>
+<p>(Step One) Suppose that all the premises are true. (Step Two) Well, just because we suppose that either Tom went to the mall or Jerry went to the mall does not mean that it must follow that Tom went to the mall. It could be the case that Jerry went to the mall and Tom did not go to the mall. Under that possibility, premise 1 would still be true but the conclusion would be false. Therefore, the argument is invalid.</p>
+<p><strong>[Example Seven]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>If it is raining then everyone wins the lottery.</li>
+<li>Everyone wins the lottery.</li>
+<li>Therefore, it is raining.</li>
+</ol>
+<p>(Step One) Suppose that all the premises are true. (Step Two) Well, just because everyone won the lottery does not mean that it is raining. What premise 1 tells us is that if it is raining then we must conclude that everyone wins the lottery. But it does not tell us that it is in fact the case that it is raining. It is perfectly possible for it to be sunny and clear out and everyone wins the lottery. In which case, all the premises are true and the conclusion false. Therefore, the argument is invalid.</p>
+<p>Next week, we will return to a couple more arguments.</p>
+<p>Let us quickly go over argument forms. To get an argument form, you just look at an argument, look for sentences which express propositions in them and replace those sentences with letters like <span class="math inline">\(A,B,C,\ldots\)</span>. Note that you are allowed to replace parts of sentences which express propositions with letters as well.</p>
+<p><strong>[Example One]</strong> Consider the argument:</p>
+<ol style="list-style-type: decimal">
+<li>Either the world is round or the sun is round.</li>
+<li>If the world is round then the sea is wet.</li>
+<li>The sun is round.</li>
+<li>Therefore, the world is round.</li>
+</ol>
+<p>Notice that in premise 1, the sentence “either the world is round or the sun is round” has two parts “the world is round” and “the sun is round” which themselves express propositions. Hence, we can represent this premise as “Either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>” where <span class="math inline">\(A\)</span>=the world is round and <span class="math inline">\(B\)</span>=the sun is round. Again, in premise 2, the sentence “If the world is round then the sea is wet” has two parts “the world is round” and “the sea is wet” which express propositions. We can represent this premise with “if <span class="math inline">\(A\)</span> then <span class="math inline">\(C\)</span>” where it continues to be the case that <span class="math inline">\(A\)</span>=the world is round and <span class="math inline">\(C\)</span>=the sea is wet. The other two premises are straightforward and we get:</p>
+<ol style="list-style-type: decimal">
+<li>Either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span></li>
+<li>If <span class="math inline">\(A\)</span> then <span class="math inline">\(C\)</span></li>
+<li><span class="math inline">\(B\)</span></li>
+<li>Therefore, <span class="math inline">\(A\)</span></li>
+</ol>
+<p>Now, some argument forms are valid. They are not valid in the same sense that an argument is valid. Instead, <em>an argument form is valid if and only if every instance of that argument form is valid</em>.</p>
+<p>That is, when we are given an argument form we are given something that looks like an argument but with a bunch of letters like <span class="math inline">\(A,B,C,D,E,\ldots\)</span> (just see the previous example). Each letter is supposed to stand for any sentence; that is, you are allowed to put any sentence (which expresses a proposition) into that place where the letters are. When you have replaced all the letters with a sentence (which expresses a proposition) then you get an instance of that argument form. For example, if we take the example we just had:</p>
+<ol style="list-style-type: decimal">
+<li>Either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span></li>
+<li>If <span class="math inline">\(A\)</span> then <span class="math inline">\(C\)</span></li>
+<li><span class="math inline">\(B\)</span></li>
+<li>Therefore, <span class="math inline">\(A\)</span></li>
+</ol>
+<p>Then there are three letters <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> which appear in that argument form. To get an instance of this form, let <span class="math inline">\(A\)</span>=Tom is funny, let <span class="math inline">\(B\)</span>=Tom is hungry, and let <span class="math inline">\(C\)</span>=Jerry is tired. Then putting these sentences into the argument form yields:</p>
+<ol style="list-style-type: decimal">
+<li>Either Tom is funny or Tom is hungry.</li>
+<li>If Tom is funny then Jerry is tired.</li>
+<li>Tom is hungry.</li>
+<li>Therefore, Tom is funny.</li>
+</ol>
+<p>I leave it to you to verify that this argument is in fact invalid. Since, the argument form has an instance which is invalid, the argument form itself is invalid.</p>
+<p>What is an example of a valid argument form? Here are two examples:</p>
+<p><strong>[Example One]</strong> Consider the argument form:</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(A\)</span> then <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(A\)</span></li>
+<li>Therefore, <span class="math inline">\(B\)</span></li>
+</ol>
+<p><strong>[Example Two]</strong> Consider the argument form:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span></li>
+<li>Therefore, <span class="math inline">\(B\)</span></li>
+</ol>
+<p>I leave it to you to think through these examples.</p>
+</div>
+<div id="translation" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Translation<a href="propositions-validity-and-translation.html#translation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will cover translation more next week. This week I just want to make some points in preparation for next week.</p>
+<p>The first point is that in translating between natural language and logic, we will be representing every proposition using letters like <span class="math inline">\(p,q,r,\ldots\)</span>. So for example, “it is raining” expresses a proposition. So we can represent such a sentence in our language as <span class="math inline">\(p\)</span>.</p>
+<p>The second point is that some of our sentences in natural language have a bit of structure to them. In sentences like “Tom is funny and Jerry is angry” we have the parts “Tom is funny” and “Jerry is angry”. All three sentences express propositions: it makes sense to say “I believe that Tom is funny and Jerry is angry”, “I believe that Tom is funny”, and “I believe that Jerry is angry”. But since “Tom is funny” and “Jerry is angry” are parts of the bigger sentence “Tom is funny and Jerry is angry”, we say that “Tom is funny” and “Jerry is angry” express sub-propositions of the proposition expressed by “Tom is funny and Jerry is angry”.</p>
+<p>In our language of propositional logic, we can capture all this structure by having dedicated symbols which translate certain special parts of language. For example, in the case of “Tom is funny and Jerry is angry” we use the symbol <span class="math inline">\(\&amp;\)</span> to translate “and” (we also use it to translate “but”; more on this next time). So we can translate the sentence “Tom is funny and Jerry is angry” as <span class="math inline">\(p \&amp; q\)</span> where <span class="math inline">\(p\)</span>=Tom is funny and <span class="math inline">\(q\)</span>=Jerry is angry.</p>
+<p>There are other dedicated symbols. Here is a list:</p>
+<ul>
+<li><span class="math inline">\(\sim\)</span> translates “it is not the case that<span class="math inline">\(\ldots\)</span>”</li>
+<li><span class="math inline">\(\&amp;\)</span> translates “<span class="math inline">\(\ldots\)</span>and<span class="math inline">\(\ldots\)</span>” and “<span class="math inline">\(\ldots\)</span>but<span class="math inline">\(\ldots\)</span></li>
+<li><span class="math inline">\(\lor\)</span> translates “either<span class="math inline">\(\ldots\)</span> or<span class="math inline">\(\ldots\)</span>”</li>
+<li><span class="math inline">\(\supset\)</span> translates “if<span class="math inline">\(\ldots\)</span> then<span class="math inline">\(\ldots\)</span>”</li>
+<li><span class="math inline">\(\equiv\)</span> translates “<span class="math inline">\(\ldots\)</span> if and only if <span class="math inline">\(\ldots\)</span>”</li>
+</ul>
 
+</div>
 </div>
             </section>
 
@@ -162,6 +295,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

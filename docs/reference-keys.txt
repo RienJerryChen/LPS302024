@@ -1,2 +1,5 @@
 about
 propositions-validity-and-translation
+propositions
+validity
+translation
