@@ -135,21 +135,3 @@ What is an example of a valid argument form? Here are two examples:
 
 I leave it to you to think through these examples.
 
-
-## Translation
-
-We will cover translation more next week. This week I just want to make some points in preparation for next week.
-
-The first point is that in translating between natural language and logic, we will be representing every proposition using letters like $p,q,r,\ldots$. So for example, "it is raining" expresses a proposition. So we can represent such a sentence in our language as $p$.
-
-The second point is that some of our sentences in natural language have a bit of structure to them. In sentences like "Tom is funny and Jerry is angry" we have the parts "Tom is funny" and "Jerry is angry". All three sentences express propositions: it makes sense to say "I believe that Tom is funny and Jerry is angry", "I believe that Tom is funny", and "I believe that Jerry is angry". But since "Tom is funny" and "Jerry is angry" are parts of the bigger sentence "Tom is funny and Jerry is angry", we say that "Tom is funny" and "Jerry is angry" express sub-propositions of the proposition expressed by "Tom is funny and Jerry is angry".
-
-In our language of propositional logic, we can capture all this structure by having dedicated symbols which translate certain special parts of language. For example, in the case of "Tom is funny and Jerry is angry" we use the symbol $\&$ to translate "and" (we also use it to translate "but"; more on this next time). So we can translate the sentence "Tom is funny and Jerry is angry" as $p \& q$ where $p$=Tom is funny and $q$=Jerry is angry.
-
-There are other dedicated symbols. Here is a list:
-
-- $\sim$ translates "it is not the case that$\ldots$"
-- $\&$ translates "$\ldots$and$\ldots$" and "$\ldots$but$\ldots$
-- $\lor$ translates "either$\ldots$ or$\ldots$"
-- $\supset$ translates "if$\ldots$ then$\ldots$"
-- $\equiv$ translates "$\ldots$ if and only if $\ldots$"
