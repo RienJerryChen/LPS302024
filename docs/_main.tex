@@ -80,7 +80,7 @@
 
 \title{LPS 30 Discussion Notes}
 \author{Ryan Chen}
-\date{2024-01-17}
+\date{2024-01-21}
 
 \begin{document}
 \maketitle
@@ -94,8 +94,10 @@
 
 These are notes for Ryan Chen's LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.). These notes summarize the material covered in discussion. For this course, it primarily consists of definitions, exercises and worked out solutions to exercises. These notes are intended for students who want to review course material and students which miss discussion for whatever reason. They are not a replacement for attending discussion section.
 
-\hypertarget{propositions-validity-and-translation}{%
-\chapter{Propositions, Validity, and Translation}\label{propositions-validity-and-translation}}
+\hypertarget{propositions-and-validity}{%
+\chapter{Propositions and Validity}\label{propositions-and-validity}}
+
+{[}I have tried to include as much detail as possible in this week's notes. This is because we did not have discussion in week 2, and so this is meant to be a sort of replacement. Future weeks may be more sparse.{]}
 
 \hypertarget{propositions}{%
 \section{Propositions}\label{propositions}}
@@ -163,6 +165,23 @@ The definition tells us how to assess whether or not an argument is valid or not
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
+  If Ryan is mortal then Ryan will one day pass away.
+\item
+  Ryan is mortal.
+\item
+  Therefore, Ryan is a PhD student
+\end{enumerate}
+
+(Step One) Let us suppose that all the premises are true. (Step Two) You should ask yourself, can it be the case that premise 1 and 2 are true while premise 3 false? It certainly seems so. I could have not pursued graduate school and pursued some other career. Nothing about the premises seems to necessitate the conclusion that Ryan is a PhD student. Hence, the argument is invalid (Note: the premises and the conclusion of this argument are true, yet the argument is invalid. There is a general lesson here. Just because an argument has true premises and a true conclusion does not mean that it is valid)
+
+From now on, I will skip writing out step one.
+
+\textbf{{[}Example Four{]}} Consider the argument:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
   Ryan prefers cats to dogs.
 \item
   If water is H2O then copper conducts electricity.
@@ -172,9 +191,9 @@ The definition tells us how to assess whether or not an argument is valid or not
   Therefore, water is not H2O.
 \end{enumerate}
 
-(Step One) Suppose that all the premises are true. (Step Two) Since, by premise 3, Copper does not conduct electricity, it cannot be the case that water is H2O. Why? Here's a bit of reasoning: If water was H2O then by premise 2 I would be forced to conclude that copper conducts electrity. By premise 3, it is not the case that copper conducts electricity. Well it cannot be the case that copper conducts electricity and it does not conduct electricity; that is just absurd! We have to think to ourselves, is there a way that both premise 2 and premise 3 are true concurrently? Yes! it must then be the case that water is not H2O. Now I am not forced to conclude that copper conducts electricity and so all the premises can remain true at the same time. Therefore, the argument is valid. (Note: notice here that premise 1 is never used. All that is needed to get the conclusion are premises 2 and 3. This tells us something important: an argument may have irrelevant premises and still be valid)
+(Step Two) Since, by premise 3, Copper does not conduct electricity, it cannot be the case that water is H2O. Why? Here's a bit of reasoning: If water was H2O then by premise 2 I would be forced to conclude that copper conducts electrity. By premise 3, it is not the case that copper conducts electricity. Well it cannot be the case that copper conducts electricity and it does not conduct electricity; that is just absurd! We have to think to ourselves, is there a way that both premise 2 and premise 3 are true concurrently? Yes! it must then be the case that water is not H2O. Now I am not forced to conclude that copper conducts electricity and so all the premises can remain true at the same time. Therefore, the argument is valid. (Note: notice here that premise 1 is never used. All that is needed to get the conclusion are premises 2 and 3. This tells us something important: an argument may have irrelevant premises and still be valid)
 
-\textbf{{[}Example Four{]}} Consider the argument:
+\textbf{{[}Example Five{]}} Consider the argument:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -191,9 +210,9 @@ The definition tells us how to assess whether or not an argument is valid or not
   Therefore, Squirtle will eat food at 4 pm today.
 \end{enumerate}
 
-(Step One) Suppose that all the premises are true. (Step Two) Can it be the case that even if I accept all the premises, the conclusion is false? Yes! Squirtle might be stopped from eating food at 4 pm; maybe, Squirtle just is not hungry. Hence, this argument is invalid.
+(Step Two) Can it be the case that even if I accept all the premises, the conclusion is false? Yes! Squirtle might be stopped from eating food at 4 pm; maybe, Squirtle just is not hungry. Hence, this argument is invalid. (Note: notice that there is still something compelling about this argument. This sort of argument is called an inductive argument, and while invalid, they seem to be used all the time. Saying why such arguments are good has been a major problem for philosophers for centuries).
 
-\textbf{{[}Example Five{]}} Consider the argument:
+\textbf{{[}Example Six{]}} Consider the argument:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -204,9 +223,9 @@ The definition tells us how to assess whether or not an argument is valid or not
   Therefore, Jerry followed after Tom.
 \end{enumerate}
 
-(Step One) Suppose that all the premises are true. (Step Two) Well if Tom went to the mall and Jerry followed after Tom is true then it simply just followed that Jerry followed after Tom! Hence, this argument is valid.
+(Step Two) If Tom went to the mall and Jerry followed after Tom is true then it simply just followed that Jerry followed after Tom! Hence, this argument is valid.
 
-\textbf{{[}Example Six{]}} Consider the argument:
+\textbf{{[}Example Seven{]}} Consider the argument:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -217,9 +236,9 @@ The definition tells us how to assess whether or not an argument is valid or not
   Therefore, Tom went to the mall.
 \end{enumerate}
 
-(Step One) Suppose that all the premises are true. (Step Two) Well, just because we suppose that either Tom went to the mall or Jerry went to the mall does not mean that it must follow that Tom went to the mall. It could be the case that Jerry went to the mall and Tom did not go to the mall. Under that possibility, premise 1 would still be true but the conclusion would be false. Therefore, the argument is invalid.
+(Step Two) Well, just because we suppose that either Tom went to the mall or Jerry went to the mall does not mean that it must follow that Tom went to the mall. It could be the case that Jerry went to the mall and Tom did not go to the mall. Under that possibility, premise 1 would still be true but the conclusion would be false. Therefore, the argument is invalid.
 
-\textbf{{[}Example Seven{]}} Consider the argument:
+\textbf{{[}Example Eight{]}} Consider the argument:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -232,11 +251,21 @@ The definition tells us how to assess whether or not an argument is valid or not
   Therefore, it is raining.
 \end{enumerate}
 
-(Step One) Suppose that all the premises are true. (Step Two) Well, just because everyone won the lottery does not mean that it is raining. What premise 1 tells us is that if it is raining then we must conclude that everyone wins the lottery. But it does not tell us that it is in fact the case that it is raining. It is perfectly possible for it to be sunny and clear out and everyone wins the lottery. In which case, all the premises are true and the conclusion false. Therefore, the argument is invalid.
+(Step Two) Well, just because everyone won the lottery does not mean that it is raining. What premise 1 tells us is that if it is raining then we must conclude that everyone wins the lottery. But it does not tell us that it is in fact the case that it is raining. It is perfectly possible for it to be sunny and clear out and everyone wins the lottery. In which case, all the premises are true and the conclusion false. Therefore, the argument is invalid.
 
 Next week, we will return to a couple more arguments.
 
-Let us quickly go over argument forms. To get an argument form, you just look at an argument, look for sentences which express propositions in them and replace those sentences with letters like \(A,B,C,\ldots\). Note that you are allowed to replace parts of sentences which express propositions with letters as well.
+\hypertarget{soundness}{%
+\section{Soundness}\label{soundness}}
+
+\emph{An argument is sound if and only if it is valid and the premises are actually true}. Notice the difference between soundness and validity. Validity requires that \textbf{if} the premises are true then the conclusion must be true. That is, it requires that under the hypothetical situation that the premises are true then the conclusion must be true. Soundness requires that the premises are in fact true.
+
+I will not say more about soundness here. Of course, you are welcome to ask questions in discussion or office hours. I think it is beneficial to sit down and think through the differences between the definitions of validity and soundness and the relations that they bear to one another (your homework makes you think about this).
+
+\hypertarget{argument-forms}{%
+\section{Argument Forms}\label{argument-forms}}
+
+To get an argument form, you look at a given argument, look for sentences which express propositions in them and replace those sentences with letters like \(A,B,C,\ldots\). Note that you are allowed to replace parts of sentences which express propositions with letters as well.
 
 \textbf{{[}Example One{]}} Consider the argument:
 
@@ -268,9 +297,9 @@ Notice that in premise 1, the sentence ``either the world is round or the sun is
   Therefore, \(A\)
 \end{enumerate}
 
-Now, some argument forms are valid. They are not valid in the same sense that an argument is valid. Instead, \emph{an argument form is valid if and only if every instance of that argument form is valid}.
+Some argument forms are valid. They are not valid in the same sense that an argument is valid. Instead, \emph{an argument form is valid if and only if every instance of that argument form is valid}.
 
-That is, when we are given an argument form we are given something that looks like an argument but with a bunch of letters like \(A,B,C,D,E,\ldots\) (just see the previous example). Each letter is supposed to stand for any sentence; that is, you are allowed to put any sentence (which expresses a proposition) into that place where the letters are. When you have replaced all the letters with a sentence (which expresses a proposition) then you get an instance of that argument form. For example, if we take the example we just had:
+That is, when we are given an argument form we are given something that looks like an argument but with a bunch of letters like \(A,B,C,D,E,\ldots\) (just see the previous example). To get an instance of that argument form, you replace all these letters with sentences (which express propositions). So, continuing with our example:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -285,7 +314,7 @@ That is, when we are given an argument form we are given something that looks li
   Therefore, \(A\)
 \end{enumerate}
 
-Then there are three letters \(A\), \(B\), and \(C\) which appear in that argument form. To get an instance of this form, let \(A\)=Tom is funny, let \(B\)=Tom is hungry, and let \(C\)=Jerry is tired. Then putting these sentences into the argument form yields:
+We see that there are three letters \(A\), \(B\), and \(C\) which appear in that argument form. To get an instance of this form, let \(A\)=Tom is funny, let \(B\)=Tom is hungry, and let \(C\)=Jerry is tired (these are just random sentences that I have chosen). Then putting these sentences into the argument form yields:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -328,7 +357,37 @@ What is an example of a valid argument form? Here are two examples:
   Therefore, \(B\)
 \end{enumerate}
 
-I leave it to you to think through these examples.
+How do we check? At this point in this course we do not have the means to verify that all instances of this argument form are valid. The problem is that to check whether or not an argument form is valid, we need to answer the following question: if I substitute in any sentences (which express propositions) for \(A\) and \(B\), then is the resulting argument valid? The crucial bit here is that you need to check for \emph{any} sentence and there are an infinite number of possible sentences in English which express propositions. It would take you an awfully long time to go through an infinite number of sentences.
+
+Thankfully, checking for invalid argument forms is doable. Here is another example (now with explicity steps):
+
+\textbf{{[}Example Three{]}} Consider the argument form:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(A\)
+\item
+  If \(C\) then \(A\) and \(B\)
+\item
+  Therefore, \(C\)
+\end{enumerate}
+
+To check that this is an invalid argument form you need to come up with sentences (which express propositions) such that if you substitute those sentences in, the resulting argument is invalid. So, (Step One), come up with as many sentences as there are different letters in the argument form. Here there are three letters, \(A\), \(B\) and \(C\), so we need three sentences. Let us use: \(A\)=``Bob is funny'', \(B\)=``Jerry is silly'', and \(C\)=``It is hot out today''. Next, (Step Two), we need to substitute these into the argument form:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Bob is funny.
+\item
+  If it is hot out today then Bob is funny and Jerry is silly.
+\item
+  Therefore, it is hot out today.
+\end{enumerate}
+
+Now, (Step Three), check for validity. So, now you need to follow the steps to check for validity. Hopefully, at this point you can check that this argument is invalid.
 
   \bibliography{book.bib,packages.bib}
 

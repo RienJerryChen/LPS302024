@@ -1,4 +1,6 @@
 about
-propositions-validity-and-translation
+propositions-and-validity
 propositions
 validity
+soundness
+argument-forms

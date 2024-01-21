@@ -1,4 +1,6 @@
-# Propositions, Validity, and Translation
+# Propositions and Validity
+
+[I have tried to include as much detail as possible in this week's notes. This is because we did not have discussion in week 2, and so this is meant to be a sort of replacement. Future weeks may be more sparse.]
 
 ## Propositions
 
@@ -45,14 +47,24 @@ The definition tells us how to assess whether or not an argument is valid or not
 
 **[Example Three]** Consider the argument:
 
+1. If Ryan is mortal then Ryan will one day pass away.
+2. Ryan is mortal.
+3. Therefore, Ryan is a PhD student
+
+(Step One) Let us suppose that all the premises are true. (Step Two) You should ask yourself, can it be the case that premise 1 and 2 are true while premise 3 false? It certainly seems so. I could have not pursued graduate school and pursued some other career. Nothing about the premises seems to necessitate the conclusion that Ryan is a PhD student. Hence, the argument is invalid (Note: the premises and the conclusion of this argument are true, yet the argument is invalid. There is a general lesson here. Just because an argument has true premises and a true conclusion does not mean that it is valid)
+
+From now on, I will skip writing out step one.
+
+**[Example Four]** Consider the argument:
+
 1. Ryan prefers cats to dogs.
 2. If water is H2O then copper conducts electricity.
 3. Copper does not conduct electricity.
 4. Therefore, water is not H2O.
 
-(Step One) Suppose that all the premises are true. (Step Two) Since, by premise 3, Copper does not conduct electricity, it cannot be the case that water is H2O. Why? Here's a bit of reasoning: If water was H2O then by premise 2 I would be forced to conclude that copper conducts electrity. By premise 3, it is not the case that copper conducts electricity. Well it cannot be the case that copper conducts electricity and it does not conduct electricity; that is just absurd! We have to think to ourselves, is there a way that both premise 2 and premise 3 are true concurrently? Yes! it must then be the case that water is not H2O. Now I am not forced to conclude that copper conducts electricity and so all the premises can remain true at the same time. Therefore, the argument is valid. (Note: notice here that premise 1 is never used. All that is needed to get the conclusion are premises 2 and 3. This tells us something important: an argument may have irrelevant premises and still be valid)
+(Step Two) Since, by premise 3, Copper does not conduct electricity, it cannot be the case that water is H2O. Why? Here's a bit of reasoning: If water was H2O then by premise 2 I would be forced to conclude that copper conducts electrity. By premise 3, it is not the case that copper conducts electricity. Well it cannot be the case that copper conducts electricity and it does not conduct electricity; that is just absurd! We have to think to ourselves, is there a way that both premise 2 and premise 3 are true concurrently? Yes! it must then be the case that water is not H2O. Now I am not forced to conclude that copper conducts electricity and so all the premises can remain true at the same time. Therefore, the argument is valid. (Note: notice here that premise 1 is never used. All that is needed to get the conclusion are premises 2 and 3. This tells us something important: an argument may have irrelevant premises and still be valid)
 
-**[Example Four]** Consider the argument:
+**[Example Five]** Consider the argument:
 
 1. Squirtle ate food at 4 pm four days ago.
 2. Squirtle ate food at 4 pm three days ago.
@@ -60,33 +72,41 @@ The definition tells us how to assess whether or not an argument is valid or not
 4. Squirtle ate food at 4 pm yesterday.
 5. Therefore, Squirtle will eat food at 4 pm today.
 
-(Step One) Suppose that all the premises are true. (Step Two) Can it be the case that even if I accept all the premises, the conclusion is false? Yes! Squirtle might be stopped from eating food at 4 pm; maybe, Squirtle just is not hungry. Hence, this argument is invalid.
+(Step Two) Can it be the case that even if I accept all the premises, the conclusion is false? Yes! Squirtle might be stopped from eating food at 4 pm; maybe, Squirtle just is not hungry. Hence, this argument is invalid. (Note: notice that there is still something compelling about this argument. This sort of argument is called an inductive argument, and while invalid, they seem to be used all the time. Saying why such arguments are good has been a major problem for philosophers for centuries).
 
-**[Example Five]** Consider the argument:
+**[Example Six]** Consider the argument:
 
 1. Tom went to the mall and Jerry followed after Tom.
 2. Therefore, Jerry followed after Tom.
 
-(Step One) Suppose that all the premises are true. (Step Two) Well if Tom went to the mall and Jerry followed after Tom is true then it simply just followed that Jerry followed after Tom! Hence, this argument is valid.
+(Step Two) If Tom went to the mall and Jerry followed after Tom is true then it simply just followed that Jerry followed after Tom! Hence, this argument is valid.
 
-**[Example Six]** Consider the argument:
+**[Example Seven]** Consider the argument:
 
 1. Either it is the case that Tom went to the mall or Jerry went to the mall.
 2. Therefore, Tom went to the mall.
 
-(Step One) Suppose that all the premises are true. (Step Two) Well, just because we suppose that either Tom went to the mall or Jerry went to the mall does not mean that it must follow that Tom went to the mall. It could be the case that Jerry went to the mall and Tom did not go to the mall. Under that possibility, premise 1 would still be true but the conclusion would be false. Therefore, the argument is invalid.
+(Step Two) Well, just because we suppose that either Tom went to the mall or Jerry went to the mall does not mean that it must follow that Tom went to the mall. It could be the case that Jerry went to the mall and Tom did not go to the mall. Under that possibility, premise 1 would still be true but the conclusion would be false. Therefore, the argument is invalid.
 
-**[Example Seven]** Consider the argument:
+**[Example Eight]** Consider the argument:
 
 1. If it is raining then everyone wins the lottery.
 2. Everyone wins the lottery.
 3. Therefore, it is raining.
 
-(Step One) Suppose that all the premises are true. (Step Two) Well, just because everyone won the lottery does not mean that it is raining. What premise 1 tells us is that if it is raining then we must conclude that everyone wins the lottery. But it does not tell us that it is in fact the case that it is raining. It is perfectly possible for it to be sunny and clear out and everyone wins the lottery. In which case, all the premises are true and the conclusion false. Therefore, the argument is invalid. 
+(Step Two) Well, just because everyone won the lottery does not mean that it is raining. What premise 1 tells us is that if it is raining then we must conclude that everyone wins the lottery. But it does not tell us that it is in fact the case that it is raining. It is perfectly possible for it to be sunny and clear out and everyone wins the lottery. In which case, all the premises are true and the conclusion false. Therefore, the argument is invalid. 
 
 Next week, we will return to a couple more arguments.
 
-Let us quickly go over argument forms. To get an argument form, you just look at an argument, look for sentences which express propositions in them and replace those sentences with letters like $A,B,C,\ldots$. Note that you are allowed to replace parts of sentences which express propositions with letters as well.
+## Soundness
+
+*An argument is sound if and only if it is valid and the premises are actually true*. Notice the difference between soundness and validity. Validity requires that **if** the premises are true then the conclusion must be true. That is, it requires that under the hypothetical situation that the premises are true then the conclusion must be true. Soundness requires that the premises are in fact true. 
+
+I will not say more about soundness here. Of course, you are welcome to ask questions in discussion or office hours. I think it is beneficial to sit down and think through the differences between the definitions of validity and soundness and the relations that they bear to one another (your homework makes you think about this).
+
+## Argument Forms
+
+To get an argument form, you look at a given argument, look for sentences which express propositions in them and replace those sentences with letters like $A,B,C,\ldots$. Note that you are allowed to replace parts of sentences which express propositions with letters as well.
 
 **[Example One]** Consider the argument:
 
@@ -102,16 +122,16 @@ Notice that in premise 1, the sentence "either the world is round or the sun is 
 3. $B$
 4. Therefore, $A$
 
-Now, some argument forms are valid. They are not valid in the same sense that an argument is valid. Instead, *an argument form is valid if and only if every instance of that argument form is valid*.
+Some argument forms are valid. They are not valid in the same sense that an argument is valid. Instead, *an argument form is valid if and only if every instance of that argument form is valid*.
 
-That is, when we are given an argument form we are given something that looks like an argument but with a bunch of letters like $A,B,C,D,E,\ldots$ (just see the previous example). Each letter is supposed to stand for any sentence; that is, you are allowed to put any sentence (which expresses a proposition) into that place where the letters are. When you have replaced all the letters with a sentence (which expresses a proposition) then you get an instance of that argument form. For example, if we take the example we just had: 
+That is, when we are given an argument form we are given something that looks like an argument but with a bunch of letters like $A,B,C,D,E,\ldots$ (just see the previous example). To get an instance of that argument form, you replace all these letters with sentences (which express propositions). So, continuing with our example: 
 
 1. Either $A$ or $B$
 2. If $A$ then $C$
 3. $B$
 4. Therefore, $A$
 
-Then there are three letters $A$, $B$, and $C$ which appear in that argument form. To get an instance of this form, let $A$=Tom is funny, let $B$=Tom is hungry, and let $C$=Jerry is tired. Then putting these sentences into the argument form yields:
+We see that there are three letters $A$, $B$, and $C$ which appear in that argument form. To get an instance of this form, let $A$=Tom is funny, let $B$=Tom is hungry, and let $C$=Jerry is tired (these are just random sentences that I have chosen). Then putting these sentences into the argument form yields:
 
 1. Either Tom is funny or Tom is hungry.
 2. If Tom is funny then Jerry is tired.
@@ -133,5 +153,22 @@ What is an example of a valid argument form? Here are two examples:
 1. $A$ and $B$
 2. Therefore, $B$
 
-I leave it to you to think through these examples.
+How do we check? At this point in this course we do not have the means to verify that all instances of this argument form are valid. The problem is that to check whether or not an argument form is valid, we need to answer the following question: if I substitute in any sentences (which express propositions) for $A$ and $B$, then is the resulting argument valid? The crucial bit here is that you need to check for *any* sentence and there are an infinite number of possible sentences in English which express propositions. It would take you an awfully long time to go through an infinite number of sentences.
+
+Thankfully, checking for invalid argument forms is doable. Here is another example (now with explicity steps):
+
+**[Example Three]** Consider the argument form:
+
+1. $A$
+2. If $C$ then $A$ and $B$
+3. Therefore, $C$
+
+To check that this is an invalid argument form you need to come up with sentences (which express propositions) such that if you substitute those sentences in, the resulting argument is invalid. So, (Step One), come up with as many sentences as there are different letters in the argument form. Here there are three letters, $A$, $B$ and $C$, so we need three sentences. Let us use: $A$="Bob is funny", $B$="Jerry is silly", and $C$="It is hot out today". Next, (Step Two), we need to substitute these into the argument form:
+
+1. Bob is funny.
+2. If it is hot out today then Bob is funny and Jerry is silly.
+3. Therefore, it is hot out today.
+
+Now, (Step Three), check for validity. So, now you need to follow the steps to check for validity. Hopefully, at this point you can check that this argument is invalid.
+
 
