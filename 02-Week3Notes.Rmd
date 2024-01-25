@@ -1,6 +1,6 @@
 # Translation
 
-This week in discussion we practiced translation problems. There are a couple key skills to learn here:
+This week in discussion we mainly practiced translation problems. There are a couple key skills to learn here:
 
 1. Given a English sentence which expresses a proposition, you should be able to translate it into propositional logic.
 2. Given an argument, you should be able to translate it into propositional logic.
