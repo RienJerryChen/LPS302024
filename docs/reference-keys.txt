@@ -4,3 +4,8 @@ propositions
 validity
 soundness
 argument-forms
+translation
+tranlating-english-into-propositional-logic
+practice-problems
+practice-problem-solutions
+translating-from-propositional-logic-to-english

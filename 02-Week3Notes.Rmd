@@ -1,0 +1,76 @@
+# Translation
+
+This week in discussion we practiced translation problems. There are a couple key skills to learn here:
+
+1. Given a English sentence which expresses a proposition, you should be able to translate it into propositional logic.
+2. Given an argument, you should be able to translate it into propositional logic.
+3. Given a string of symbols, you should be able to evaluate whether or not it is a formula in propositional logic.
+4. Given a formula in propositional logic, you should be able to translate it back into English.
+
+We only practiced the first skill in discussion. The second skill should follow immediately from knowing how to do the first. We will touch more on the third skill in week 4, but also see the Translation and Language Slides on canvas, starting from slide 25. Finally, skill 4 was not covered, so I will give an example of this at the end of these notes.
+
+## Tranlating English into Propositional Logic
+
+In a question where you are asked to translate an English sentence or an argument into propositional logic, you do the following:
+
+- (Step One) Provide a dictionary. That is, for every part of a sentence that expresses a proposition in the sentence, assign it a unique lower-case letter. [NOTE: Sometimes this involves first rewriting the sentence, so that it is clear what all the sentence parts are. More on this in the example]
+- (Step Two) Go through that sentence and replace all the parts of the sentence with their corresponding letters according to the dictionary.
+- (Step Three) Go through the result of step two and examine all the English expressions which remain. If any of the left-over expressions correspond to a propositional connective, then look for the propositional letters which the connective is binding together. Then, following the rules for constructing formulas in propositional logic, replace the expression, with the symbol corresponding to the propositional connective.
+
+Note that these steps give you the general strategy that you should use when translating. Sometimes, you may need to still bring your intuitions to the table when doing this sort of exercise.
+
+[Example One] Consider the sentence: "If Tom went to the mall then Jerry fell down the stairs". (Step One) We see here that "Tom went to the mall" and "Jerry fell down the stairs" are sentences which express propositions. These are the parts of the larger sentence "If Tom went to the mall then Jerry fell down the stairs" which we want to assign unique letters. So, let $t$=Tom went to the mall and $j$=Jerry fell down the stairs. (Step Two) When we replace the parts of the sentences with the propositional letters, we get "If $t$ then $j$". (Step Three) Now, we see that the phrase is of the form "If$\ldots$ then$\ldots$" which corresponds to the propositional connective $\supset$. We also note that the conditional is operating on $t$ and $j$ with $t$ being the antecedent and $j$ being the consequent. Hence, following the rules for how to build formulas in propositional logic, we get $(t \supset j)$.
+
+[Example Two] Consider the sentence: "Tom and Jerry went to the mall". (Step One) Here, we can first rewrite the sentence to reveal its underlying structure. "Tom and Jerry went to the mall" can be rewritten as "Tom went to the mall and Jerry went to the mall" (this trick does not always work). Now, we can provide a dictionary: $t$=Tom went to the mall, $j$=Jerry went to the mall. (Step Two) Replacing the sentences with their propositional letters, we get "$t$ and $j$". (Step Three) We note that this is of the form "$\ldots$and$\ldots$" and that it binds together, $t$ and $j$, so we get $(t \& j)$.
+
+[Example Three] I go a bit quicker in this example. Consider the sentence: "If Tom went to the mall and Jerry went to the mall then Adam went to the mall". (Step One) Dictionary: $t$=Tom went to the mall, $j$=Jerry went to the mall, and $a$=Adam went to the mall. (Step Two) Replacing the sentences with their propositional letters, we get "If $t$ and $j$ then $a$". (Step Three) Now here is where we need to be a bit careful.We need to note that the "If$\ldots$then$\ldots$" clause has as its antecedent "$t$ and $j$" and its consequent $a$."$t$ and $j$" just translates into $(t \& j)$ (see Example Two). So, we end up with "If $(t \& j)$ then $a$". This just translates into $((t \& j) \supset a)$ (see Example One). 
+
+## Practice Problems
+
+Here are the questions in section (A) and section (B) which we worked on in discussion section. If you have not tried doing them, I recommend trying to translate them before looking at the solutions:
+
+- (A1) If Mary is the sister of Jane then Jane is Bill's aunt.
+- (A2) Either Jones bluffed his hand or Jones is crazy.
+- (A3) Neither Jones nor Sally were happy with the colour blue.
+- (A4) Tables are solid if and only if books are readable.
+- (A5) Tom went to the mall and Jerry went to bed.
+- (A6) Tom went to the mall but Jerry went to bed.
+- (A7) If Jesse lies and Frank cheats then the Thagard's are crooks.
+- (A8) If Jesse lies then if Frank cheats then the Thagard's are crooks.
+- (A9) If Jesse and Frank are crooks then either George is a crook or the sky is falling.
+- (B1) If Alfred is a spy then Rudolf is breaking the law.
+- (B2) Alfred is a spy only if Rudolf is breaking the law.
+- (B3) Alfred is a spy if Rudolf is breaking the law.
+- (B4) Alfred is a spy unless Rudolf is breaking the law.
+- (B5) It will be hot out tomorrow and quite damp, unless the eastern winds pick up today.
+- (B6) Debra will not leave until the others do, but, only if Meredith is in the office.
+- (B7) If the ball is red then Ash won the competition unless the second ball drawn is blue.
+- (B8) If Lee wants it, Lee can get it, but Lee should not blame Sarah if Sarah gets in trouble.
+- (B9) If Justin's heart stops beating then Justin will live if the doctors apply electric shock.
+
+## Practice Problem Solutions
+
+Here are the solutions. If it is obvious, then I leave the dictionary out:
+
+- (A1) $(m \supset j)$
+- (A2) Dictionary: $j$=Jones bluffed his hand, $c$=Jones is crazy. Answer: $(j \lor c)$
+- (A3) $\sim(j \lor s)$ (it is equally acceptable to write $(\sim j \& \sim s)$)
+- (A4) $(t \equiv b)$
+- (A5) $(t \& j)$
+- (A6) $(t \& j)$ [NOTE: A5 and A6 have the same answer]
+- (A7) $((j \& f) \supset t)$
+- (A8) $(j \supset (f \supset t))$
+- (A9) $((j \& f) \supset (g \lor s))$
+- (B1) $(a \supset r)$
+- (B2) $(a \supset r)$ [NOTE: B1 and B2 have the same answer]
+- (B3) $(r \supset a)$ 
+- (B4) $(\sim r\supset a)$
+- (B5) $(\sim e \supset (h \& d))$
+- (B6) This one is trickier than I thought and so I won't provde an answer here. You won't get a question this tricky.
+- (B7) Here are two possible answers: $(\sim b \supset (r \supset a))$ and $(r \supset (\sim b \supset a))$
+- (B8) Dictionary: $w$=Lee wants it, $g$=Lee gets it, $b$=Lee should blame Sarah, $t$=Sarah gets in trouble. Answer: $((w \supset g) \& (t \supset \sim b))$
+- (B9) $(h \supset (e \supset l))$
+
+## Translating from Propositional Logic to English
+
+[Example] Consider the following dictionary $a$=Albert is funny, $b$=Bart is smart, and $c$=Cassandra is athletic. Then consider the following formula $(\sim a \supset (b \& c))$. To translate this back into English, let us first translate the connectives back into English. Let us start with the $\supset$, so we get "If $\sim a$ then $(b \& c)$". Now we translate the $\sim$ to get, "If it is not the case that $a$ then $(b \& c)$". Next is the $\&$ to get, "If it is not the case that $a$ then $b$ and $c$". Finally, we plug the sentences back in: "If it is not the case that Albert is funny then Bart is smart and Cassandra is athletic". Sometimes, if you follow this sort of procedure, if does not make sense. You may have to move words around in order to make it make sense.

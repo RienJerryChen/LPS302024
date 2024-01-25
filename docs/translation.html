@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 3 Translation | LPS 30 Discussion Notes</title>
+  <meta name="description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 3 Translation | LPS 30 Discussion Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 3 Translation | LPS 30 Discussion Notes" />
+  
+  <meta name="twitter:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  
+
+<meta name="author" content="Ryan Chen" />
+
+
+<meta name="date" content="2024-01-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="propositions-and-validity.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LPS 30 Discussion Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html"><i class="fa fa-check"></i><b>2</b> Propositions and Validity</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#propositions"><i class="fa fa-check"></i><b>2.1</b> Propositions</a></li>
+<li class="chapter" data-level="2.2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#validity"><i class="fa fa-check"></i><b>2.2</b> Validity</a></li>
+<li class="chapter" data-level="2.3" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#soundness"><i class="fa fa-check"></i><b>2.3</b> Soundness</a></li>
+<li class="chapter" data-level="2.4" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#argument-forms"><i class="fa fa-check"></i><b>2.4</b> Argument Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="translation.html"><a href="translation.html"><i class="fa fa-check"></i><b>3</b> Translation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="translation.html"><a href="translation.html#tranlating-english-into-propositional-logic"><i class="fa fa-check"></i><b>3.1</b> Tranlating English into Propositional Logic</a></li>
+<li class="chapter" data-level="3.2" data-path="translation.html"><a href="translation.html#practice-problems"><i class="fa fa-check"></i><b>3.2</b> Practice Problems</a></li>
+<li class="chapter" data-level="3.3" data-path="translation.html"><a href="translation.html#practice-problem-solutions"><i class="fa fa-check"></i><b>3.3</b> Practice Problem Solutions</a></li>
+<li class="chapter" data-level="3.4" data-path="translation.html"><a href="translation.html#translating-from-propositional-logic-to-english"><i class="fa fa-check"></i><b>3.4</b> Translating from Propositional Logic to English</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LPS 30 Discussion Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="translation" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Week 3</span> Translation<a href="translation.html#translation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This week in discussion we practiced translation problems. There are a couple key skills to learn here:</p>
+<ol style="list-style-type: decimal">
+<li>Given a English sentence which expresses a proposition, you should be able to translate it into propositional logic.</li>
+<li>Given an argument, you should be able to translate it into propositional logic.</li>
+<li>Given a string of symbols, you should be able to evaluate whether or not it is a formula in propositional logic.</li>
+<li>Given a formula in propositional logic, you should be able to translate it back into English.</li>
+</ol>
+<p>We only practiced the first skill in discussion. The second skill should follow immediately from knowing how to do the first. We will touch more on the third skill in week 4, but also see the Translation and Language Slides on canvas, starting from slide 25. Finally, skill 4 was not covered, so I will give an example of this at the end of these notes.</p>
+<div id="tranlating-english-into-propositional-logic" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Tranlating English into Propositional Logic<a href="translation.html#tranlating-english-into-propositional-logic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In a question where you are asked to translate an English sentence or an argument into propositional logic, you do the following:</p>
+<ul>
+<li>(Step One) Provide a dictionary. That is, for every part of a sentence that expresses a proposition in the sentence, assign it a unique lower-case letter. [NOTE: Sometimes this involves first rewriting the sentence, so that it is clear what all the sentence parts are. More on this in the example]</li>
+<li>(Step Two) Go through that sentence and replace all the parts of the sentence with their corresponding letters according to the dictionary.</li>
+<li>(Step Three) Go through the result of step two and examine all the English expressions which remain. If any of the left-over expressions correspond to a propositional connective, then look for the propositional letters which the connective is binding together. Then, following the rules for constructing formulas in propositional logic, replace the expression, with the symbol corresponding to the propositional connective.</li>
+</ul>
+<p>Note that these steps give you the general strategy that you should use when translating. Sometimes, you may need to still bring your intuitions to the table when doing this sort of exercise.</p>
+<p>[Example One] Consider the sentence: “If Tom went to the mall then Jerry fell down the stairs”. (Step One) We see here that “Tom went to the mall” and “Jerry fell down the stairs” are sentences which express propositions. These are the parts of the larger sentence “If Tom went to the mall then Jerry fell down the stairs” which we want to assign unique letters. So, let <span class="math inline">\(t\)</span>=Tom went to the mall and <span class="math inline">\(j\)</span>=Jerry fell down the stairs. (Step Two) When we replace the parts of the sentences with the propositional letters, we get “If <span class="math inline">\(t\)</span> then <span class="math inline">\(j\)</span>”. (Step Three) Now, we see that the phrase is of the form “If<span class="math inline">\(\ldots\)</span> then<span class="math inline">\(\ldots\)</span>” which corresponds to the propositional connective <span class="math inline">\(\supset\)</span>. We also note that the conditional is operating on <span class="math inline">\(t\)</span> and <span class="math inline">\(j\)</span> with <span class="math inline">\(t\)</span> being the antecedent and <span class="math inline">\(j\)</span> being the consequent. Hence, following the rules for how to build formulas in propositional logic, we get <span class="math inline">\((t \supset j)\)</span>.</p>
+<p>[Example Two] Consider the sentence: “Tom and Jerry went to the mall”. (Step One) Here, we can first rewrite the sentence to reveal its underlying structure. “Tom and Jerry went to the mall” can be rewritten as “Tom went to the mall and Jerry went to the mall” (this trick does not always work). Now, we can provide a dictionary: <span class="math inline">\(t\)</span>=Tom went to the mall, <span class="math inline">\(j\)</span>=Jerry went to the mall. (Step Two) Replacing the sentences with their propositional letters, we get “<span class="math inline">\(t\)</span> and <span class="math inline">\(j\)</span>”. (Step Three) We note that this is of the form “<span class="math inline">\(\ldots\)</span>and<span class="math inline">\(\ldots\)</span>” and that it binds together, <span class="math inline">\(t\)</span> and <span class="math inline">\(j\)</span>, so we get <span class="math inline">\((t \&amp; j)\)</span>.</p>
+<p>[Example Three] I go a bit quicker in this example. Consider the sentence: “If Tom went to the mall and Jerry went to the mall then Adam went to the mall”. (Step One) Dictionary: <span class="math inline">\(t\)</span>=Tom went to the mall, <span class="math inline">\(j\)</span>=Jerry went to the mall, and <span class="math inline">\(a\)</span>=Adam went to the mall. (Step Two) Replacing the sentences with their propositional letters, we get “If <span class="math inline">\(t\)</span> and <span class="math inline">\(j\)</span> then <span class="math inline">\(a\)</span>”. (Step Three) Now here is where we need to be a bit careful.We need to note that the “If<span class="math inline">\(\ldots\)</span>then<span class="math inline">\(\ldots\)</span>” clause has as its antecedent “<span class="math inline">\(t\)</span> and <span class="math inline">\(j\)</span>” and its consequent <span class="math inline">\(a\)</span>.”<span class="math inline">\(t\)</span> and <span class="math inline">\(j\)</span>” just translates into <span class="math inline">\((t \&amp; j)\)</span> (see Example Two). So, we end up with “If <span class="math inline">\((t \&amp; j)\)</span> then <span class="math inline">\(a\)</span>”. This just translates into <span class="math inline">\(((t \&amp; j) \supset a)\)</span> (see Example One).</p>
+</div>
+<div id="practice-problems" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Practice Problems<a href="translation.html#practice-problems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here are the questions in section (A) and section (B) which we worked on in discussion section. If you have not tried doing them, I recommend trying to translate them before looking at the solutions:</p>
+<ul>
+<li>(A1) If Mary is the sister of Jane then Jane is Bill’s aunt.</li>
+<li>(A2) Either Jones bluffed his hand or Jones is crazy.</li>
+<li>(A3) Neither Jones nor Sally were happy with the colour blue.</li>
+<li>(A4) Tables are solid if and only if books are readable.</li>
+<li>(A5) Tom went to the mall and Jerry went to bed.</li>
+<li>(A6) Tom went to the mall but Jerry went to bed.</li>
+<li>(A7) If Jesse lies and Frank cheats then the Thagard’s are crooks.</li>
+<li>(A8) If Jesse lies then if Frank cheats then the Thagard’s are crooks.</li>
+<li>(A9) If Jesse and Frank are crooks then either George is a crook or the sky is falling.</li>
+<li>(B1) If Alfred is a spy then Rudolf is breaking the law.</li>
+<li>(B2) Alfred is a spy only if Rudolf is breaking the law.</li>
+<li>(B3) Alfred is a spy if Rudolf is breaking the law.</li>
+<li>(B4) Alfred is a spy unless Rudolf is breaking the law.</li>
+<li>(B5) It will be hot out tomorrow and quite damp, unless the eastern winds pick up today.</li>
+<li>(B6) Debra will not leave until the others do, but, only if Meredith is in the office.</li>
+<li>(B7) If the ball is red then Ash won the competition unless the second ball drawn is blue.</li>
+<li>(B8) If Lee wants it, Lee can get it, but Lee should not blame Sarah if Sarah gets in trouble.</li>
+<li>(B9) If Justin’s heart stops beating then Justin will live if the doctors apply electric shock.</li>
+</ul>
+</div>
+<div id="practice-problem-solutions" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Practice Problem Solutions<a href="translation.html#practice-problem-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Here are the solutions. If it is obvious, then I leave the dictionary out:</p>
+<ul>
+<li>(A1) <span class="math inline">\((m \supset j)\)</span></li>
+<li>(A2) Dictionary: <span class="math inline">\(j\)</span>=Jones bluffed his hand, <span class="math inline">\(c\)</span>=Jones is crazy. Answer: <span class="math inline">\((j \lor c)\)</span></li>
+<li>(A3) <span class="math inline">\(\sim(j \lor s)\)</span> (it is equally acceptable to write <span class="math inline">\((\sim j \&amp; \sim s)\)</span>)</li>
+<li>(A4) <span class="math inline">\((t \equiv b)\)</span></li>
+<li>(A5) <span class="math inline">\((t \&amp; j)\)</span></li>
+<li>(A6) <span class="math inline">\((t \&amp; j)\)</span> [NOTE: A5 and A6 have the same answer]</li>
+<li>(A7) <span class="math inline">\(((j \&amp; f) \supset t)\)</span></li>
+<li>(A8) <span class="math inline">\((j \supset (f \supset t))\)</span></li>
+<li>(A9) <span class="math inline">\(((j \&amp; f) \supset (g \lor s))\)</span></li>
+<li>(B1) <span class="math inline">\((a \supset r)\)</span></li>
+<li>(B2) <span class="math inline">\((a \supset r)\)</span> [NOTE: B1 and B2 have the same answer]</li>
+<li>(B3) <span class="math inline">\((r \supset a)\)</span></li>
+<li>(B4) <span class="math inline">\((\sim r\supset a)\)</span></li>
+<li>(B5) <span class="math inline">\((\sim e \supset (h \&amp; d))\)</span></li>
+<li>(B6) This one is trickier than I thought and so I won’t provde an answer here. You won’t get a question this tricky.</li>
+<li>(B7) Here are two possible answers: <span class="math inline">\((\sim b \supset (r \supset a))\)</span> and <span class="math inline">\((r \supset (\sim b \supset a))\)</span></li>
+<li>(B8) Dictionary: <span class="math inline">\(w\)</span>=Lee wants it, <span class="math inline">\(g\)</span>=Lee gets it, <span class="math inline">\(b\)</span>=Lee should blame Sarah, <span class="math inline">\(t\)</span>=Sarah gets in trouble. Answer: <span class="math inline">\(((w \supset g) \&amp; (t \supset \sim b))\)</span></li>
+<li>(B9) <span class="math inline">\((h \supset (e \supset l))\)</span></li>
+</ul>
+</div>
+<div id="translating-from-propositional-logic-to-english" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Translating from Propositional Logic to English<a href="translation.html#translating-from-propositional-logic-to-english" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>[Example] Consider the following dictionary <span class="math inline">\(a\)</span>=Albert is funny, <span class="math inline">\(b\)</span>=Bart is smart, and <span class="math inline">\(c\)</span>=Cassandra is athletic. Then consider the following formula <span class="math inline">\((\sim a \supset (b \&amp; c))\)</span>. To translate this back into English, let us first translate the connectives back into English. Let us start with the <span class="math inline">\(\supset\)</span>, so we get “If <span class="math inline">\(\sim a\)</span> then <span class="math inline">\((b \&amp; c)\)</span>”. Now we translate the <span class="math inline">\(\sim\)</span> to get, “If it is not the case that <span class="math inline">\(a\)</span> then <span class="math inline">\((b \&amp; c)\)</span>”. Next is the <span class="math inline">\(\&amp;\)</span> to get, “If it is not the case that <span class="math inline">\(a\)</span> then <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>”. Finally, we plug the sentences back in: “If it is not the case that Albert is funny then Bart is smart and Cassandra is athletic”. Sometimes, if you follow this sort of procedure, if does not make sense. You may have to move words around in order to make it make sense.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="propositions-and-validity.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Week3Notes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
