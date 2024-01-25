@@ -9,7 +9,7 @@ This week in discussion we mainly practiced translation problems. There are a co
 
 We only practiced the first skill in discussion. The second skill should follow immediately from knowing how to do the first. We will touch more on the third skill in week 4, but also see the Translation and Language Slides on canvas, starting from slide 25. Finally, skill 4 was not covered, so I will give an example of this at the end of these notes.
 
-## Translating English into Propositional Logic
+## Translating from English to Propositional Logic
 
 In a question where you are asked to translate an English sentence or an argument into propositional logic, you do the following:
 
