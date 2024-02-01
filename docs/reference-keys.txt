@@ -9,3 +9,9 @@ translating-from-english-to-propositional-logic
 practice-problems
 practice-problem-solutions
 translating-from-propositional-logic-to-english
+truth-tables
+how-to-fill-out-a-truth-table
+definitions-of-tautology-contradiction-and-contingency
+checking-validity-of-arguments-with-a-truth-table
+practice-problems-1
+solutions

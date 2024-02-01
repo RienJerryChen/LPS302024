@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 4 Truth Tables | LPS 30 Discussion Notes</title>
+  <meta name="description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 4 Truth Tables | LPS 30 Discussion Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 4 Truth Tables | LPS 30 Discussion Notes" />
+  
+  <meta name="twitter:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  
+
+<meta name="author" content="Ryan Chen" />
+
+
+<meta name="date" content="2024-02-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="translation.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LPS 30 Discussion Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html"><i class="fa fa-check"></i><b>2</b> Propositions and Validity</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#propositions"><i class="fa fa-check"></i><b>2.1</b> Propositions</a></li>
+<li class="chapter" data-level="2.2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#validity"><i class="fa fa-check"></i><b>2.2</b> Validity</a></li>
+<li class="chapter" data-level="2.3" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#soundness"><i class="fa fa-check"></i><b>2.3</b> Soundness</a></li>
+<li class="chapter" data-level="2.4" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#argument-forms"><i class="fa fa-check"></i><b>2.4</b> Argument Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="translation.html"><a href="translation.html"><i class="fa fa-check"></i><b>3</b> Translation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="translation.html"><a href="translation.html#translating-from-english-to-propositional-logic"><i class="fa fa-check"></i><b>3.1</b> Translating from English to Propositional Logic</a></li>
+<li class="chapter" data-level="3.2" data-path="translation.html"><a href="translation.html#practice-problems"><i class="fa fa-check"></i><b>3.2</b> Practice Problems</a></li>
+<li class="chapter" data-level="3.3" data-path="translation.html"><a href="translation.html#practice-problem-solutions"><i class="fa fa-check"></i><b>3.3</b> Practice Problem Solutions</a></li>
+<li class="chapter" data-level="3.4" data-path="translation.html"><a href="translation.html#translating-from-propositional-logic-to-english"><i class="fa fa-check"></i><b>3.4</b> Translating from Propositional Logic to English</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="truth-tables.html"><a href="truth-tables.html"><i class="fa fa-check"></i><b>4</b> Truth Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="truth-tables.html"><a href="truth-tables.html#how-to-fill-out-a-truth-table"><i class="fa fa-check"></i><b>4.1</b> How to Fill Out a Truth Table</a></li>
+<li class="chapter" data-level="4.2" data-path="truth-tables.html"><a href="truth-tables.html#definitions-of-tautology-contradiction-and-contingency"><i class="fa fa-check"></i><b>4.2</b> Definitions of Tautology, Contradiction and Contingency</a></li>
+<li class="chapter" data-level="4.3" data-path="truth-tables.html"><a href="truth-tables.html#checking-validity-of-arguments-with-a-truth-table"><i class="fa fa-check"></i><b>4.3</b> Checking Validity of Arguments with a Truth Table</a></li>
+<li class="chapter" data-level="4.4" data-path="truth-tables.html"><a href="truth-tables.html#practice-problems-1"><i class="fa fa-check"></i><b>4.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="4.5" data-path="truth-tables.html"><a href="truth-tables.html#solutions"><i class="fa fa-check"></i><b>4.5</b> Solutions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LPS 30 Discussion Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="truth-tables" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Week 4</span> Truth Tables<a href="truth-tables.html#truth-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="how-to-fill-out-a-truth-table" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> How to Fill Out a Truth Table<a href="truth-tables.html#how-to-fill-out-a-truth-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You may be asked to provide and fill out the truth table for a given formula. In what follows, I provide steps as to how to do this. Note that I do this in a painstakingly detailed way. Your answers do not have go step-by-step in the way I have outlined here; just the final truth table is fine. In any case, make sure you understand why I take each step that I take.</p>
+<ol style="list-style-type: decimal">
+<li><p>First, look at the formula and identify the distinct propositional letters in the formula. Knowing how many propositional letters there are and which ones there are will tell you how to fill out the left-hand side of your table. For example, if you have the formula <span class="math inline">\(((p \supset q) \lor (q \lor \sim p))\)</span> then there are only two distinct propositional letters <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>. If you have the formula <span class="math inline">\(((q \lor j) \&amp; (j \equiv r))\)</span>, there are three distinct propositional letters <span class="math inline">\(q\)</span>, <span class="math inline">\(j\)</span>, and <span class="math inline">\(r\)</span>.</p></li>
+<li><p>With the propositional letters you have identified in step 1., you will start the left hand side of your truth table with those letters. You will then put the formula you want to do the truth table for to the right of those letters. So, suppose that you have a formula <span class="math inline">\((p \supset (q \supset p))\)</span> with letters <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>, you will start it as follows:</p></li>
+</ol>
+<p><img src="Pictures/Week4Picture1.png" />
+If instead, you have the formula <span class="math inline">\(((r \lor w) \&amp; (\sim j \supset u))\)</span>, then you will start your table as follows:</p>
+<p><img src="Pictures/Week4Picture2.png" />
+3. Next, you fill out the columns for the propositional letters on the left hand side. To do this, you follow a pattern.</p>
+<p>First, you determine the number of rows that you need to fill out. For <span class="math inline">\(n\)</span> different propositional letters, you will have <span class="math inline">\(2^n\)</span> rows. For example, if you have <span class="math inline">\(2\)</span> propositional letters, then you will have <span class="math inline">\(2^2 = 4\)</span> rows. If you have <span class="math inline">\(3\)</span> propositional letters, then you will have <span class="math inline">\(2^3 = 8\)</span> rows.</p>
+<p>Secondly, starting from the right most propositional letter, you fill out the column by alternating 0s and 1s for each row (this is where figuring out how many rows there are comes in handy; for example, if you know that there will be <span class="math inline">\(8\)</span> rows, then you will alternate until you have filled out all <span class="math inline">\(8\)</span> rows). Then you move to the propositional letter one column to the left and you alternate 00 and 11 down the column (you will stop here if you only have two propositional letters). Here is an example:</p>
+<p><img src="Pictures/Week4Picture3.png" /></p>
+<p>If you have more than two propositional letters, move one column to the left and you alternate 0000 and 1111 down the column (you will stop here if you only have three propositional letters). Here is an example:</p>
+<p><img src="Pictures/Week4Picture4.png" /></p>
+<p>If you have more than three propositional letters, then move one column to the left and you alternate 00000000 and 11111111 down the column (you will stop here if you only have four propositional letters). I leave it to you to continue the pattern.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Now, you can start filling out the columns under the formula that you are concerned with. My advice is to just fill out whatever columns you <em>can</em> fill out. This will require you to know how the formulas compose together to form bigger formulas. Here is an example (slightly different from the one I covered in person, in discussion): consider the formula <span class="math inline">\((p \lor j) \&amp; (\sim p \supset \sim (j \equiv p))\)</span>. We start off the table as follows:</li>
+</ol>
+<p><img src="Pictures/Week4Picture5.png" />
+Now, we look at the propositional connectives and see which ones we can start to evaluate. Let us consider the <span class="math inline">\(\&amp;\)</span> connective. Can we evaluate that one yet? Well, we could only evaluate the <span class="math inline">\(\&amp;\)</span> if we knew the truth value columns of the two formulas that it binds. In this case, the <span class="math inline">\(\&amp;\)</span> binds together the <span class="math inline">\((p \lor j)\)</span> and the <span class="math inline">\((\sim p \supset \sim (j \equiv p))\)</span>. Do we currently know what the truth value columns for those formulas are? No. The truth value column of <span class="math inline">\((p\lor j)\)</span> would be the column under the <span class="math inline">\(\lor\)</span> as the <span class="math inline">\(\lor\)</span> binds together the <span class="math inline">\(p\)</span> and the <span class="math inline">\(j\)</span> to create <span class="math inline">\((p \lor j)\)</span>. Can we figure it out? Yes, since we already have the truth value columns for <span class="math inline">\(p\)</span> and <span class="math inline">\(j\)</span>:</p>
+<p><img src="Pictures/Week4Picture6.png" />
+So, the left conjunct of the <span class="math inline">\(\&amp;\)</span> is taken care of. We now need to find the truth value column of the right conjunct. In this case, the column is the one under the <span class="math inline">\(\supset\)</span> symbol. This is because to form <span class="math inline">\((\sim p \supset \sim (j \equiv p))\)</span>, the <span class="math inline">\(\supset\)</span> symbol binds together the <span class="math inline">\(\sim p\)</span> and the <span class="math inline">\(\sim (j \equiv p)\)</span> formulas. Do we have the truth values of <span class="math inline">\(\sim p\)</span> and <span class="math inline">\(\sim (j \equiv p)\)</span>? No. Can we figure it out? Well, we can quickly fill out the <span class="math inline">\(\sim p\)</span> since we know the truth value column of <span class="math inline">\(p\)</span>:</p>
+<p><img src="Pictures/Week4Picture7.png" /></p>
+<p>Can we do this for <span class="math inline">\(\sim (j \equiv p)\)</span>? No. To determine the truth value column under the <span class="math inline">\(\sim\)</span>, we need to first know the truth value column under the <span class="math inline">\(\equiv\)</span> in <span class="math inline">\((j \equiv p)\)</span>. Thankfully, we can find that since we already have the truth values of <span class="math inline">\(j\)</span> and <span class="math inline">\(p\)</span>:</p>
+<p><img src="Pictures/Week4Picture8.png" /></p>
+<p>Now, we can figure out the truth value column under the <span class="math inline">\(\sim\)</span>. I have highlighted in magenta-red(?), the column that the negation <span class="math inline">\(\sim\)</span> operates over:</p>
+<p><img src="Pictures/Week4Picture9.png" /></p>
+<p>Now, remember that the <span class="math inline">\(\supset\)</span> binded together the <span class="math inline">\(\sim p\)</span> formula and the <span class="math inline">\(\sim (j \equiv p)\)</span>. The blue highlighted columns are the truth value columns for those formulas and we have both of them now. So we can evaluate the conditional:</p>
+<p><img src="Pictures/Week4Picture10.png" /></p>
+<p>Finally, remember that the <span class="math inline">\(\&amp;\)</span> binded together the <span class="math inline">\((p \lor j)\)</span> formula and the <span class="math inline">\((\sim p \supset \sim (j \equiv p))\)</span> formula. The highlighted green columns are the truth value columns for those two formulas. Hence, we can now evaluate the <span class="math inline">\(\&amp;\)</span>, which I will highlight in yellow:</p>
+<p><img src="Pictures/Week4Picture11.png" /></p>
+<p>That yellow column is the truth value column for the entire formula.</p>
+</div>
+<div id="definitions-of-tautology-contradiction-and-contingency" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Definitions of Tautology, Contradiction and Contingency<a href="truth-tables.html#definitions-of-tautology-contradiction-and-contingency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The concepts of tautology, contradiction, and contingency are really important in logic. Sometimes, just by looking at a formula you may be able to tell whether or not it is a tautology, contradiction or contingency, but sometimes you will not be able to. Thankfully, truth tables are one way to always tell whether or not a formula is one of these three.</p>
+<p>So, given a formula, to ascertain whether or not it is a tautology, contradiction or a contingency, you:</p>
+<ol style="list-style-type: decimal">
+<li>Fill out its truth table.</li>
+<li>Look at the truth value column for the formula that you are concerned with. If the column is all 1s then it is a <em>tautology</em>. If the column is all 0s then its a <em>contradiction</em>. If the column includes at least one 1 and at least one 0 then it is a <em>contingency</em>.</li>
+</ol>
+<p>That is all there is to it. Informally, a tautology is a formula which is always true; a contradiction is a formula which is always false; and a contingency is a formula which is sometimes true and sometimes false.</p>
+</div>
+<div id="checking-validity-of-arguments-with-a-truth-table" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Checking Validity of Arguments with a Truth Table<a href="truth-tables.html#checking-validity-of-arguments-with-a-truth-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sometimes you will be asked to check the validity of an argument using a truth table. The question will often look like “is <span class="math inline">\(\phi_1,\phi_2,\ldots,\phi_n \therefore \psi\)</span> valid?” (the <span class="math inline">\(\phi_1,\phi_2,\ldots,\phi_n,\psi\)</span> just stand for arbitrary formulas). The formulas before the <span class="math inline">\(\therefore\)</span> are the premises and the formula after the <span class="math inline">\(\therefore\)</span> is the conclusion. The procedure for answering such questions is an extension of how to fill out the truth table of a given formula:</p>
+<ol style="list-style-type: decimal">
+<li>First look across all the formulas <span class="math inline">\(\phi_1,\phi_2,\ldots,\phi_n, \psi\)</span> and look at all the distinct propositional letters in those formulas. Start off the left hand side of your truth table with those propositional letters (this is just like the first step for “How to Fill out a Truth Table”; the only exception is now you are looking at letters across multiple formulas). Next, put the premises <span class="math inline">\(\phi_1,\ldots,\phi_n,\psi\)</span> to the right of the propositional letters with a line in between each of them. You will end up with something looking like:</li>
+</ol>
+<p><img src="Pictures/Week4Picture12.png" />
+(This is a case with two premises <span class="math inline">\(\phi_1\)</span>, <span class="math inline">\(\phi_2\)</span> and the conclusion <span class="math inline">\(\psi\)</span>). Next, you fill out the columns for the propositional letters on the left-hand side of the table as you would normally (as in, do the same as step 3. for “How to Fill Out a Truth Table”).</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Then, working with only one formula at a time, fill out the truth table. For example, if you are working on <span class="math inline">\(\phi_1\)</span>, then you just fill out that truth table; you do not need to consider the other formulas at all. You should end up with truth value columns for all of the formulas (i.e., the premises and the conclusion).</p></li>
+<li><p>To evaluate validity, start from the top row and see whether or not it is a row in which the truth value of every premise is a 1. If it is a row in which all the premises are 1, then check whether or not the conclusion is also a 1. If it is <em>not</em>, then the argument is invalid and you can stop checking. If it is a 1 then you move onto the row below and repeat the checking procedure. If there is no row below, then you are done and the argument is valid.</p></li>
+</ol>
+</div>
+<div id="practice-problems-1" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Practice Problems<a href="truth-tables.html#practice-problems-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Provide the truth table for the following (I omit A3, since it is too easy):</p>
+<ul>
+<li>(A1) <span class="math inline">\((p \lor q) \lor r\)</span></li>
+<li>(A2) <span class="math inline">\(\sim (p \&amp; q)\)</span></li>
+<li>(A4) <span class="math inline">\((\sim p \lor \sim q)\)</span></li>
+<li>(A5) <span class="math inline">\(((p \supset q) \equiv (\sim p \lor q))\)</span></li>
+</ul>
+<p>Is the following formula a tautology, contradiction or a contingency? Use a truth table to evaluate:</p>
+<ul>
+<li>(B1) <span class="math inline">\((p \supset p)\)</span></li>
+<li>(B2) <span class="math inline">\((p \supset \sim\sim p)\)</span></li>
+<li>(B3) <span class="math inline">\((p \&amp; q) \lor (q \&amp; p)\)</span></li>
+<li>(B4) <span class="math inline">\(\sim (p \supset (q \supset p))\)</span></li>
+<li>(B5) <span class="math inline">\(((q \supset p) \supset (\sim q \supset \sim p))\)</span></li>
+<li>(B6) <span class="math inline">\(((p \supset ((p \supset q) \equiv (p \&amp; \sim r))) \lor r)\)</span></li>
+</ul>
+<p>Which of the following arguments are valid?</p>
+<ul>
+<li>(C1) <span class="math inline">\((\sim p \lor q), q \therefore \sim p\)</span></li>
+<li>(C2) <span class="math inline">\((\sim p \supset (q \lor p)), \sim p \therefore q\)</span></li>
+<li>(C3) <span class="math inline">\((p \equiv (q \&amp; \sim p)), (q\supset p) \therefore (q \lor p)\)</span></li>
+</ul>
+</div>
+<div id="solutions" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Solutions<a href="truth-tables.html#solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Under the main column you should have (left-to-right = top-to-bottom)</p>
+<ul>
+<li>(A1) <span class="math inline">\(01111111\)</span></li>
+<li>(A2) <span class="math inline">\(1110\)</span></li>
+<li>(A4) <span class="math inline">\(1110\)</span></li>
+<li>(A5) <span class="math inline">\(1111\)</span></li>
+</ul>
+<p>Then for the other questions, I just give the answers you should arrive at (I also quickly did these so there is a possibility of a mistake):</p>
+<ul>
+<li>(B1) Tautology</li>
+<li>(B2) Tautology</li>
+<li>(B3) Contingency</li>
+<li>(B4) Contradiction</li>
+<li>(B5) Tautology</li>
+<li>(B6) Contingency</li>
+<li>(C1) Invalid</li>
+<li>(C2) Valid</li>
+<li>(C3) Invalid</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="translation.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Week4Notes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
