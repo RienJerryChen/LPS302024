@@ -118,7 +118,7 @@ Then for the other questions, I just give the answers you should arrive at (I al
 - (B2) Tautology
 - (B3) Contingency
 - (B4) Contradiction
-- (B5) Tautology
+- (B5) Contingency
 - (B6) Contingency
 - (C1) Invalid
 - (C2) Valid
