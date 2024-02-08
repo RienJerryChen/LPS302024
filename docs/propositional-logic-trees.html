@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 5 Propositional Logic Trees | LPS 30 Discussion Notes</title>
+  <meta name="description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 5 Propositional Logic Trees | LPS 30 Discussion Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 5 Propositional Logic Trees | LPS 30 Discussion Notes" />
+  
+  <meta name="twitter:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  
+
+<meta name="author" content="Ryan Chen" />
+
+
+<meta name="date" content="2024-02-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="truth-tables.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LPS 30 Discussion Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html"><i class="fa fa-check"></i><b>2</b> Propositions and Validity</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#propositions"><i class="fa fa-check"></i><b>2.1</b> Propositions</a></li>
+<li class="chapter" data-level="2.2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#validity"><i class="fa fa-check"></i><b>2.2</b> Validity</a></li>
+<li class="chapter" data-level="2.3" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#soundness"><i class="fa fa-check"></i><b>2.3</b> Soundness</a></li>
+<li class="chapter" data-level="2.4" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#argument-forms"><i class="fa fa-check"></i><b>2.4</b> Argument Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="translation.html"><a href="translation.html"><i class="fa fa-check"></i><b>3</b> Translation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="translation.html"><a href="translation.html#translating-from-english-to-propositional-logic"><i class="fa fa-check"></i><b>3.1</b> Translating from English to Propositional Logic</a></li>
+<li class="chapter" data-level="3.2" data-path="translation.html"><a href="translation.html#practice-problems"><i class="fa fa-check"></i><b>3.2</b> Practice Problems</a></li>
+<li class="chapter" data-level="3.3" data-path="translation.html"><a href="translation.html#practice-problem-solutions"><i class="fa fa-check"></i><b>3.3</b> Practice Problem Solutions</a></li>
+<li class="chapter" data-level="3.4" data-path="translation.html"><a href="translation.html#translating-from-propositional-logic-to-english"><i class="fa fa-check"></i><b>3.4</b> Translating from Propositional Logic to English</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="truth-tables.html"><a href="truth-tables.html"><i class="fa fa-check"></i><b>4</b> Truth Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="truth-tables.html"><a href="truth-tables.html#how-to-fill-out-a-truth-table"><i class="fa fa-check"></i><b>4.1</b> How to Fill Out a Truth Table</a></li>
+<li class="chapter" data-level="4.2" data-path="truth-tables.html"><a href="truth-tables.html#definitions-of-tautology-contradiction-and-contingency"><i class="fa fa-check"></i><b>4.2</b> Definitions of Tautology, Contradiction and Contingency</a></li>
+<li class="chapter" data-level="4.3" data-path="truth-tables.html"><a href="truth-tables.html#checking-validity-of-arguments-with-a-truth-table"><i class="fa fa-check"></i><b>4.3</b> Checking Validity of Arguments with a Truth Table</a></li>
+<li class="chapter" data-level="4.4" data-path="truth-tables.html"><a href="truth-tables.html#practice-problems-1"><i class="fa fa-check"></i><b>4.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="4.5" data-path="truth-tables.html"><a href="truth-tables.html#solutions"><i class="fa fa-check"></i><b>4.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html"><i class="fa fa-check"></i><b>5</b> Propositional Logic Trees</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#satisfiability"><i class="fa fa-check"></i><b>5.1</b> Satisfiability</a></li>
+<li class="chapter" data-level="5.2" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#trees"><i class="fa fa-check"></i><b>5.2</b> Trees</a></li>
+<li class="chapter" data-level="5.3" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#soundness-and-validity"><i class="fa fa-check"></i><b>5.3</b> Soundness and Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#practice-problems-2"><i class="fa fa-check"></i><b>5.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="5.5" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#solutions-1"><i class="fa fa-check"></i><b>5.5</b> Solutions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LPS 30 Discussion Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="propositional-logic-trees" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Week 5</span> Propositional Logic Trees<a href="propositional-logic-trees.html#propositional-logic-trees" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="satisfiability" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Satisfiability<a href="propositional-logic-trees.html#satisfiability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>[Definition] A collection of formulas <span class="math inline">\(\{A_1,A_2,\ldots,A_n\}\)</span> is satisfiable just in case there there is some row of the truth table (we also call a row on the truth table, an evaluation) where <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> are all true.</p>
+<p>Why does this matter for us? Because trees are a method for determining whether or not a collection of formulas is satisfiable. And it is because of their ability to determine satisfiability, that trees are also a method for determining the validity of arguments. Here’s how (keep track of the italicized phrases in the following list; they indicate which phrases change):</p>
+<ol style="list-style-type: decimal">
+<li>Recall the definition of validity. An argument is valid just in case it is impossible for all the premises to be true and the conclusion to be false.</li>
+<li>And 1. is equivalent to saying: An argument is <em>invalid</em> just in case it is <em>possible</em> for all the premises to be true and the conclusion false.</li>
+<li>And 2. is equivalent to saying: An argument is invalid just in case it is possible for all the premises to be true and the <em>negation</em> of the conclusion to be true</li>
+<li>And 3. is equivalent to saying: An argument is invalid just in case the premises and the negation of the conclusion are satisfiable.</li>
+</ol>
+<p>And so, suppose that we have some method for determining whether or not any collection of formulas is satisfiable. Then whenever we are given some argument, we can find out whether or not that argument is valid by using that method to determine whether or not the premises and the negation of the conclusion are satisfiable.</p>
+</div>
+<div id="trees" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Trees<a href="propositional-logic-trees.html#trees" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trees tell us whether or not a collection of formulas is satisfiable. In this course, there are three main kinds of questions which we can use trees to answer:</p>
+<ul>
+<li>Is <span class="math inline">\(A_1,\ldots,A_n\)</span> satisfiable?</li>
+<li>Is <span class="math inline">\(A\)</span> a tautology, contradiction, or a contingency?</li>
+<li>Is <span class="math inline">\(A_1,\ldots,A_n \therefore B\)</span> valid?</li>
+</ul>
+<p>To be able to use the tree method, you will need to be able to identify the main connective of a formula. Again, the main connective is the last connective used to construct the formula that you are concerned with. The main connective always has a tree rule associated with it. And so once you have identified the main connective, then you know immediately, which tree rule to apply (there is an exception with the negation symbol). There are only three cases in which you can no longer apply a tree rule: (i) you have already applied a tree rule to that formula; (ii) the formula is an atomic formula (aka, a propositional letter); (iii) the formula is a negated atomif formula (aka, a propositional letter with a single negation in front of it).</p>
+<p>For example, in <span class="math inline">\((((p \supset q) \lor j) \&amp; k)\)</span> the main connective is <span class="math inline">\(\&amp;\)</span>. This is because the only way to construct <span class="math inline">\((((p \supset q) \lor j) \&amp; k)\)</span> (in accordance with the rules for making formulas) is to take <span class="math inline">\(((p \supset q) \lor j)\)</span> and <span class="math inline">\(k\)</span> and concatenate them together with the <span class="math inline">\(\&amp;\)</span> symbol in between (and with parentheses at the ends). Because the <span class="math inline">\(\&amp;\)</span> symbol is the main connective, the tree rule you can apply to <span class="math inline">\((((p \supset q) \lor j) \&amp; k)\)</span> is the <span class="math inline">\(\&amp;\)</span> rule [Look to the slides or your own notes to recall what this rule looks like].</p>
+<p>I mentioned earlier that negation has an exception. It has an exception because when the negation <span class="math inline">\(\sim\)</span> symbol as the main connective (and it is not just a negated atomic), you have to look at the formula without the negation to determine which tree rule to use. For example, in <span class="math inline">\(\sim (q \supset p)\)</span> the <span class="math inline">\(\sim\)</span> is the main connective. Now you should ignore the <span class="math inline">\(\sim\)</span>, so we get <span class="math inline">\((q \supset p)\)</span> whose main connective is the <span class="math inline">\(\supset\)</span>. This tells you to use the negated conditional rule [NOTE: you do not use the conditional rule here; it is the <em>negated conditional rule</em>].</p>
+<p>I will not cover the other aspects of how to do the trees here. You have to review on your own: how to start the tree, when you can close a branch, how to extend the tree out, and strategies for which formulas to do first.</p>
+<p>[How to Answer Questions About Satisfiability] Suppose that you are asked whether or not <span class="math inline">\(A_1,\ldots,A_n\)</span> is satisfiable. Then:</p>
+<ol style="list-style-type: decimal">
+<li>Start your tree with <span class="math inline">\(A_1,\ldots,A_n\)</span></li>
+<li>Apply tree rules until you obtain a complete tree.</li>
+<li>If there is at least one open branch on the tree, then <span class="math inline">\(A_1,\ldots,A_n\)</span> is satisfiable. Otherwise, the tree is complete and closed and hence <span class="math inline">\(A_1,\ldots,A_n\)</span> is unsatisfiable.</li>
+</ol>
+<p>[How to Answer Questions About Tautology, Contingency, and Contradiction] Suppose that you are asked whether or not <span class="math inline">\(A\)</span> is a tautology, contingency, or a contradiction. Then:</p>
+<ol style="list-style-type: decimal">
+<li>Start a tree with <span class="math inline">\(A\)</span></li>
+<li>Apply tree rules until you obtain a complete tree.</li>
+<li>If the tree is complete and closed, then <span class="math inline">\(A\)</span> is a contradiction [Why? Because if the tree is complete and closed (with <span class="math inline">\(A\)</span> as its start), this means <span class="math inline">\(A\)</span> is unsatisfiable which means it is never true; to be a contradiction just is to be never true]. Otherwise, the tree has at least one open branch and continue to step 4</li>
+<li>Start a tree with <span class="math inline">\(\sim A\)</span></li>
+<li>Apply tree rules until you obtain a complete tree.</li>
+<li>If the tree is complete and closed, then <span class="math inline">\(A\)</span> is a tautology [Why? Because if the tree is complete and closed (with <span class="math inline">\(\sim A\)</span> as its start), this means that <span class="math inline">\(\sim A\)</span> is unsatisfiable. This means that <span class="math inline">\(\sim A\)</span> is never true which implies that <span class="math inline">\(A\)</span> is always true; to be a tautology is just to always be true]. If the tree has at least one open branch, then it is neither a contradiction nor a tautology, and hence, must be a contingency.</li>
+</ol>
+<p>[How to Answer a Question About the Validity of an Argument] Suppose you are asked whether or not <span class="math inline">\(A_1,\ldots,A_n \therefore B\)</span> is a valid argument. Then:</p>
+<ol style="list-style-type: decimal">
+<li>Start your tree with <span class="math inline">\(A_1,\ldots,A_n\)</span> and <span class="math inline">\(\sim B\)</span></li>
+<li>Apply tree rules until you obtain a complete tree.</li>
+<li>If the tree is complete and closed the argument is valid. Otherwise, the complete tree has at least one open branch and is invalid.</li>
+<li>If you are asked to provide a counter example evaluation (you can only do this if the argument is invalid) then you pick any open branch and identify when atomic formulas or negated atomic formulas appear on that branch. If an atomic formula appears on that branch, then give it an assignment of <span class="math inline">\(1\)</span> on a row in the truth table. If the negated atomic appears on the branch, then give it an assignment of <span class="math inline">\(0\)</span> on that same row. If a propositional letter does not appear on the branch, but it is in at least one of the formulas in the argument, then you can give it any truth value.</li>
+</ol>
+</div>
+<div id="soundness-and-validity" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Soundness and Validity<a href="propositional-logic-trees.html#soundness-and-validity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Note that we write:
+<span class="math display">\[
+A_1,\ldots,A_n \vdash B
+\]</span>
+to mean that the tree that starts with <span class="math inline">\(A_1,\ldots,A_n, \sim B\)</span> closes. This means that <span class="math inline">\(A_1,\ldots,A_n, \sim B\)</span> is not satisfiable which is equivalent to saying that <span class="math inline">\(A_1,\ldots,A_n \therefore B\)</span> is valid. Remember, that we write:
+<span class="math display">\[
+A_1,\ldots,A_n \vDash B
+\]</span>
+for when the argument <span class="math inline">\(A_1,\ldots,A_n \therefore B\)</span> is valid. Hence, for propositional logic, the following theorem is true:</p>
+<p><a href="propositions-and-validity.html#soundness">Soundness</a>
+<span class="math display">\[
+        \text{If } A_1,\ldots, A_n \vdash B \text{ then } A_1,\ldots, A_n \vDash B
+\]</span>
+which has its counterpart:</p>
+<p>[Completeness]
+<span class="math display">\[
+        \text{If } A_1,\ldots, A_n \vDash B \text{ then } A_1,\ldots, A_n \vdash B
+\]</span>
+What is the difference between the two? Soundness tells us that our tree process never misleads us. If the tree with <span class="math inline">\(A_1,\ldots,A_n, \sim B\)</span> closes then there is no row on the truth table with premises <span class="math inline">\(A_1,\ldots,A_n, B\)</span> such that the premises are true and the conclusion false. But notice the antecedent of the preceding statement: ``if the tree with <span class="math inline">\(A_1,\ldots,A_n,\sim B\)</span> closes’’. Suppose that <span class="math inline">\(A_1,\ldots,A_n, \sim B\)</span> is unsatisfiable (equivalently, that the argument <span class="math inline">\(A_1,\ldots,A_n \therefore B\)</span> is valid). We would like it to be the case that the tree starting with <span class="math inline">\(A_1,\ldots,A_n,\sim B\)</span> does close, but the Soundness property does not guarantee that it will close. It is the Completeness Theorem which tells us we do not need to worry about this; if <span class="math inline">\(A_1,\ldots,A_n, \sim B\)</span> is unsatisfiable then the tree will close.</p>
+</div>
+<div id="practice-problems-2" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Practice Problems<a href="propositional-logic-trees.html#practice-problems-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>(A1) Is <span class="math inline">\(((k \&amp; (t \&amp; j)) \supset \sim \sim (j \equiv \sim (\sim t \lor k))\)</span> satisfiable?</li>
+<li>(A2) Is <span class="math inline">\(\{(p \supset (j \lor z)), \sim (j \lor z), p\}\)</span> satisfiable?</li>
+<li>(A3) Is <span class="math inline">\(\{((q \lor j) \supset z), ((\sim z \&amp; u) \equiv (o \lor k)), (q \&amp; k)\}\)</span> satisfiable?</li>
+<li>(B1) Is <span class="math inline">\(\sim ((\sim p \&amp; \sim j) \equiv (p \lor j))\)</span> a tautology, contradiction or contingency?</li>
+<li>(B2) Is <span class="math inline">\(((f \supset h) \&amp; \sim(\sim f \lor h))\)</span> a tautology, contradiction or contingency?</li>
+<li>(C1) Is the argument <span class="math inline">\(d, (a \supset b), (e \supset c), (\sim a \supset (d \supset e)), ((b \lor c) \supset f), \therefore f\)</span> a validity?</li>
+<li>(C2) Is the argument <span class="math inline">\((\sim q \lor \sim j),(k \&amp; f), (f \supset (\sim j \lor k)), (k \supset (\sim q \lor j)) \therefore (j \lor k)\)</span> a validity?</li>
+<li>(C3) Is the argument <span class="math inline">\((((a \lor b) \&amp; (c \lor d)) \supset k), \sim(\sim a \lor \sim d), (c \equiv \sim b), \sim (b \supset d) \therefore k\)</span> a validity?</li>
+</ul>
+</div>
+<div id="solutions-1" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Solutions<a href="propositional-logic-trees.html#solutions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>(A1) Satisfiable</li>
+<li>(A2) Unsatisfiable</li>
+<li>(A3) Unsatisfiable</li>
+<li>(B1) Tautology</li>
+<li>(B2) Contradiction</li>
+<li>(C1) Valid</li>
+<li>(C2) Valid</li>
+<li>(C3) Valid</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="truth-tables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-Week5Notes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

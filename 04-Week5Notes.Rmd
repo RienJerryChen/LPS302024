@@ -1,0 +1,98 @@
+# Propositional Logic Trees
+
+## Satisfiability
+
+[Definition] A collection of formulas $\{A_1,A_2,\ldots,A_n\}$ is satisfiable just in case there there is some row of the truth table (we also call a row on the truth table, an evaluation) where $A_1,A_2,\ldots,A_n$ are all true. 
+
+Why does this matter for us? Because trees are a method for determining whether or not a collection of formulas is satisfiable. And it is because of their ability to determine satisfiability, that trees are also a method for determining the validity of arguments. Here's how (keep track of the italicized phrases in the following list; they indicate which phrases change):
+
+1. Recall the definition of validity. An argument is valid just in case it is impossible for all the premises to be true and the conclusion to be false.
+2. And 1. is equivalent to saying: An argument is *invalid* just in case it is *possible* for all the premises to be true and the conclusion false.
+3. And 2. is equivalent to saying: An argument is invalid just in case it is possible for all the premises to be true and the *negation* of the conclusion to be true 
+4. And 3. is equivalent to saying: An argument is invalid just in case the premises and the negation of the conclusion are satisfiable.
+
+And so, suppose that we have some method for determining whether or not any collection of formulas is satisfiable. Then whenever we are given some argument, we can find out whether or not that argument is valid by using that method to determine whether or not the premises and the negation of the conclusion are satisfiable.
+
+## Trees
+
+Trees tell us whether or not a collection of formulas is satisfiable. In this course, there are three main kinds of questions which we can use trees to answer:
+
+- Is $A_1,\ldots,A_n$ satisfiable?
+- Is $A$ a tautology, contradiction, or a contingency?
+- Is $A_1,\ldots,A_n \therefore B$ valid?
+
+To be able to use the tree method, you will need to be able to identify the main connective of a formula. Again, the main connective is the last connective used to construct the formula that you are concerned with. The main connective always has a tree rule associated with it. And so once you have identified the main connective, then you know immediately, which tree rule to apply (there is an exception with the negation symbol). There are only three cases in which you can no longer apply a tree rule: (i) you have already applied a tree rule to that formula; (ii) the formula is an atomic formula (aka, a propositional letter); (iii) the formula is a negated atomif formula (aka, a propositional letter with a single negation in front of it). 
+
+For example, in $(((p \supset q) \lor j) \& k)$ the main connective is $\&$. This is because the only way to construct $(((p \supset q) \lor j) \& k)$ (in accordance with the rules for making formulas) is to take $((p \supset q) \lor j)$ and $k$ and concatenate them together with the $\&$ symbol in between (and with parentheses at the ends). Because the $\&$ symbol is the main connective, the tree rule you can apply to $(((p \supset q) \lor j) \& k)$ is the $\&$ rule [Look to the slides or your own notes to recall what this rule looks like].
+
+I mentioned earlier that negation has an exception. It has an exception because when the negation $\sim$ symbol as the main connective (and it is not just a negated atomic), you have to look at the formula without the negation to determine which tree rule to use. For example, in $\sim (q \supset p)$ the $\sim$ is the main connective. Now you should ignore the $\sim$, so we get $(q \supset p)$ whose main connective is the $\supset$. This tells you to use the negated conditional rule [NOTE: you do not use the conditional rule here; it is the *negated conditional rule*].
+
+I will not cover the other aspects of how to do the trees here. You have to review on your own: how to start the tree, when you can close a branch, how to extend the tree out, and strategies for which formulas to do first.
+
+[How to Answer Questions About Satisfiability] Suppose that you are asked whether or not $A_1,\ldots,A_n$ is satisfiable. Then:
+
+1. Start your tree with $A_1,\ldots,A_n$
+2. Apply tree rules until you obtain a complete tree.
+3. If there is at least one open branch on the tree, then $A_1,\ldots,A_n$ is satisfiable. Otherwise, the tree is complete and closed and hence $A_1,\ldots,A_n$ is unsatisfiable.
+
+[How to Answer Questions About Tautology, Contingency, and Contradiction] Suppose that you are asked whether or not $A$ is a tautology, contingency, or a contradiction. Then:
+
+1. Start a tree with $A$
+2. Apply tree rules until you obtain a complete tree.
+3. If the tree is complete and closed, then $A$ is a contradiction [Why? Because if the tree is complete and closed (with $A$ as its start), this means $A$ is unsatisfiable which means it is never true; to be a contradiction just is to be never true]. Otherwise, the tree has at least one open branch and continue to step 4
+4. Start a tree with $\sim A$
+5. Apply tree rules until you obtain a complete tree.
+6. If the tree is complete and closed, then $A$ is a tautology [Why? Because if the tree is complete and closed (with $\sim A$ as its start), this means that $\sim A$ is unsatisfiable. This means that $\sim A$ is never true which implies that $A$ is always true; to be a tautology is just to always be true]. If the tree has at least one open branch, then it is neither a contradiction nor a tautology, and hence, must be a contingency.
+
+[How to Answer a Question About the Validity of an Argument] Suppose you are asked whether or not $A_1,\ldots,A_n \therefore B$ is a valid argument. Then:
+
+1. Start your tree with $A_1,\ldots,A_n$ and $\sim B$
+2. Apply tree rules until you obtain a complete tree.
+3. If the tree is complete and closed the argument is valid. Otherwise, the complete tree has at least one open branch and is invalid. 
+4. If you are asked to provide a counter example evaluation (you can only do this if the argument is invalid) then you pick any open branch and identify when atomic formulas or negated atomic formulas appear on that branch. If an atomic formula appears on that branch, then give it an assignment of $1$ on a row in the truth table. If the negated atomic appears on the branch, then give it an assignment of $0$ on that same row. If a propositional letter does not appear on the branch, but it is in at least one of the formulas in the argument, then you can give it any truth value.
+
+## Soundness and Validity
+Note that we write:
+$$
+A_1,\ldots,A_n \vdash B
+$$
+to mean that the tree that starts with $A_1,\ldots,A_n, \sim B$ closes. This means that $A_1,\ldots,A_n, \sim B$ is not satisfiable which is equivalent to saying that $A_1,\ldots,A_n \therefore B$ is valid. Remember, that we write:
+$$
+A_1,\ldots,A_n \vDash B
+$$
+for when the argument $A_1,\ldots,A_n \therefore B$ is valid. Hence, for propositional logic, the following theorem is true:
+
+[Soundness]
+$$
+        \text{If } A_1,\ldots, A_n \vdash B \text{ then } A_1,\ldots, A_n \vDash B
+$$
+which has its counterpart:
+
+[Completeness]
+$$
+        \text{If } A_1,\ldots, A_n \vDash B \text{ then } A_1,\ldots, A_n \vdash B
+$$
+What is the difference between the two? Soundness tells us that our tree process never misleads us. If the tree with $A_1,\ldots,A_n, \sim B$ closes then there is no row on the truth table with premises $A_1,\ldots,A_n, B$ such that the premises are true and the conclusion false. But notice the antecedent of  the preceding statement: ``if the tree with $A_1,\ldots,A_n,\sim B$ closes''. Suppose that $A_1,\ldots,A_n, \sim B$ is unsatisfiable (equivalently, that the argument $A_1,\ldots,A_n \therefore B$ is valid). We would like it to be the case that the tree starting with $A_1,\ldots,A_n,\sim B$ does close, but the Soundness property does not guarantee that it will close. It is the Completeness Theorem which tells us we do not need to worry about this; if $A_1,\ldots,A_n, \sim B$ is unsatisfiable then the tree will close.
+
+## Practice Problems
+
+- (A1) Is $((k \& (t \& j)) \supset \sim \sim (j \equiv \sim (\sim t \lor k))$ satisfiable?
+- (A2) Is $\{(p \supset (j \lor z)), \sim (j \lor z), p\}$ satisfiable?
+- (A3) Is $\{((q \lor j) \supset z), ((\sim z \& u) \equiv (o \lor k)), (q \& k)\}$ satisfiable?
+- (B1) Is $\sim ((\sim p \& \sim j) \equiv (p \lor j))$ a tautology, contradiction or contingency?
+- (B2) Is $((f \supset h) \& \sim(\sim f \lor h))$ a tautology, contradiction or contingency?
+- (C1) Is the argument $d, (a \supset b), (e \supset c), (\sim a \supset (d \supset e)), ((b \lor c) \supset f), \therefore f$ a validity?
+- (C2) Is the argument $(\sim q \lor \sim j),(k \& f), (f \supset (\sim j \lor k)), (k \supset (\sim q \lor j)) \therefore (j \lor k)$ a validity?
+- (C3) Is the argument $(((a \lor b) \& (c \lor d)) \supset k), \sim(\sim a \lor \sim d), (c \equiv \sim b), \sim (b \supset d) \therefore k$ a validity?
+
+## Solutions
+
+- (A1) Satisfiable
+- (A2) Unsatisfiable
+- (A3) Unsatisfiable
+- (B1) Tautology
+- (B2) Contradiction
+- (C1) Valid
+- (C2) Valid
+- (C3) Valid
+

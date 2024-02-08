@@ -15,3 +15,9 @@ definitions-of-tautology-contradiction-and-contingency
 checking-validity-of-arguments-with-a-truth-table
 practice-problems-1
 solutions
+propositional-logic-trees
+satisfiability
+trees
+soundness-and-validity
+practice-problems-2
+solutions-1
