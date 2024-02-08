@@ -62,13 +62,13 @@ A_1,\ldots,A_n \vDash B
 $$
 for when the argument $A_1,\ldots,A_n \therefore B$ is valid. Hence, for propositional logic, the following theorem is true:
 
-[Soundness]
+Soundness
 $$
         \text{If } A_1,\ldots, A_n \vdash B \text{ then } A_1,\ldots, A_n \vDash B
 $$
 which has its counterpart:
 
-[Completeness]
+Completeness
 $$
         \text{If } A_1,\ldots, A_n \vDash B \text{ then } A_1,\ldots, A_n \vdash B
 $$
