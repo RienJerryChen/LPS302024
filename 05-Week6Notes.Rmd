@@ -1,0 +1,53 @@
+# Predicate Logic Overview
+
+In this short document, I will overview what we have done in propositional logic and how that will transfer over to predicate logic. [Note: I do not cover the Sorites Paradox in discussion. It is examinable material; if you have questions about it, email me or come see me in office hours].
+
+## Language
+
+We began propositional logic with translations from English into the language of propositional logic. The language of propositional logic just consists of:
+
+1. Propositional letters $p,q,r,\ldots$
+2. Propositional connectives $\sim, \&, \lor, \supset, \equiv$
+3. Parentheses $(,)$
+
+Predicate logic adds four new kinds of symbols to the language and gets rid of propositional letters. We end up with:
+
+1. Names (or Constants) $a,b,c$
+2. Predicates $A,B,C$
+3. Variables $x,y,z$
+4. Quantifiers $\forall, \exists$
+5. Propositional connectives $\sim, \&, \lor, \supset, \equiv$
+6. Parentheses $(,)$
+
+## Syntax
+
+Soon after doing translation work, we gave a syntax for propositional logic. A syntax is just a set of rules for determining when a string of symbols (i.e., symbols put next to one another) counts as a *formula*. Recall, that the syntax for propositional logic is given by:
+
+1. All propositional letters are formulas.
+2. If $A$ and $B$ are formulas then $\sim(A)$, $(A \& B)$, $(A \lor B)$, $(A \supset B)$, $(A 
+\equiv B)$.
+3. Nothing else is a formula.
+
+So, suppose that $p,q$ are propositional letters. Then according to rule 1., $p$ is a formula and $q$ is a formula. Since $p$ is a formula and $q$ is a formula, according to rule 2., $(p \lor q)$ is a formula. Furthermore, since $(p \lor q)$ is a formula, again according to rule 2., $((p \lor q ) \equiv q)$ is a formula.
+
+There is a direct analogy with English grammar. In the case of English, to provide a syntax is to provide the rules for determining when a string of words counts as a sentence. A very basic syntax for a fragment of English might look like:
+
+1. If $N$ is a noun and $V$ a verb then $N V$ is a sentence.
+2. If $A$ is an adjective and $N$ a noun then $A N$ is a noun.
+
+Using these rules, you can determine what counts as a sentence. For example, suppose that "ducks" is a noun and "swim" a verb. Then according to rule 1. of our example syntax for English, "ducks swim" is a sentence. Now, suppose that "funny" is an adjective. According to rule 2., "funny ducks" is a noun. Hence, according to rule 1., "funny ducks swim" is a sentence.
+
+We will be providing a syntax for predicate logic formulas as well. They will be covered in next week's notes.
+
+## Semantics
+
+Out of a syntax we are given the formulas of a language. The next thing we will want to know is whether or not a formula is true or false. More generally, we want to know *under what possibilities, a formula is true or false*. To provide a general schema for determining under what possibilities any given formula is true or false is just to provide a semantics. In propositional logic, our semantics consists of truth tables. The truth tables listed out exactly under what possibilities (i.e., rows) our formula is true.
+
+We will also be providing a semantics for predicate logic. The semantics will not be truth tables; we will not be listing out our formulas across the top of a table and truth values for atomic formulas on the left of our table. Instead, we will be providing what we call *models*. More on this when it comes.
+
+The next step of developing the semantics is to relate it to the notion of validity. In the case of propositional logic, this involved looking at the rows of the truth table where all the premises are true and checking whether or not the conclusion was also true in that row. The situation is much more complicated in predicate logic. It will not be a simple matter of checking rows of some truth table (one of the reasons being that there will be no truth tables). 
+
+## Proofs
+
+Next, we provided a proof system for propositional logic. A proof system is a set of rules for determining when a collection of formulas is satisfiable. In our case, we used the tree system. Predicate logic will be similar in that we will be using a tree system. However, unlike in propositional logic where our trees are always finitely long, in predicate logic, there do exist infinite trees. This has important consequences and we will get there when we get there.
+

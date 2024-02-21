@@ -1,0 +1,179 @@
+# Translation for Predicate Logic
+
+There are a number of arguments which are valid in English which we cannot translate into a valid argument form in propositional logic. For example:
+
+1. Tom is very funny.
+2. Therefore, there is something which is very funny.
+
+In proposition logic, the best we could do is translate $t$=Tom is very funny and $f$=there is something which is very funny. Then the argument form we end up with is:
+
+1. $t$
+2. Therefore, $f$
+
+It should immediately be clear that this is an invalid argument form (just consider the row on the row of the truth table which assigns $t = 1$ and $f = 0$). To take another example, consider:
+
+1. Ortcutt is a spy.
+2. All spies wear brown hats.
+3. Therefore, Ortcutt wears a brown hat.
+
+I leave it to you to verify that there is no (good) propositional logic translation of this which would be valid. One of the reasons why propositional logic is incapable of capturing the validity of the aforementioned arguments is that it completely ignores the subject-predicate structure of the sentence. For instance, in the sentence "Tom is funny", there is nothing in the propositional letter $t$ used to translate the sentence, which represents the fact that the sentence is composed of a subject "Tom" and a predicate "is funny". Likewise, for sentences like "Ortcutt is a spy". 
+
+Another problem with propositional logic is that it is unable to deal with quantifier phrases like "everything," "there is," "there exists," "all," "at least," "at most," and so on. Intuitively, part of the function of these phrases is to assert that some number of objects in the world bear a certain kind of property. There is nothing in a propositional letter (or propositional connective) which represents the fact that quantifier phrases are being used to construct the sentence "All spies wear brown hats". Predicate logic, a very powerful development of logic, is capable with dealing with both subject-predicate structure and quantifiers. 
+
+## Atomic Formulas, Names and Predicates
+
+The language of predicate logic starts with $n$-ary predicates $P,Q,R,\ldots$ and symbols for names $a,b,c$. We use capital letters for predicates and lower-case letters for names. The general idea is that predicates in predicate logic correspond to English predicates: e.g., "x is funny", "x is to the right of y",  "x is in between y and z", "x is in the center of the circle inscribed by y,z,r". Names in predicate logic correspond to English proper nouns (and sometimes, pronouns): e.g. "Tom", "London", "The Louvre". When you put a proper name (e.g., "Tom") or more generally nouns (e.g., "cows") into the place marked by the $x,y,z,r$ in an English predicate, then you end up with an English sentence (this may require some grammatical adjustments). For right now, we will ignore common nouns and stick with proper names. So, for example:
+
+1. Putting "Tom" into the x position of "x is funny" gives us "Tom is funny". Since "x is funny" only requires one name in order to become a full English sentence, we say that "x is funny" is a monadic (or equivalently, a 1-ary) predicate. 
+2. Putting "Tom" for the x position of "x is to the right of y" and "Jerry" for the y position gives us "Tom is to the right of Jerry". Since "x is to the right of y" requires two names in order to become a full English sentence, we say that "x is to the right of y" is a dyadic (or equivalently, a 2-ary) predicate. Notice that putting "Jerry" for the x position and "Tom" for the y position yields "Jerry is to the right of Tom". This is important because to say that "Tom is to the right of Jerry" is not equivalent to saying that "Jerry is to the right of Tom". This shows that which name going where matters for the meaning of the resulting sentence.
+3. Putting "Portland" for the x position, "Vancouver" for the y position and "Irvine" for the z position into the sentence "x is in between y and z" yields "Portland is in between Vancouver and Irvine". Since the predicate "x is in between y and z" requires three names in order to become a sentence, we say that "x is in between y and z" is a triadic (or equivalently 3-ary) predicate. Again, notice that which name going where changes the meaning of sentence. Whereas "Portland is in between Vancouver and Irvine" is true, "Vancouver is in between Irvine and Portland" is false.
+
+Essentially, the atomic formulas of predicate logic follow this exact pattern. Officially:
+
+- If $P$ is an $n$-ary predicate and $a_1,a_n,\ldots,a_n$ $n$ names then $Pa_1a_2\ldots,a_n$ is an (atomic) formula.
+
+So, for example, if $P$ is a dyadic predicate and $a$ and $b$ are names in our language of predicate logic, then $Pab$ is a formula. Just like in the English case, order matters: $Pab$ is not the same formula as $Pba$.
+
+How do you know what the arity (i.e., how many names you need in order to make a formula) of a predicate is? We can mark the arity of a predicate by using $x,y,z$ and other such symbols (i.e., letters in the latter end of the alphabet) when defining the predicate. For example, $Pxy$ says that $P$ is a dyadic predicate (since the $x$ and $y$ mark that you need to fill in two name-positions). Likewise, $Fxyzwr$ is a 5-arity predicate. It requires the filling in of five name positions before we get a formula and this is marked by the letters.
+
+Now, ***how do we translate between English and predicate logic?*** It is easier to show how this is done with a number of examples:
+
+1. Consider the sentence "Tom is funny". We know that "x is funny" is a monadic predicate. We know that "Tom" is a name. So, in our dictionary for predicate logic, let us add a monadic predicate symbol $Fx = x \text{ is funny}$ and a name $t=$Tom. Then when we put the $t$ into the $x$ position of $Fx$ we get $Ft$ which is a formula. Furthermore, because $t$=Tom, when we translate $Ft$ back into English, we get "Tom is funny" because the dictionary says, take the translation of whatever name gets put into the $x$ position of $Fx$ and plop that into "x is funny".
+
+2. Consider the sentence "Toronto is west of London". One way to identify predicates is to simply remove the names of the sentence (names are usually easier to identify) and replace them with letters like $x,y,z$. So, in this case, we get "x is west of y". We removed "Toronto" and "London". Hence, we add to our dictionary, a dyadic predicate symbol $Wxy=$x is west of y and add two names $t$=Toronto and $l$=London. Now comes a slightly tricky bit. We need to be careful about whether or not $t$ goes into the $x$ or the $y$ position of $Wxy$. In this case the name symbol that goes in the $x$ position, when translated back into English gets put into the x position of "x is west of y". So, in this case, we want the name corresponding to "Toronto" to go into the x position. This gives us $Wty$. Now there is only one other position that $l$ could go, so the correct translation here is $Wtl$. Again, you can translate the formula back into English. In this case, we start with the predicate $Wxy$=x is west of y. We see that $t$=Toronto is in the x position and $l$=London is in the y position. Hence, the English translation is "Toronto is west of London". One might ask, what happens if you write $Wlt$? Well, then what you would have written according to our dictionary is a predicate language translation of the English sentence "London is west of Toronto". 
+
+## (A) Practice with Translating with only Predicates and Names
+
+Translate the following sentences into predicate logic. Provide a dictionary:
+
+1. Tweety is a bird.
+2. Tweety is an endangered bird.
+3. Ortcutt is the father of Willard.
+4. Tokyo north of Singapore.
+5. Tokyo is south of Singapore.
+6. Belgium is between France and Germany.
+7. Germany is between Belgium and France.
+8. Tom is fond of himself.
+
+## Bringing Back the Propositional Connectives
+
+The previous section defined the atomic formulas of predicate logic. We can take our knowledge from propositional logic to create more complex formulas:
+
+- If $A$ and $B$ are formulas then $\sim(A)$, $(A \& B)$, $(A \lor B)$, $(A \supset B)$, $(A \equiv B)$ are formulas.
+
+So, suppose that $P$ is a triadic predicate letter, $F$ a dyadic predicate letter, and $a,b,c$ are name symbols. Then $Pacb$ is a formula and $Fca$ is a formula. Then according to the rule just stated, $(Pacb \& Fca)$ is a formula. Likewise, $(Fca \supset Pacb)$ is a formula. And so on and so forth.
+
+Now we can translate English sentences with propositional connectives into predicate logic. We follow the same procedure here with respect to propositional connectives that we did for propositional logic. For example:
+
+1. Consider the sentence "Tom went to the mall and Sally found Tom". Here, we clearly have a conjunction of two propositions. But instead of translating them into propositional letters, in predicate logic, we break them down into subject-predicate structure. So, let us consider each sentence in turn. For "Tom went to the mall" let us introduce a monadic predicate $Wx$=x went to the mall and a name $t$=Tom. For "Sally found Tom" let us introduce a dyadic predicate $Fxy$=x found y and a name $s$=Sally (we already have a name for Tom is our dictionary). Then the sentence "Tom went to the mall" gets translated as $Wt$. The sentence "Sally found Tom" gets translated as $Fst$. Now, since $Wt$ is a formula and $Fst$ is a formula, and the English sentence is a conjunction, we want to use the the conjunction propositional connective in between those two formulas. So, the translation of "Tom went to the mall and Sally found Tom" is $(Wt \& Fst)$.
+
+## (B) Practice with Propositional Connectives in Predicate Logic
+
+Translate the following sentences into predicate logic. Provide a dictionary:
+
+1. Sylvester is not a gunsman.
+2. If Tweety is a bird then Tweety can fly.
+3. Fred and Sally are parents.
+4. It is either the case that London is east of New York or New York is east of London. 
+5. Jerry will win first place only if Bob notifies Adam.
+6. Unless Olivia practices, Jeremiah will be Larry's favorite student.
+
+## Quantifiers
+
+With predicates and names, we are now able to capture the subject-predicate structure of English sentences. What we are still lacking is an ability to capture the quantifiers. Predicate logic has two symbols to represent the quantifiers:
+$$
+\forall, \exists
+$$
+The upside-down A is called the *universal* quantifier and the backwards e is called the *existential* quantifier. The most natural translation for the universal quantifier is "for all" and the most natural translation for the existential quantifier is "there exists".
+
+Crucially, quantifiers in predicate logic *always* come with a variable $x,y,z$ (NOTE: these $x,y,z$ are not to be confused with the $x,y,z$ used to mark positions in predicates). That is, in a formula, you will always see quantifiers have a variable right next to them. For example:
+$$
+\forall x \:\: \forall y \:\: \exists x \:\: \exists z 
+$$
+So you know you have done something wrong if you write a quantifier with no variable next to it.
+
+The syntax for quantifiers in predicate logic can be a bit confusing so let us take it slowly. We start with formulas without quantifiers. For our working example, let us suppose that $P$ is a monadic predicate and $F$ a dyadic predicate. Let us also suppose that $a,b$ are name symbols. So:
+$$
+Pab \:\:\: Paa \:\:\: Fa
+$$
+
+are formulas. Then we have the notion of a *quasi-formula*. We get a quasi-formula by substituting for *all* occurrences of a name in a formula, a variable. Given a formula $A$ and a name $n$ and any variable $x$, let $A(n:=x)$ be the result of replacing all occurrences of $n$ in $A$ with $x$. For example:
+
+1. For $Fa$ if we want to substitute the variable $z$ for $a$ then we write, $Fa(a:=z)$ to represent this. We then get:
+$$
+Fa(a:=z) = Fz
+$$
+We can pick other variables as well. For instance, if instead of $z$ we wanted to use $i$, then we would write $Fa(a:=i)$
+
+2. For $Pab$ if we want to substitute the variable $y$ for $a$ we write, $Pab(a:=y)$. Then:
+$$
+Pab(a:=y) = Pyb
+$$
+This is different from substituting the variable $y$ for $b$. To do that, we would write $Pab(b:= y)$. Then:
+$$
+Pab(b:= y) = Pay
+$$
+If we want both letters to be substituted for the variable $y$ then we would have to substitute twice: $Pab(b:= y)(a:=y)$ which gives us:
+$$
+Pab(b:=y)(a:=y) = Pyy
+$$
+3. For $Paa$ if we want to substitute the variable $z$ for $a$ note that we must do it for both $a$s. We write:
+$$
+P(a:=z) = Pzz
+$$
+4. Now we can also substitute into complex formulas. For example, consider $(Pab \supset Fa)$. If we want to substitute the occurrences of $a$ for $u$ we would write $(Pab \supset Fa) (a:=u)$. Then:
+$$
+(Pab\supset Fa)(a:= u) = (Pub\supset Fu)
+$$
+The upshot of quasi-formula is that they are the way by which we insert variables into formulas. 
+
+The rule for forming formulas with quantifiers relies upon the notion of a quasi-formula:
+
+- If $A$ is a formula, $a$ is a name and $x$ is a variable, then $(\exists x)A(a:=x)$ is a formula.
+- If $A$ is a formula, $a$ is a name and $x$ is a variable, then $(\forall x)A(a:=x)$ is a formula.
+
+Let us consider three examples just immediately preceding this paragraph:
+
+1. Since $Fa$ is a formula, $a$ is a name, and $z$ is variable, the rule from above tells us that $(\exists z)Fa(a:=z)$ is a formula. When we resolve the substitution, we get that:
+$$
+(\exists z)Fz
+$$
+is a formula. You can replace the $\exists$ with a $\forall$ and you would also get a formula.
+
+2. Since $Pab$ is a formula, $b$ is a name, and $y$ a variable, the rule from above tells us that $(\forall y)Pab(b:=y)$ is a formula. When we resolve the substitution, we get:
+$$
+(\forall y)Pay
+$$
+is a formula.
+
+3. Since $(Pab \supset Fa)$ is a formula, $a$ is a name, and $i$ a variable, the rule from above tells us that $(\forall i)(Pab\supset Fa)(a:=i)$ is a formula. When we resolve the substitution, we get:
+$$
+(\forall i)(Pib \supset Fi)
+$$
+is a formula. 
+
+So now we know how to construct formulas using quantifiers. ***How do we translate between English sentences involving quantifier phrases and predicate logic?*** I leave this for you to try to work out yourself. This is one of the most important skills in the course and it really requires you to work through the ideas yourself. I encourage you to look at Toby's slides, re-listen to the lectures and ask questions. Instead of going through the steps, I will provide some examples (try to figure out why they are the right translations; these are somewhat difficult so take your time trying to understand them):
+
+1. The sentence "There is something which is funny" would naturally be translated as $(\exists x) Fx$
+2. The sentence "Cows are animals" would naturally be translated as $(\forall x)(Cx \supset Ax)$
+3. The sentence "All logicians are students of Frege" would naturally be translated as $(\forall y)(Ly \supset Syf)$.
+4. The sentence "Some bird hit the Eiffel Tower" would naturally be translated as $(\exists x) (Bx \& Hxe)$.
+5. The sentence "everything to the right of Jim then that thing will be right of Tweety" would naturally be translated as $(\forall x)(Rxj \supset Rxt)$
+6. The sentence "every pirate was attacked by a shark" has two translations (1) $(\forall x) (Px \supset (\exists y)(Sy \& Ayx))$ and (2)$(\exists x)(Sx \& (\forall y)(Py \supset Axy))$. These translations do not say the same thing. The first translation says that for every pirate there exists a unique shark that attacked them. That is, if there were 4 pirates then there were 4 sharks with each shark attacking a pirate. The second translation says that there was one shark, and it attacked every pirate. That is, even if there were 4 pirates, there is only 1 shark. This example, demonstrates how English can sometimes be ambiguous when translating into predicate logic.
+
+## Solutions
+
+I take it that the dictionary here would be obvious:
+- (A1) $Bt$
+- (A2) $Et$
+- (A3) $Fow$
+- (A4) $Nts$
+- (A5) $Sts$
+- (A6) $Bbfg$
+- (A7) $Bgbf$
+- (B1) $\sim(Gs)$
+- (B2) $(Bt \supset Ft)$
+- (B3) $(Pf \& Ps)$
+- (B4) $(Eln \lor Enl)$
+- (B5) $(Wj \supset Nba)$
+- (B6) $(\sim Po \supset Flj)$

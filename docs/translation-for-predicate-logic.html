@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 7 Translation for Predicate Logic | LPS 30 Discussion Notes</title>
+  <meta name="description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 7 Translation for Predicate Logic | LPS 30 Discussion Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 7 Translation for Predicate Logic | LPS 30 Discussion Notes" />
+  
+  <meta name="twitter:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  
+
+<meta name="author" content="Ryan Chen" />
+
+
+<meta name="date" content="2024-02-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="predicate-logic-overview.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LPS 30 Discussion Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html"><i class="fa fa-check"></i><b>2</b> Propositions and Validity</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#propositions"><i class="fa fa-check"></i><b>2.1</b> Propositions</a></li>
+<li class="chapter" data-level="2.2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#validity"><i class="fa fa-check"></i><b>2.2</b> Validity</a></li>
+<li class="chapter" data-level="2.3" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#soundness"><i class="fa fa-check"></i><b>2.3</b> Soundness</a></li>
+<li class="chapter" data-level="2.4" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#argument-forms"><i class="fa fa-check"></i><b>2.4</b> Argument Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="translation.html"><a href="translation.html"><i class="fa fa-check"></i><b>3</b> Translation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="translation.html"><a href="translation.html#translating-from-english-to-propositional-logic"><i class="fa fa-check"></i><b>3.1</b> Translating from English to Propositional Logic</a></li>
+<li class="chapter" data-level="3.2" data-path="translation.html"><a href="translation.html#practice-problems"><i class="fa fa-check"></i><b>3.2</b> Practice Problems</a></li>
+<li class="chapter" data-level="3.3" data-path="translation.html"><a href="translation.html#practice-problem-solutions"><i class="fa fa-check"></i><b>3.3</b> Practice Problem Solutions</a></li>
+<li class="chapter" data-level="3.4" data-path="translation.html"><a href="translation.html#translating-from-propositional-logic-to-english"><i class="fa fa-check"></i><b>3.4</b> Translating from Propositional Logic to English</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="truth-tables.html"><a href="truth-tables.html"><i class="fa fa-check"></i><b>4</b> Truth Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="truth-tables.html"><a href="truth-tables.html#how-to-fill-out-a-truth-table"><i class="fa fa-check"></i><b>4.1</b> How to Fill Out a Truth Table</a></li>
+<li class="chapter" data-level="4.2" data-path="truth-tables.html"><a href="truth-tables.html#definitions-of-tautology-contradiction-and-contingency"><i class="fa fa-check"></i><b>4.2</b> Definitions of Tautology, Contradiction and Contingency</a></li>
+<li class="chapter" data-level="4.3" data-path="truth-tables.html"><a href="truth-tables.html#checking-validity-of-arguments-with-a-truth-table"><i class="fa fa-check"></i><b>4.3</b> Checking Validity of Arguments with a Truth Table</a></li>
+<li class="chapter" data-level="4.4" data-path="truth-tables.html"><a href="truth-tables.html#practice-problems-1"><i class="fa fa-check"></i><b>4.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="4.5" data-path="truth-tables.html"><a href="truth-tables.html#solutions"><i class="fa fa-check"></i><b>4.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html"><i class="fa fa-check"></i><b>5</b> Propositional Logic Trees</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#satisfiability"><i class="fa fa-check"></i><b>5.1</b> Satisfiability</a></li>
+<li class="chapter" data-level="5.2" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#trees"><i class="fa fa-check"></i><b>5.2</b> Trees</a></li>
+<li class="chapter" data-level="5.3" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#soundness-and-validity"><i class="fa fa-check"></i><b>5.3</b> Soundness and Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#practice-problems-2"><i class="fa fa-check"></i><b>5.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="5.5" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#solutions-1"><i class="fa fa-check"></i><b>5.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html"><i class="fa fa-check"></i><b>6</b> Predicate Logic Overview</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#language"><i class="fa fa-check"></i><b>6.1</b> Language</a></li>
+<li class="chapter" data-level="6.2" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#syntax"><i class="fa fa-check"></i><b>6.2</b> Syntax</a></li>
+<li class="chapter" data-level="6.3" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#semantics"><i class="fa fa-check"></i><b>6.3</b> Semantics</a></li>
+<li class="chapter" data-level="6.4" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#proofs"><i class="fa fa-check"></i><b>6.4</b> Proofs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html"><i class="fa fa-check"></i><b>7</b> Translation for Predicate Logic</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#atomic-formulas-names-and-predicates"><i class="fa fa-check"></i><b>7.1</b> Atomic Formulas, Names and Predicates</a></li>
+<li class="chapter" data-level="7.2" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#a-practice-with-translating-with-only-predicates-and-names"><i class="fa fa-check"></i><b>7.2</b> (A) Practice with Translating with only Predicates and Names</a></li>
+<li class="chapter" data-level="7.3" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#bringing-back-the-propositional-connectives"><i class="fa fa-check"></i><b>7.3</b> Bringing Back the Propositional Connectives</a></li>
+<li class="chapter" data-level="7.4" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#b-practice-with-propositional-connectives-in-predicate-logic"><i class="fa fa-check"></i><b>7.4</b> (B) Practice with Propositional Connectives in Predicate Logic</a></li>
+<li class="chapter" data-level="7.5" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#quantifiers"><i class="fa fa-check"></i><b>7.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="7.6" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#solutions-2"><i class="fa fa-check"></i><b>7.6</b> Solutions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LPS 30 Discussion Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="translation-for-predicate-logic" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Week 7</span> Translation for Predicate Logic<a href="translation-for-predicate-logic.html#translation-for-predicate-logic" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>There are a number of arguments which are valid in English which we cannot translate into a valid argument form in propositional logic. For example:</p>
+<ol style="list-style-type: decimal">
+<li>Tom is very funny.</li>
+<li>Therefore, there is something which is very funny.</li>
+</ol>
+<p>In proposition logic, the best we could do is translate <span class="math inline">\(t\)</span>=Tom is very funny and <span class="math inline">\(f\)</span>=there is something which is very funny. Then the argument form we end up with is:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(t\)</span></li>
+<li>Therefore, <span class="math inline">\(f\)</span></li>
+</ol>
+<p>It should immediately be clear that this is an invalid argument form (just consider the row on the row of the truth table which assigns <span class="math inline">\(t = 1\)</span> and <span class="math inline">\(f = 0\)</span>). To take another example, consider:</p>
+<ol style="list-style-type: decimal">
+<li>Ortcutt is a spy.</li>
+<li>All spies wear brown hats.</li>
+<li>Therefore, Ortcutt wears a brown hat.</li>
+</ol>
+<p>I leave it to you to verify that there is no (good) propositional logic translation of this which would be valid. One of the reasons why propositional logic is incapable of capturing the validity of the aforementioned arguments is that it completely ignores the subject-predicate structure of the sentence. For instance, in the sentence “Tom is funny”, there is nothing in the propositional letter <span class="math inline">\(t\)</span> used to translate the sentence, which represents the fact that the sentence is composed of a subject “Tom” and a predicate “is funny”. Likewise, for sentences like “Ortcutt is a spy”.</p>
+<p>Another problem with propositional logic is that it is unable to deal with quantifier phrases like “everything,” “there is,” “there exists,” “all,” “at least,” “at most,” and so on. Intuitively, part of the function of these phrases is to assert that some number of objects in the world bear a certain kind of property. There is nothing in a propositional letter (or propositional connective) which represents the fact that quantifier phrases are being used to construct the sentence “All spies wear brown hats”. Predicate logic, a very powerful development of logic, is capable with dealing with both subject-predicate structure and quantifiers.</p>
+<div id="atomic-formulas-names-and-predicates" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Atomic Formulas, Names and Predicates<a href="translation-for-predicate-logic.html#atomic-formulas-names-and-predicates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The language of predicate logic starts with <span class="math inline">\(n\)</span>-ary predicates <span class="math inline">\(P,Q,R,\ldots\)</span> and symbols for names <span class="math inline">\(a,b,c\)</span>. We use capital letters for predicates and lower-case letters for names. The general idea is that predicates in predicate logic correspond to English predicates: e.g., “x is funny”, “x is to the right of y”, “x is in between y and z”, “x is in the center of the circle inscribed by y,z,r”. Names in predicate logic correspond to English proper nouns (and sometimes, pronouns): e.g. “Tom”, “London”, “The Louvre”. When you put a proper name (e.g., “Tom”) or more generally nouns (e.g., “cows”) into the place marked by the <span class="math inline">\(x,y,z,r\)</span> in an English predicate, then you end up with an English sentence (this may require some grammatical adjustments). For right now, we will ignore common nouns and stick with proper names. So, for example:</p>
+<ol style="list-style-type: decimal">
+<li>Putting “Tom” into the x position of “x is funny” gives us “Tom is funny”. Since “x is funny” only requires one name in order to become a full English sentence, we say that “x is funny” is a monadic (or equivalently, a 1-ary) predicate.</li>
+<li>Putting “Tom” for the x position of “x is to the right of y” and “Jerry” for the y position gives us “Tom is to the right of Jerry”. Since “x is to the right of y” requires two names in order to become a full English sentence, we say that “x is to the right of y” is a dyadic (or equivalently, a 2-ary) predicate. Notice that putting “Jerry” for the x position and “Tom” for the y position yields “Jerry is to the right of Tom”. This is important because to say that “Tom is to the right of Jerry” is not equivalent to saying that “Jerry is to the right of Tom”. This shows that which name going where matters for the meaning of the resulting sentence.</li>
+<li>Putting “Portland” for the x position, “Vancouver” for the y position and “Irvine” for the z position into the sentence “x is in between y and z” yields “Portland is in between Vancouver and Irvine”. Since the predicate “x is in between y and z” requires three names in order to become a sentence, we say that “x is in between y and z” is a triadic (or equivalently 3-ary) predicate. Again, notice that which name going where changes the meaning of sentence. Whereas “Portland is in between Vancouver and Irvine” is true, “Vancouver is in between Irvine and Portland” is false.</li>
+</ol>
+<p>Essentially, the atomic formulas of predicate logic follow this exact pattern. Officially:</p>
+<ul>
+<li>If <span class="math inline">\(P\)</span> is an <span class="math inline">\(n\)</span>-ary predicate and <span class="math inline">\(a_1,a_n,\ldots,a_n\)</span> <span class="math inline">\(n\)</span> names then <span class="math inline">\(Pa_1a_2\ldots,a_n\)</span> is an (atomic) formula.</li>
+</ul>
+<p>So, for example, if <span class="math inline">\(P\)</span> is a dyadic predicate and <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are names in our language of predicate logic, then <span class="math inline">\(Pab\)</span> is a formula. Just like in the English case, order matters: <span class="math inline">\(Pab\)</span> is not the same formula as <span class="math inline">\(Pba\)</span>.</p>
+<p>How do you know what the arity (i.e., how many names you need in order to make a formula) of a predicate is? We can mark the arity of a predicate by using <span class="math inline">\(x,y,z\)</span> and other such symbols (i.e., letters in the latter end of the alphabet) when defining the predicate. For example, <span class="math inline">\(Pxy\)</span> says that <span class="math inline">\(P\)</span> is a dyadic predicate (since the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> mark that you need to fill in two name-positions). Likewise, <span class="math inline">\(Fxyzwr\)</span> is a 5-arity predicate. It requires the filling in of five name positions before we get a formula and this is marked by the letters.</p>
+<p>Now, <strong><em>how do we translate between English and predicate logic?</em></strong> It is easier to show how this is done with a number of examples:</p>
+<ol style="list-style-type: decimal">
+<li><p>Consider the sentence “Tom is funny”. We know that “x is funny” is a monadic predicate. We know that “Tom” is a name. So, in our dictionary for predicate logic, let us add a monadic predicate symbol <span class="math inline">\(Fx = x \text{ is funny}\)</span> and a name <span class="math inline">\(t=\)</span>Tom. Then when we put the <span class="math inline">\(t\)</span> into the <span class="math inline">\(x\)</span> position of <span class="math inline">\(Fx\)</span> we get <span class="math inline">\(Ft\)</span> which is a formula. Furthermore, because <span class="math inline">\(t\)</span>=Tom, when we translate <span class="math inline">\(Ft\)</span> back into English, we get “Tom is funny” because the dictionary says, take the translation of whatever name gets put into the <span class="math inline">\(x\)</span> position of <span class="math inline">\(Fx\)</span> and plop that into “x is funny”.</p></li>
+<li><p>Consider the sentence “Toronto is west of London”. One way to identify predicates is to simply remove the names of the sentence (names are usually easier to identify) and replace them with letters like <span class="math inline">\(x,y,z\)</span>. So, in this case, we get “x is west of y”. We removed “Toronto” and “London”. Hence, we add to our dictionary, a dyadic predicate symbol <span class="math inline">\(Wxy=\)</span>x is west of y and add two names <span class="math inline">\(t\)</span>=Toronto and <span class="math inline">\(l\)</span>=London. Now comes a slightly tricky bit. We need to be careful about whether or not <span class="math inline">\(t\)</span> goes into the <span class="math inline">\(x\)</span> or the <span class="math inline">\(y\)</span> position of <span class="math inline">\(Wxy\)</span>. In this case the name symbol that goes in the <span class="math inline">\(x\)</span> position, when translated back into English gets put into the x position of “x is west of y”. So, in this case, we want the name corresponding to “Toronto” to go into the x position. This gives us <span class="math inline">\(Wty\)</span>. Now there is only one other position that <span class="math inline">\(l\)</span> could go, so the correct translation here is <span class="math inline">\(Wtl\)</span>. Again, you can translate the formula back into English. In this case, we start with the predicate <span class="math inline">\(Wxy\)</span>=x is west of y. We see that <span class="math inline">\(t\)</span>=Toronto is in the x position and <span class="math inline">\(l\)</span>=London is in the y position. Hence, the English translation is “Toronto is west of London”. One might ask, what happens if you write <span class="math inline">\(Wlt\)</span>? Well, then what you would have written according to our dictionary is a predicate language translation of the English sentence “London is west of Toronto”.</p></li>
+</ol>
+</div>
+<div id="a-practice-with-translating-with-only-predicates-and-names" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> (A) Practice with Translating with only Predicates and Names<a href="translation-for-predicate-logic.html#a-practice-with-translating-with-only-predicates-and-names" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Translate the following sentences into predicate logic. Provide a dictionary:</p>
+<ol style="list-style-type: decimal">
+<li>Tweety is a bird.</li>
+<li>Tweety is an endangered bird.</li>
+<li>Ortcutt is the father of Willard.</li>
+<li>Tokyo north of Singapore.</li>
+<li>Tokyo is south of Singapore.</li>
+<li>Belgium is between France and Germany.</li>
+<li>Germany is between Belgium and France.</li>
+<li>Tom is fond of himself.</li>
+</ol>
+</div>
+<div id="bringing-back-the-propositional-connectives" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Bringing Back the Propositional Connectives<a href="translation-for-predicate-logic.html#bringing-back-the-propositional-connectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The previous section defined the atomic formulas of predicate logic. We can take our knowledge from propositional logic to create more complex formulas:</p>
+<ul>
+<li>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are formulas then <span class="math inline">\(\sim(A)\)</span>, <span class="math inline">\((A \&amp; B)\)</span>, <span class="math inline">\((A \lor B)\)</span>, <span class="math inline">\((A \supset B)\)</span>, <span class="math inline">\((A \equiv B)\)</span> are formulas.</li>
+</ul>
+<p>So, suppose that <span class="math inline">\(P\)</span> is a triadic predicate letter, <span class="math inline">\(F\)</span> a dyadic predicate letter, and <span class="math inline">\(a,b,c\)</span> are name symbols. Then <span class="math inline">\(Pacb\)</span> is a formula and <span class="math inline">\(Fca\)</span> is a formula. Then according to the rule just stated, <span class="math inline">\((Pacb \&amp; Fca)\)</span> is a formula. Likewise, <span class="math inline">\((Fca \supset Pacb)\)</span> is a formula. And so on and so forth.</p>
+<p>Now we can translate English sentences with propositional connectives into predicate logic. We follow the same procedure here with respect to propositional connectives that we did for propositional logic. For example:</p>
+<ol style="list-style-type: decimal">
+<li>Consider the sentence “Tom went to the mall and Sally found Tom”. Here, we clearly have a conjunction of two propositions. But instead of translating them into propositional letters, in predicate logic, we break them down into subject-predicate structure. So, let us consider each sentence in turn. For “Tom went to the mall” let us introduce a monadic predicate <span class="math inline">\(Wx\)</span>=x went to the mall and a name <span class="math inline">\(t\)</span>=Tom. For “Sally found Tom” let us introduce a dyadic predicate <span class="math inline">\(Fxy\)</span>=x found y and a name <span class="math inline">\(s\)</span>=Sally (we already have a name for Tom is our dictionary). Then the sentence “Tom went to the mall” gets translated as <span class="math inline">\(Wt\)</span>. The sentence “Sally found Tom” gets translated as <span class="math inline">\(Fst\)</span>. Now, since <span class="math inline">\(Wt\)</span> is a formula and <span class="math inline">\(Fst\)</span> is a formula, and the English sentence is a conjunction, we want to use the the conjunction propositional connective in between those two formulas. So, the translation of “Tom went to the mall and Sally found Tom” is <span class="math inline">\((Wt \&amp; Fst)\)</span>.</li>
+</ol>
+</div>
+<div id="b-practice-with-propositional-connectives-in-predicate-logic" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> (B) Practice with Propositional Connectives in Predicate Logic<a href="translation-for-predicate-logic.html#b-practice-with-propositional-connectives-in-predicate-logic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Translate the following sentences into predicate logic. Provide a dictionary:</p>
+<ol style="list-style-type: decimal">
+<li>Sylvester is not a gunsman.</li>
+<li>If Tweety is a bird then Tweety can fly.</li>
+<li>Fred and Sally are parents.</li>
+<li>It is either the case that London is east of New York or New York is east of London.</li>
+<li>Jerry will win first place only if Bob notifies Adam.</li>
+<li>Unless Olivia practices, Jeremiah will be Larry’s favorite student.</li>
+</ol>
+</div>
+<div id="quantifiers" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Quantifiers<a href="translation-for-predicate-logic.html#quantifiers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>With predicates and names, we are now able to capture the subject-predicate structure of English sentences. What we are still lacking is an ability to capture the quantifiers. Predicate logic has two symbols to represent the quantifiers:
+<span class="math display">\[
+\forall, \exists
+\]</span>
+The upside-down A is called the <em>universal</em> quantifier and the backwards e is called the <em>existential</em> quantifier. The most natural translation for the universal quantifier is “for all” and the most natural translation for the existential quantifier is “there exists”.</p>
+<p>Crucially, quantifiers in predicate logic <em>always</em> come with a variable <span class="math inline">\(x,y,z\)</span> (NOTE: these <span class="math inline">\(x,y,z\)</span> are not to be confused with the <span class="math inline">\(x,y,z\)</span> used to mark positions in predicates). That is, in a formula, you will always see quantifiers have a variable right next to them. For example:
+<span class="math display">\[
+\forall x \:\: \forall y \:\: \exists x \:\: \exists z
+\]</span>
+So you know you have done something wrong if you write a quantifier with no variable next to it.</p>
+<p>The syntax for quantifiers in predicate logic can be a bit confusing so let us take it slowly. We start with formulas without quantifiers. For our working example, let us suppose that <span class="math inline">\(P\)</span> is a monadic predicate and <span class="math inline">\(F\)</span> a dyadic predicate. Let us also suppose that <span class="math inline">\(a,b\)</span> are name symbols. So:
+<span class="math display">\[
+Pab \:\:\: Paa \:\:\: Fa
+\]</span></p>
+<p>are formulas. Then we have the notion of a <em>quasi-formula</em>. We get a quasi-formula by substituting for <em>all</em> occurrences of a name in a formula, a variable. Given a formula <span class="math inline">\(A\)</span> and a name <span class="math inline">\(n\)</span> and any variable <span class="math inline">\(x\)</span>, let <span class="math inline">\(A(n:=x)\)</span> be the result of replacing all occurrences of <span class="math inline">\(n\)</span> in <span class="math inline">\(A\)</span> with <span class="math inline">\(x\)</span>. For example:</p>
+<ol style="list-style-type: decimal">
+<li><p>For <span class="math inline">\(Fa\)</span> if we want to substitute the variable <span class="math inline">\(z\)</span> for <span class="math inline">\(a\)</span> then we write, <span class="math inline">\(Fa(a:=z)\)</span> to represent this. We then get:
+<span class="math display">\[
+Fa(a:=z) = Fz
+\]</span>
+We can pick other variables as well. For instance, if instead of <span class="math inline">\(z\)</span> we wanted to use <span class="math inline">\(i\)</span>, then we would write <span class="math inline">\(Fa(a:=i)\)</span></p></li>
+<li><p>For <span class="math inline">\(Pab\)</span> if we want to substitute the variable <span class="math inline">\(y\)</span> for <span class="math inline">\(a\)</span> we write, <span class="math inline">\(Pab(a:=y)\)</span>. Then:
+<span class="math display">\[
+Pab(a:=y) = Pyb
+\]</span>
+This is different from substituting the variable <span class="math inline">\(y\)</span> for <span class="math inline">\(b\)</span>. To do that, we would write <span class="math inline">\(Pab(b:= y)\)</span>. Then:
+<span class="math display">\[
+Pab(b:= y) = Pay
+\]</span>
+If we want both letters to be substituted for the variable <span class="math inline">\(y\)</span> then we would have to substitute twice: <span class="math inline">\(Pab(b:= y)(a:=y)\)</span> which gives us:
+<span class="math display">\[
+Pab(b:=y)(a:=y) = Pyy
+\]</span></p></li>
+<li><p>For <span class="math inline">\(Paa\)</span> if we want to substitute the variable <span class="math inline">\(z\)</span> for <span class="math inline">\(a\)</span> note that we must do it for both <span class="math inline">\(a\)</span>s. We write:
+<span class="math display">\[
+P(a:=z) = Pzz
+\]</span></p></li>
+<li><p>Now we can also substitute into complex formulas. For example, consider <span class="math inline">\((Pab \supset Fa)\)</span>. If we want to substitute the occurrences of <span class="math inline">\(a\)</span> for <span class="math inline">\(u\)</span> we would write <span class="math inline">\((Pab \supset Fa) (a:=u)\)</span>. Then:
+<span class="math display">\[
+(Pab\supset Fa)(a:= u) = (Pub\supset Fu)
+\]</span>
+The upshot of quasi-formula is that they are the way by which we insert variables into formulas.</p></li>
+</ol>
+<p>The rule for forming formulas with quantifiers relies upon the notion of a quasi-formula:</p>
+<ul>
+<li>If <span class="math inline">\(A\)</span> is a formula, <span class="math inline">\(a\)</span> is a name and <span class="math inline">\(x\)</span> is a variable, then <span class="math inline">\((\exists x)A(a:=x)\)</span> is a formula.</li>
+<li>If <span class="math inline">\(A\)</span> is a formula, <span class="math inline">\(a\)</span> is a name and <span class="math inline">\(x\)</span> is a variable, then <span class="math inline">\((\forall x)A(a:=x)\)</span> is a formula.</li>
+</ul>
+<p>Let us consider three examples just immediately preceding this paragraph:</p>
+<ol style="list-style-type: decimal">
+<li><p>Since <span class="math inline">\(Fa\)</span> is a formula, <span class="math inline">\(a\)</span> is a name, and <span class="math inline">\(z\)</span> is variable, the rule from above tells us that <span class="math inline">\((\exists z)Fa(a:=z)\)</span> is a formula. When we resolve the substitution, we get that:
+<span class="math display">\[
+(\exists z)Fz
+\]</span>
+is a formula. You can replace the <span class="math inline">\(\exists\)</span> with a <span class="math inline">\(\forall\)</span> and you would also get a formula.</p></li>
+<li><p>Since <span class="math inline">\(Pab\)</span> is a formula, <span class="math inline">\(b\)</span> is a name, and <span class="math inline">\(y\)</span> a variable, the rule from above tells us that <span class="math inline">\((\forall y)Pab(b:=y)\)</span> is a formula. When we resolve the substitution, we get:
+<span class="math display">\[
+(\forall y)Pay
+\]</span>
+is a formula.</p></li>
+<li><p>Since <span class="math inline">\((Pab \supset Fa)\)</span> is a formula, <span class="math inline">\(a\)</span> is a name, and <span class="math inline">\(i\)</span> a variable, the rule from above tells us that <span class="math inline">\((\forall i)(Pab\supset Fa)(a:=i)\)</span> is a formula. When we resolve the substitution, we get:
+<span class="math display">\[
+(\forall i)(Pib \supset Fi)
+\]</span>
+is a formula.</p></li>
+</ol>
+<p>So now we know how to construct formulas using quantifiers. <strong><em>How do we translate between English sentences involving quantifier phrases and predicate logic?</em></strong> I leave this for you to try to work out yourself. This is one of the most important skills in the course and it really requires you to work through the ideas yourself. I encourage you to look at Toby’s slides, re-listen to the lectures and ask questions. Instead of going through the steps, I will provide some examples (try to figure out why they are the right translations; these are somewhat difficult so take your time trying to understand them):</p>
+<ol style="list-style-type: decimal">
+<li>The sentence “There is something which is funny” would naturally be translated as <span class="math inline">\((\exists x) Fx\)</span></li>
+<li>The sentence “Cows are animals” would naturally be translated as <span class="math inline">\((\forall x)(Cx \supset Ax)\)</span></li>
+<li>The sentence “All logicians are students of Frege” would naturally be translated as <span class="math inline">\((\forall y)(Ly \supset Syf)\)</span>.</li>
+<li>The sentence “Some bird hit the Eiffel Tower” would naturally be translated as <span class="math inline">\((\exists x) (Bx \&amp; Hxe)\)</span>.</li>
+<li>The sentence “everything to the right of Jim then that thing will be right of Tweety” would naturally be translated as <span class="math inline">\((\forall x)(Rxj \supset Rxt)\)</span></li>
+<li>The sentence “every pirate was attacked by a shark” has two translations (1) <span class="math inline">\((\forall x) (Px \supset (\exists y)(Sy \&amp; Ayx))\)</span> and (2)<span class="math inline">\((\exists x)(Sx \&amp; (\forall y)(Py \supset Axy))\)</span>. These translations do not say the same thing. The first translation says that for every pirate there exists a unique shark that attacked them. That is, if there were 4 pirates then there were 4 sharks with each shark attacking a pirate. The second translation says that there was one shark, and it attacked every pirate. That is, even if there were 4 pirates, there is only 1 shark. This example, demonstrates how English can sometimes be ambiguous when translating into predicate logic.</li>
+</ol>
+</div>
+<div id="solutions-2" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Solutions<a href="translation-for-predicate-logic.html#solutions-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I take it that the dictionary here would be obvious:
+- (A1) <span class="math inline">\(Bt\)</span>
+- (A2) <span class="math inline">\(Et\)</span>
+- (A3) <span class="math inline">\(Fow\)</span>
+- (A4) <span class="math inline">\(Nts\)</span>
+- (A5) <span class="math inline">\(Sts\)</span>
+- (A6) <span class="math inline">\(Bbfg\)</span>
+- (A7) <span class="math inline">\(Bgbf\)</span>
+- (B1) <span class="math inline">\(\sim(Gs)\)</span>
+- (B2) <span class="math inline">\((Bt \supset Ft)\)</span>
+- (B3) <span class="math inline">\((Pf \&amp; Ps)\)</span>
+- (B4) <span class="math inline">\((Eln \lor Enl)\)</span>
+- (B5) <span class="math inline">\((Wj \supset Nba)\)</span>
+- (B6) <span class="math inline">\((\sim Po \supset Flj)\)</span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="predicate-logic-overview.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-Week7Notes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
