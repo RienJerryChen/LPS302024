@@ -80,7 +80,7 @@
 
 \title{LPS 30 Discussion Notes}
 \author{Ryan Chen}
-\date{2024-02-21}
+\date{2024-02-28}
 
 \begin{document}
 \maketitle
@@ -1254,6 +1254,318 @@ I take it that the dictionary here would be obvious:
 - (B4) \((Eln \lor Enl)\)
 - (B5) \((Wj \supset Nba)\)
 - (B6) \((\sim Po \supset Flj)\)
+
+\hypertarget{predicate-logic-practice-problems}{%
+\chapter{Predicate Logic Practice Problems}\label{predicate-logic-practice-problems}}
+
+\hypertarget{part-a}{%
+\section{Part A}\label{part-a}}
+
+Using the following symbolization key:
+
+\begin{itemize}
+\tightlist
+\item
+  \(Sxy\): \(x\) is a child of \(y\)
+\item
+  \(Pxy\): \(x\) is a parent of \(y\)
+\item
+  \(Mx\): \(x\) is a mother
+\item
+  \(Fx\): \(x\) is a father
+\item
+  \(d\): David
+\item
+  \(k\): Kit
+\end{itemize}
+
+translate the following sentences into predicate logic:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  David is a parent of Kit and Kit is the child of David.
+\item
+  Kit is not a child of David but Kit is a father.
+\item
+  If Kit is a parent of David then either Kit is a mother or Kit is a father.
+\item
+  Every mother is a parent of someone.
+\item
+  Everyone is a child of a father.
+\item
+  There are mothers which are not fathers.
+\item
+  Every child of David is a father.
+\item
+  For every child of David, there is a parent of that child who is a mother.
+\item
+  Kit has a parent who is neither a mother nor a father.
+\item
+  Kit is a mother and if Kit has a child then that child is a father.
+\end{enumerate}
+
+\hypertarget{part-b}{%
+\section{Part B}\label{part-b}}
+
+Using the following symbolization key:
+
+\begin{itemize}
+\tightlist
+\item
+  \(Ax\): \(x\) is an animal
+\item
+  \(Gx\): \(x\) is an alligator
+\item
+  \(Mx\): \(x\) is a monkey
+\item
+  \(Rx\): \(x\) is a reptile
+\item
+  \(Zx\): \(x\) lives at the zoo
+\item
+  \(Lxy\): \(x\) likes \(y\)
+\item
+  \(a\): Alfred
+\item
+  \(b\): Bertrand
+\item
+  \(c\): Charles
+\end{itemize}
+
+translate the following sentences into predicate logic:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Alfred, Bertrand and Charles live at the zoo.
+\item
+  Bertrand is a reptile, but not an alligator.
+\item
+  If Charles likes Bertrand then Bertrand is a monkey.
+\item
+  If both Bertrand and Charles are alligators, then Alfred likes them both.
+\item
+  Every animal at the zoo is either a monkey or an alligator.
+\item
+  Some reptiles live at the zoo.
+\item
+  Every alligator is a reptile.
+\item
+  There are reptiles which are not alligators.
+\item
+  Bertrand likes all monkeys that live at the zoo.
+\item
+  Every monkey that Charles likes, is also liked by Alfred.
+\end{enumerate}
+
+\hypertarget{part-c}{%
+\section{Part C}\label{part-c}}
+
+Using the following symbolization key:
+
+\begin{itemize}
+\tightlist
+\item
+  \(Exy\): \(x\) is to the east of \(y\)
+\item
+  \(Nxy\): \(x\) is to the north of \(y\)
+\item
+  \(Tx\): \(x\) is a town
+\item
+  \(Mx\): \(x\) is a metropolis
+\item
+  \(h\): Hong Kong
+\item
+  \(p\): Paris
+\item
+  \(l\): Los Angeles
+\item
+  \(n\): New York
+\item
+  \(a\): Antarctic
+\end{itemize}
+
+translate the following formulas into English:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \((Nnl \& Enl)\)
+\item
+  \((\sim Nhp \& \sim Epn)\)
+\item
+  \(\forall x(Mx \supset Nxa)\)
+\item
+  \(\exists x(Tx \& Nxn)\)
+\item
+  \(\forall x(Tx \& Exl)\)
+\item
+  \(\exists x(Mx \& Nnx)\)
+\item
+  \(\forall x(Mx \supset (Nxp \lor Epx))\)
+\item
+  \(\forall x(Tx \supset \forall y( Nyx \supset Eny))\)
+\item
+  \(\exists x(Mx \& \forall y(Ty \supset \sim Nyx))\)
+\end{enumerate}
+
+\hypertarget{part-d}{%
+\section{Part D}\label{part-d}}
+
+Let:
+
+\begin{itemize}
+\tightlist
+\item
+  \(b\): Bob
+\item
+  \(j\): Jim
+\item
+  \(z\): Zoe
+\end{itemize}
+
+and consider the following model:
+
+\includegraphics{Pictures/Week8.png}
+
+Evaluate the following formulas for truth or falsity:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(Pb\)
+\item
+  \(Rbz\)
+\item
+  \((Pb \lor Rbz)\)
+\item
+  \(((\sim Pb \& Rbz) \equiv Rjz)\)
+\item
+  \(\sim (Pj \supset Rzz)\)
+\item
+  \(((Pb \lor Pj) \supset (Rbj \& Rzj))\)
+\item
+  \((Pj \supset (Rbb \supset Rjj))\)
+\item
+  \(\exists x(Px \& \exists y (Rxy))\)
+\item
+  \(\forall x \sim (Rxx)\)
+\item
+  \(\forall x (Px \supset Rxz)\)
+\end{enumerate}
+
+\hypertarget{solutions-3}{%
+\section{Solutions}\label{solutions-3}}
+
+Part A:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \((Pdk \& Skd)\)
+\item
+  \((\sim Skd \& Fk)\)
+\item
+  \((Pkd \supset (Mk \lor Fk))\)
+\item
+  \(\forall x(Mx \supset \exists y (Pxy))\)
+\item
+  \(\forall x\exists y (Sxy \& Fy)\)
+\item
+  \(\exists x(Mx \& \sim Fx)\)
+\item
+  \(\forall x(Sxd \supset Fx)\)
+\item
+  \(\forall x(Sxd \supset \exists y(Pyx \& My))\)
+\item
+  \(\exists x(Pxk \& \sim(Mx \lor Fx))\)
+\item
+  \((Mk \& (\exists x (Sxk \supset Fx))\)
+\end{enumerate}
+
+Part B:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \((Za \& Zb \& Zc)\)
+\item
+  \((Rb \& \sim Gb)\)
+\item
+  \((Lcb \supset Mb)\)
+\item
+  \(((Gb \& Gc) \supset (Lab \& Lac))\)
+\item
+  \(\forall x((Ax \& Zx) \supset (Mx \lor Gx))\)
+\item
+  \(\exists x(Rx \& Zx)\)
+\item
+  \(\forall x(Gx \supset Rx)\)
+\item
+  \(\exists x(Rx \& \sim Gx)\)
+\item
+  \(\forall x((Mx \& Zx) \supset Lbx)\)
+\item
+  \(\forall x((Mx \& Lcx) \supset Lax)\)
+\end{enumerate}
+
+Part C:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  New York is north of and east of Los Angeles.
+\item
+  Hong Kong is not north of Paris and Paris is not east of New York.
+\item
+  All metropolises are north of Antarctica.
+\item
+  There is a town north of New York.
+\item
+  Everything is a town east of London.
+\item
+  New York is north of some metropolis.
+\item
+  All metropolises are either north of Paris or to the east of Paris.
+\item
+  New York is east of everything north of every town.
+\item
+  There is a metropolis such that all towns are not north of that metropolis.
+\end{enumerate}
+
+Part D:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  False
+\item
+  True
+\item
+  True
+\item
+  True
+\item
+  False
+\item
+  True
+\item
+  True
+\item
+  True
+\item
+  True
+\item
+  True
+\end{enumerate}
 
   \bibliography{book.bib,packages.bib}
 

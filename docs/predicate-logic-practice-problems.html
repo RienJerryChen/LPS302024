@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Week 6 Predicate Logic Overview | LPS 30 Discussion Notes</title>
+  <title>Week 8 Predicate Logic Practice Problems | LPS 30 Discussion Notes</title>
   <meta name="description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Week 6 Predicate Logic Overview | LPS 30 Discussion Notes" />
+  <meta property="og:title" content="Week 8 Predicate Logic Practice Problems | LPS 30 Discussion Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Week 6 Predicate Logic Overview | LPS 30 Discussion Notes" />
+  <meta name="twitter:title" content="Week 8 Predicate Logic Practice Problems | LPS 30 Discussion Notes" />
   
   <meta name="twitter:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="propositional-logic-trees.html"/>
-<link rel="next" href="translation-for-predicate-logic.html"/>
+<link rel="prev" href="translation-for-predicate-logic.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -151,53 +151,165 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="predicate-logic-overview" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Week 6</span> Predicate Logic Overview<a href="predicate-logic-overview.html#predicate-logic-overview" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this short document, I will overview what we have done in propositional logic and how that will transfer over to predicate logic. [Note: I do not cover the Sorites Paradox in discussion. It is examinable material; if you have questions about it, email me or come see me in office hours].</p>
-<div id="language" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Language<a href="predicate-logic-overview.html#language" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We began propositional logic with translations from English into the language of propositional logic. The language of propositional logic just consists of:</p>
+<div id="predicate-logic-practice-problems" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Week 8</span> Predicate Logic Practice Problems<a href="predicate-logic-practice-problems.html#predicate-logic-practice-problems" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="part-a" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Part A<a href="predicate-logic-practice-problems.html#part-a" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the following symbolization key:</p>
+<ul>
+<li><span class="math inline">\(Sxy\)</span>: <span class="math inline">\(x\)</span> is a child of <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(Pxy\)</span>: <span class="math inline">\(x\)</span> is a parent of <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(Mx\)</span>: <span class="math inline">\(x\)</span> is a mother</li>
+<li><span class="math inline">\(Fx\)</span>: <span class="math inline">\(x\)</span> is a father</li>
+<li><span class="math inline">\(d\)</span>: David</li>
+<li><span class="math inline">\(k\)</span>: Kit</li>
+</ul>
+<p>translate the following sentences into predicate logic:</p>
 <ol style="list-style-type: decimal">
-<li>Propositional letters <span class="math inline">\(p,q,r,\ldots\)</span></li>
-<li>Propositional connectives <span class="math inline">\(\sim, \&amp;, \lor, \supset, \equiv\)</span></li>
-<li>Parentheses <span class="math inline">\((,)\)</span></li>
-</ol>
-<p>Predicate logic adds four new kinds of symbols to the language and gets rid of propositional letters. We end up with:</p>
-<ol style="list-style-type: decimal">
-<li>Names (or Constants) <span class="math inline">\(a,b,c\)</span></li>
-<li>Predicates <span class="math inline">\(A,B,C\)</span></li>
-<li>Variables <span class="math inline">\(x,y,z\)</span></li>
-<li>Quantifiers <span class="math inline">\(\forall, \exists\)</span></li>
-<li>Propositional connectives <span class="math inline">\(\sim, \&amp;, \lor, \supset, \equiv\)</span></li>
-<li>Parentheses <span class="math inline">\((,)\)</span></li>
+<li>David is a parent of Kit and Kit is the child of David.</li>
+<li>Kit is not a child of David but Kit is a father.</li>
+<li>If Kit is a parent of David then either Kit is a mother or Kit is a father.</li>
+<li>Every mother is a parent of someone.</li>
+<li>Everyone is a child of a father.</li>
+<li>There are mothers which are not fathers.</li>
+<li>Every child of David is a father.</li>
+<li>For every child of David, there is a parent of that child who is a mother.</li>
+<li>Kit has a parent who is neither a mother nor a father.</li>
+<li>Kit is a mother and if Kit has a child then that child is a father.</li>
 </ol>
 </div>
-<div id="syntax" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Syntax<a href="predicate-logic-overview.html#syntax" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Soon after doing translation work, we gave a syntax for propositional logic. A syntax is just a set of rules for determining when a string of symbols (i.e., symbols put next to one another) counts as a <em>formula</em>. Recall, that the syntax for propositional logic is given by:</p>
+<div id="part-b" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Part B<a href="predicate-logic-practice-problems.html#part-b" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the following symbolization key:</p>
+<ul>
+<li><span class="math inline">\(Ax\)</span>: <span class="math inline">\(x\)</span> is an animal</li>
+<li><span class="math inline">\(Gx\)</span>: <span class="math inline">\(x\)</span> is an alligator</li>
+<li><span class="math inline">\(Mx\)</span>: <span class="math inline">\(x\)</span> is a monkey</li>
+<li><span class="math inline">\(Rx\)</span>: <span class="math inline">\(x\)</span> is a reptile</li>
+<li><span class="math inline">\(Zx\)</span>: <span class="math inline">\(x\)</span> lives at the zoo</li>
+<li><span class="math inline">\(Lxy\)</span>: <span class="math inline">\(x\)</span> likes <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(a\)</span>: Alfred</li>
+<li><span class="math inline">\(b\)</span>: Bertrand</li>
+<li><span class="math inline">\(c\)</span>: Charles</li>
+</ul>
+<p>translate the following sentences into predicate logic:</p>
 <ol style="list-style-type: decimal">
-<li>All propositional letters are formulas.</li>
-<li>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are formulas then <span class="math inline">\(\sim(A)\)</span>, <span class="math inline">\((A \&amp; B)\)</span>, <span class="math inline">\((A \lor B)\)</span>, <span class="math inline">\((A \supset B)\)</span>, <span class="math inline">\((A \equiv B)\)</span>.</li>
-<li>Nothing else is a formula.</li>
+<li>Alfred, Bertrand and Charles live at the zoo.</li>
+<li>Bertrand is a reptile, but not an alligator.</li>
+<li>If Charles likes Bertrand then Bertrand is a monkey.</li>
+<li>If both Bertrand and Charles are alligators, then Alfred likes them both.</li>
+<li>Every animal at the zoo is either a monkey or an alligator.</li>
+<li>Some reptiles live at the zoo.</li>
+<li>Every alligator is a reptile.</li>
+<li>There are reptiles which are not alligators.</li>
+<li>Bertrand likes all monkeys that live at the zoo.</li>
+<li>Every monkey that Charles likes, is also liked by Alfred.</li>
 </ol>
-<p>So, suppose that <span class="math inline">\(p,q\)</span> are propositional letters. Then according to rule 1., <span class="math inline">\(p\)</span> is a formula and <span class="math inline">\(q\)</span> is a formula. Since <span class="math inline">\(p\)</span> is a formula and <span class="math inline">\(q\)</span> is a formula, according to rule 2., <span class="math inline">\((p \lor q)\)</span> is a formula. Furthermore, since <span class="math inline">\((p \lor q)\)</span> is a formula, again according to rule 2., <span class="math inline">\(((p \lor q ) \equiv q)\)</span> is a formula.</p>
-<p>There is a direct analogy with English grammar. In the case of English, to provide a syntax is to provide the rules for determining when a string of words counts as a sentence. A very basic syntax for a fragment of English might look like:</p>
+</div>
+<div id="part-c" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Part C<a href="predicate-logic-practice-problems.html#part-c" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Using the following symbolization key:</p>
+<ul>
+<li><span class="math inline">\(Exy\)</span>: <span class="math inline">\(x\)</span> is to the east of <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(Nxy\)</span>: <span class="math inline">\(x\)</span> is to the north of <span class="math inline">\(y\)</span></li>
+<li><span class="math inline">\(Tx\)</span>: <span class="math inline">\(x\)</span> is a town</li>
+<li><span class="math inline">\(Mx\)</span>: <span class="math inline">\(x\)</span> is a metropolis</li>
+<li><span class="math inline">\(h\)</span>: Hong Kong</li>
+<li><span class="math inline">\(p\)</span>: Paris</li>
+<li><span class="math inline">\(l\)</span>: Los Angeles</li>
+<li><span class="math inline">\(n\)</span>: New York</li>
+<li><span class="math inline">\(a\)</span>: Antarctic</li>
+</ul>
+<p>translate the following formulas into English:</p>
 <ol style="list-style-type: decimal">
-<li>If <span class="math inline">\(N\)</span> is a noun and <span class="math inline">\(V\)</span> a verb then <span class="math inline">\(N V\)</span> is a sentence.</li>
-<li>If <span class="math inline">\(A\)</span> is an adjective and <span class="math inline">\(N\)</span> a noun then <span class="math inline">\(A N\)</span> is a noun.</li>
+<li><span class="math inline">\((Nnl \&amp; Enl)\)</span></li>
+<li><span class="math inline">\((\sim Nhp \&amp; \sim Epn)\)</span></li>
+<li><span class="math inline">\(\forall x(Mx \supset Nxa)\)</span></li>
+<li><span class="math inline">\(\exists x(Tx \&amp; Nxn)\)</span></li>
+<li><span class="math inline">\(\forall x(Tx \&amp; Exl)\)</span></li>
+<li><span class="math inline">\(\exists x(Mx \&amp; Nnx)\)</span></li>
+<li><span class="math inline">\(\forall x(Mx \supset (Nxp \lor Epx))\)</span></li>
+<li><span class="math inline">\(\forall x(Tx \supset \forall y( Nyx \supset Eny))\)</span></li>
+<li><span class="math inline">\(\exists x(Mx \&amp; \forall y(Ty \supset \sim Nyx))\)</span></li>
 </ol>
-<p>Using these rules, you can determine what counts as a sentence. For example, suppose that “ducks” is a noun and “swim” a verb. Then according to rule 1. of our example syntax for English, “ducks swim” is a sentence. Now, suppose that “funny” is an adjective. According to rule 2., “funny ducks” is a noun. Hence, according to rule 1., “funny ducks swim” is a sentence.</p>
-<p>We will be providing a syntax for predicate logic formulas as well. They will be covered in next week’s notes.</p>
 </div>
-<div id="semantics" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Semantics<a href="predicate-logic-overview.html#semantics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Out of a syntax we are given the formulas of a language. The next thing we will want to know is whether or not a formula is true or false. More generally, we want to know <em>under what possibilities, a formula is true or false</em>. To provide a general schema for determining under what possibilities any given formula is true or false is just to provide a semantics. In propositional logic, our semantics consists of truth tables. The truth tables listed out exactly under what possibilities (i.e., rows) our formula is true.</p>
-<p>We will also be providing a semantics for predicate logic. The semantics will not be truth tables; we will not be listing out our formulas across the top of a table and truth values for atomic formulas on the left of our table. Instead, we will be providing what we call <em>models</em>. More on this when it comes.</p>
-<p>The next step of developing the semantics is to relate it to the notion of validity. In the case of propositional logic, this involved looking at the rows of the truth table where all the premises are true and checking whether or not the conclusion was also true in that row. The situation is much more complicated in predicate logic. It will not be a simple matter of checking rows of some truth table (one of the reasons being that there will be no truth tables).</p>
+<div id="part-d" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Part D<a href="predicate-logic-practice-problems.html#part-d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(b\)</span>: Bob</li>
+<li><span class="math inline">\(j\)</span>: Jim</li>
+<li><span class="math inline">\(z\)</span>: Zoe</li>
+</ul>
+<p>and consider the following model:</p>
+<p><img src="Pictures/Week8.png" /></p>
+<p>Evaluate the following formulas for truth or falsity:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(Pb\)</span></li>
+<li><span class="math inline">\(Rbz\)</span></li>
+<li><span class="math inline">\((Pb \lor Rbz)\)</span></li>
+<li><span class="math inline">\(((\sim Pb \&amp; Rbz) \equiv Rjz)\)</span></li>
+<li><span class="math inline">\(\sim (Pj \supset Rzz)\)</span></li>
+<li><span class="math inline">\(((Pb \lor Pj) \supset (Rbj \&amp; Rzj))\)</span></li>
+<li><span class="math inline">\((Pj \supset (Rbb \supset Rjj))\)</span></li>
+<li><span class="math inline">\(\exists x(Px \&amp; \exists y (Rxy))\)</span></li>
+<li><span class="math inline">\(\forall x \sim (Rxx)\)</span></li>
+<li><span class="math inline">\(\forall x (Px \supset Rxz)\)</span></li>
+</ol>
 </div>
-<div id="proofs" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Proofs<a href="predicate-logic-overview.html#proofs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Next, we provided a proof system for propositional logic. A proof system is a set of rules for determining when a collection of formulas is satisfiable. In our case, we used the tree system. Predicate logic will be similar in that we will be using a tree system. However, unlike in propositional logic where our trees are always finitely long, in predicate logic, there do exist infinite trees. This has important consequences and we will get there when we get there.</p>
+<div id="solutions-3" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Solutions<a href="predicate-logic-practice-problems.html#solutions-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Part A:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((Pdk \&amp; Skd)\)</span></li>
+<li><span class="math inline">\((\sim Skd \&amp; Fk)\)</span></li>
+<li><span class="math inline">\((Pkd \supset (Mk \lor Fk))\)</span></li>
+<li><span class="math inline">\(\forall x(Mx \supset \exists y (Pxy))\)</span></li>
+<li><span class="math inline">\(\forall x\exists y (Sxy \&amp; Fy)\)</span></li>
+<li><span class="math inline">\(\exists x(Mx \&amp; \sim Fx)\)</span></li>
+<li><span class="math inline">\(\forall x(Sxd \supset Fx)\)</span></li>
+<li><span class="math inline">\(\forall x(Sxd \supset \exists y(Pyx \&amp; My))\)</span></li>
+<li><span class="math inline">\(\exists x(Pxk \&amp; \sim(Mx \lor Fx))\)</span></li>
+<li><span class="math inline">\((Mk \&amp; (\exists x (Sxk \supset Fx))\)</span></li>
+</ol>
+<p>Part B:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\((Za \&amp; Zb \&amp; Zc)\)</span></li>
+<li><span class="math inline">\((Rb \&amp; \sim Gb)\)</span></li>
+<li><span class="math inline">\((Lcb \supset Mb)\)</span></li>
+<li><span class="math inline">\(((Gb \&amp; Gc) \supset (Lab \&amp; Lac))\)</span></li>
+<li><span class="math inline">\(\forall x((Ax \&amp; Zx) \supset (Mx \lor Gx))\)</span></li>
+<li><span class="math inline">\(\exists x(Rx \&amp; Zx)\)</span></li>
+<li><span class="math inline">\(\forall x(Gx \supset Rx)\)</span></li>
+<li><span class="math inline">\(\exists x(Rx \&amp; \sim Gx)\)</span></li>
+<li><span class="math inline">\(\forall x((Mx \&amp; Zx) \supset Lbx)\)</span></li>
+<li><span class="math inline">\(\forall x((Mx \&amp; Lcx) \supset Lax)\)</span></li>
+</ol>
+<p>Part C:</p>
+<ol style="list-style-type: decimal">
+<li>New York is north of and east of Los Angeles.</li>
+<li>Hong Kong is not north of Paris and Paris is not east of New York.</li>
+<li>All metropolises are north of Antarctica.</li>
+<li>There is a town north of New York.</li>
+<li>Everything is a town east of London.</li>
+<li>New York is north of some metropolis.</li>
+<li>All metropolises are either north of Paris or to the east of Paris.</li>
+<li>New York is east of everything north of every town.</li>
+<li>There is a metropolis such that all towns are not north of that metropolis.</li>
+</ol>
+<p>Part D:</p>
+<ol style="list-style-type: decimal">
+<li>False</li>
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>False</li>
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>True</li>
+</ol>
 
 </div>
 </div>
@@ -206,8 +318,8 @@
           </div>
         </div>
       </div>
-<a href="propositional-logic-trees.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="translation-for-predicate-logic.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="translation-for-predicate-logic.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -238,7 +350,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-Week6Notes.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-Week8Notes.Rmd",
 "text": "Edit"
 },
 "history": {

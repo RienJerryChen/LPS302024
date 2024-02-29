@@ -33,3 +33,9 @@ bringing-back-the-propositional-connectives
 b-practice-with-propositional-connectives-in-predicate-logic
 quantifiers
 solutions-2
+predicate-logic-practice-problems
+part-a
+part-b
+part-c
+part-d
+solutions-3
