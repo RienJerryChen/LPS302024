@@ -138,7 +138,7 @@ Part C:
 4. There is a town north of New York.
 5. Everything is a town east of London.
 6. New York is north of some metropolis.
-7. All metropolises are either north of Paris or to the east of Paris.
+7. All metropolises are either north of Paris or Paris is to the east of them.
 8. New York is east of everything north of every town. 
 9. There is a metropolis such that all towns are not north of that metropolis.
 
