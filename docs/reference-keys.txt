@@ -39,3 +39,9 @@ part-b
 part-c
 part-d
 solutions-3
+semantics-for-quantified-formulas
+existentials
+universals
+multiple-quantifiers
+practice-problem
+solution

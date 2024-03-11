@@ -80,7 +80,7 @@
 
 \title{LPS 30 Discussion Notes}
 \author{Ryan Chen}
-\date{2024-02-29}
+\date{2024-03-11}
 
 \begin{document}
 \maketitle
@@ -1565,6 +1565,288 @@ Part D:
   True
 \item
   True
+\end{enumerate}
+
+\hypertarget{semantics-for-quantified-formulas}{%
+\chapter{Semantics for Quantified Formulas}\label{semantics-for-quantified-formulas}}
+
+What follows will only make sense if you already know how to evaluate formulas in predicate logic without quantifiers in them. We shall begin by considering the semantics for quantified formulas:
+
+\begin{itemize}
+\tightlist
+\item
+  \((\forall x)A\) is true iff \(A(x:=a)\) is true for all objects \(a\) in the domain \(D\).
+\item
+  \((\exists x)A\) is true iff \(A(x:=a)\) is true for some object \(a\) in the domain \(D\).
+\end{itemize}
+
+where \(A\) is just a variable (i.e., a place-holder) for any formula in predicate logic and \(A(x:=a)\) is just the formula \(A\) but with all the occurrences of \(x\) replaced with \(a\) (note that the choice of using \(A\) and \(a\) here is arbitrary; I could have written the condition in terms of \(B\) and \(c\)). We shall consider a working example throughout this section. Consider the following model:
+
+\includegraphics{Pictures/Week9-1.png}
+
+Here, we have two monadic predicates \(G\) and \(P\) and one dyadic predicate \(W\). We also have a domain of three objects \(D = \{\text{Squirtle, Bulbasuar, Charmander}\}\). Let us suppose that there are no names in our language.
+
+\hypertarget{existentials}{%
+\section{Existentials}\label{existentials}}
+
+Let us start with existential formulas first and see how to evaluate them.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Consider \((\exists x)(Gx)\). The semantics tells us that: \((\exists x)(Gx)\) is true iff \((Gx)(x:=a)\) is true for some object \(a\) in the domain \(D\). This just means that if there is an object in the domain and we substitute in for \(x\) a name of this object and we end up with a true formula, then the existential formula is true. In our toy model, we only have three objects so we can check whether or not there is such an object by brute force:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Consider Squirtle. We do not have a name for Squirtle yet in our language, so let us just use \(s\) as a name for Squirtle. Then we want to know whether or not \((Gx) (x := s)\) is true. \((Gx)(x:=s)\) is just \(Gs\). And we see that under the \(Gx\) table, the row for the object denoted by \(s\) (namely, Squirtle) has a \(0\). Therefore, \((Gx) (x:=s)\) is false.
+\item
+  Consider Bulbasaur. We don't have a name for Bulbasaur yet in our language, so let us introduce \(b\) as a name for Bulbasaur. We want to know whether or not \((Gx)(x:= b)\) is true. \((Gx)(x:=b)\) is just \(Gb\). And we see that under the \(Gx\) table, the row for the object denoted by \(b\) (namely, Bulbasaur) has a 1. Therefore, \((Gx)(x:=b)\) is true.
+\end{itemize}
+
+This last condition with Bulbasaur reveals that there is such an object such that if we substitute in a name for that object for \(x\), then we end up with a true formula. This means that the existential formula \((\exists x)(Gx)\) is true.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Consider \((\exists y)(Py)\). Going a bit quicker, what we are looking for is an object in the domain, such that if we put a name for that object into the \(y\) position, the resulting formula is true. Simply looking at the \(Px\) table, we see that there is no object that will make \(Px\) true. Hence, \((\exists y)(Py)\) is false.
+\item
+  Consider \((\exists x)(\sim Px)\). Again, going quickly, we are looking for at least one object in the domain such that when we substitute in a name for that object into the \(x\) position, the resulting formula is true. It turns out that \(\sim Ps\) is true. Hence, \((\exists x)(\sim Px)\) is true.
+\item
+  Consider \((\exists z)(Wzs \lor Gz)\). This formula is true just in case there is some object in the domain such that when we substitute in a name for that object into the \(z\) positions (notice there are two \(z\) in the formula), the resulting formula is true. There are three objects and hence three formulas we need to consider (and only one of these needs to be true for the existential formula to be true):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \((Wzs \lor Gz)(x:=s) \implies (Wss \lor Gs) \implies 0\)
+\item
+  \((Wzs \lor Gz)(x:=b) \implies(Wbs \lor Gb) \implies 1\) {[}Can stop here{]}
+\item
+  \((Wzs \lor Gz)(x:=c) \implies (Wcs \lor Gc)\)
+\end{itemize}
+
+Hence, \(\exists z)(Wzs)\lor Gz)\) is true. Note again, we need not check for every object in the domain. The moment you have found an object that will witness the truth of the existential, you know that the existential is true.
+
+\hypertarget{universals}{%
+\section{Universals}\label{universals}}
+
+Now let us move on to universal sentences:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Consider \((\forall x)(Gx)\). According to our semantical rule, \((\forall x)(Gx)\) is true iff \((Gx)(x:=a)\) is true for all objects \(a\) in the domain. This means that \((\forall x)(Gx)\) is true just in case no matter which object we consider, if we replace the \(x\) with a name for that object, we end up with a true formula. It also means that \((\forall x)(Gx)\) is false just in case there exists at least one object, such that if we replace \(x\) with a name for that object, we end up with a false formula. In any cases, lets begin checking the cases:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \((Gx)(x:= s) \implies Gs \implies 0\) {[}Can stop here{]}
+\item
+  \((Gx)(x:= b) \implies Gb\)
+\item
+  \((Gx)(x:= c) \implies Gc\)
+\end{itemize}
+
+We can stop immediately at the Squirtle case because it immediately shows that it is not the case that we can always replace \(x\) with a name for any object. Hence, \((\forall x)(Gx)\) is false.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Consider \((\forall x)(\sim Px)\). Going quickly, let us consider the three cases:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \((\sim Px)(x:=s) \implies \sim Ps \implies 1\)
+\item
+  \((\sim Px)(x:=b) \implies \sim Pb \implies 1\)
+\item
+  \((\sim Px)(x:=c) \implies \sim Pc \implies 1\)
+\end{itemize}
+
+We see here that no matter which object we pick, if we substitute for \(x\), a name for that object, we get a true formula. Hence, \((\forall x)(\sim Px)\) is true.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Consider \((\forall x)(Gx \supset Wxc)\):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \((Gx \supset Wxc)(x:= s) \implies (Gs \supset Wsc) \implies 1\)
+\item
+  \((Gx \supset Wxc)(x:= b) \implies (Gb \supset Wbc) \implies 1\)
+\item
+  \((Gx \supset Wxc)(x:= c) \implies (Gc \supset Wcc) \implies 1\)
+\end{itemize}
+
+We see that no matter what object's name we substitute in, the formula is true. Hence, \((\forall x)(Gx \supset Wxc)\) is true.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Consider \((\forall x)(Gx \supset Wcx)\):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \((Gx \supset Wcx)(x:= s) \implies (Gs \supset Wcs) \implies 1\)
+\item
+  \((Gx \supset Wcx)(x:= b) \implies (Gb \supset Wcb) \implies 0\) {[}Can stop here{]}
+\item
+  \((Gx \supset Wcx)(x:= c) \implies (Gc \supset Wcc)\)
+\end{itemize}
+
+We see here that substituting in a name for Bulbasaur in for \(x\) results in a false formula. Hence, \((\forall x) (Gx \supset Wcx)\) is false.
+
+\hypertarget{multiple-quantifiers}{%
+\section{Multiple Quantifiers}\label{multiple-quantifiers}}
+
+Now we consider formulas with multiple quantifiers. The idea is exactly the same, but now you need to do a lot of book keeping:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Consider \((\forall x)((\exists y)(Wxy))\):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \(((\exists y)(Wxy)))(x:=s) \implies (\exists y)(Wsy)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \((Wsy)(y:=s) \implies Wss \implies 0\)
+  \item
+    \((Wsy)(y:=b) \implies Wsb \implies 1\) {[}Can stop here: \(((\exists y)(Wxy))(x:=s) \implies 1\){]}
+  \end{itemize}
+\item
+  \(((\exists y)(Wxy)))(x:=b) \implies (\exists y)(Wby)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \((Wby)(y:=s) \implies Wbs \implies 0\)
+  \item
+    \((Wby)(y:=b) \implies Wbb \implies 0\)
+  \item
+    \((Wby)(y:=c) \implies Wbc \implies 1\) {[}Must stop here: \(((\exists y)(Wxy))(x:=b) \implies 1\){]}
+  \end{itemize}
+\item
+  \(((\exists y)(Wxy)))(x:=c) \implies (\exists y)(Wcy)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \((Wcy)(y:=s) \implies Wcs \implies 1\) {[}Can stop here: \(((\exists y)(Wxy))(x:= c) \implies 1\){]}\$
+  \end{itemize}
+\end{itemize}
+
+So, we get that no matter what object we choose for \(x\), the resulting existential formula is true. Therefore, \(\forall x\exists y (Wxy)\) is true.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Consider \((\exists x)((\forall y)(Wyx))\):
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \(((\forall y)(Wxy))(x:= s) \implies (\forall y)(Wys)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \((Wys)(y:=s) \implies Wss \implies 0\) {[}Can Stop Here: \(((\forall y)(Wyx))(x:=s) \implies 0\){]}
+  \end{itemize}
+\item
+  \(((\forall y)(Wyx))(x:=b) \implies (\forall y)(Wyb)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \((Wyb)(y:=s) \implies Wsb \implies 1\)
+  \item
+    \((Wyb)(y:=b) \implies Wbb \implies 0\) {[}Can stop here: \(((\forall y)(Wyx))(x:=b) \implies 0\){]}
+  \end{itemize}
+\item
+  \(((\forall y)(Wyx))(x:=c) \implies (\forall y)(Wyc)\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \((Wyc)(y:=s) \implies Wsc \implies 0\) {[}Can Stop here: \(((\forall y)(Wyx))(x:=c) \implies 0\){]}
+  \end{itemize}
+\end{itemize}
+
+So, there is no object that makes the resulting universal formula true. Therefore, \(\exists x\forall y(Wyx)\) is false.
+
+\hypertarget{practice-problem}{%
+\section{Practice Problem:}\label{practice-problem}}
+
+Consider the model:
+
+\[
+I(F) = \{\langle 0,1\rangle, \langle 1,0\rangle, \langle 1,2\rangle, \langle 2,1\rangle, \langle 2,3,\rangle, \langle 3,2\rangle, \langle 3,4\rangle, \langle 4,3\rangle \}
+\]
+\[
+I(L) = \{\langle 1,0,1\rangle, \langle 1,2,3\rangle,\langle 1,3,4\rangle\}
+\]
+Which of the following formulas are true?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\forall x(\exists y (Fxy))\)
+\item
+  \(\forall x (\forall y (Fxy \supset Fyx))\)
+\item
+  \(\forall x (Fxx \supset Lxxx)\)
+\item
+  \(\exists x \forall y \forall z(Lxyz)\)
+\item
+  \(\sim \forall x \forall y (Lxyx \equiv Lyxy)\)
+\end{enumerate}
+
+\hypertarget{solution}{%
+\section{Solution}\label{solution}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  T
+\item
+  T
+\item
+  T
+\item
+  F
+\item
+  F
 \end{enumerate}
 
   \bibliography{book.bib,packages.bib}

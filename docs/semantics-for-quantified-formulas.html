@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Week 9 Semantics for Quantified Formulas | LPS 30 Discussion Notes</title>
+  <meta name="description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Week 9 Semantics for Quantified Formulas | LPS 30 Discussion Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Week 9 Semantics for Quantified Formulas | LPS 30 Discussion Notes" />
+  
+  <meta name="twitter:description" content="These are notes for Ryan Chen’s LPS 30 Discussion Sections (Monday 1-2 p.m. and 4-5 p.m.)." />
+  
+
+<meta name="author" content="Ryan Chen" />
+
+
+<meta name="date" content="2024-03-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="predicate-logic-practice-problems.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LPS 30 Discussion Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a></li>
+<li class="chapter" data-level="2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html"><i class="fa fa-check"></i><b>2</b> Propositions and Validity</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#propositions"><i class="fa fa-check"></i><b>2.1</b> Propositions</a></li>
+<li class="chapter" data-level="2.2" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#validity"><i class="fa fa-check"></i><b>2.2</b> Validity</a></li>
+<li class="chapter" data-level="2.3" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#soundness"><i class="fa fa-check"></i><b>2.3</b> Soundness</a></li>
+<li class="chapter" data-level="2.4" data-path="propositions-and-validity.html"><a href="propositions-and-validity.html#argument-forms"><i class="fa fa-check"></i><b>2.4</b> Argument Forms</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="translation.html"><a href="translation.html"><i class="fa fa-check"></i><b>3</b> Translation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="translation.html"><a href="translation.html#translating-from-english-to-propositional-logic"><i class="fa fa-check"></i><b>3.1</b> Translating from English to Propositional Logic</a></li>
+<li class="chapter" data-level="3.2" data-path="translation.html"><a href="translation.html#practice-problems"><i class="fa fa-check"></i><b>3.2</b> Practice Problems</a></li>
+<li class="chapter" data-level="3.3" data-path="translation.html"><a href="translation.html#practice-problem-solutions"><i class="fa fa-check"></i><b>3.3</b> Practice Problem Solutions</a></li>
+<li class="chapter" data-level="3.4" data-path="translation.html"><a href="translation.html#translating-from-propositional-logic-to-english"><i class="fa fa-check"></i><b>3.4</b> Translating from Propositional Logic to English</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="truth-tables.html"><a href="truth-tables.html"><i class="fa fa-check"></i><b>4</b> Truth Tables</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="truth-tables.html"><a href="truth-tables.html#how-to-fill-out-a-truth-table"><i class="fa fa-check"></i><b>4.1</b> How to Fill Out a Truth Table</a></li>
+<li class="chapter" data-level="4.2" data-path="truth-tables.html"><a href="truth-tables.html#definitions-of-tautology-contradiction-and-contingency"><i class="fa fa-check"></i><b>4.2</b> Definitions of Tautology, Contradiction and Contingency</a></li>
+<li class="chapter" data-level="4.3" data-path="truth-tables.html"><a href="truth-tables.html#checking-validity-of-arguments-with-a-truth-table"><i class="fa fa-check"></i><b>4.3</b> Checking Validity of Arguments with a Truth Table</a></li>
+<li class="chapter" data-level="4.4" data-path="truth-tables.html"><a href="truth-tables.html#practice-problems-1"><i class="fa fa-check"></i><b>4.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="4.5" data-path="truth-tables.html"><a href="truth-tables.html#solutions"><i class="fa fa-check"></i><b>4.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html"><i class="fa fa-check"></i><b>5</b> Propositional Logic Trees</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#satisfiability"><i class="fa fa-check"></i><b>5.1</b> Satisfiability</a></li>
+<li class="chapter" data-level="5.2" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#trees"><i class="fa fa-check"></i><b>5.2</b> Trees</a></li>
+<li class="chapter" data-level="5.3" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#soundness-and-validity"><i class="fa fa-check"></i><b>5.3</b> Soundness and Validity</a></li>
+<li class="chapter" data-level="5.4" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#practice-problems-2"><i class="fa fa-check"></i><b>5.4</b> Practice Problems</a></li>
+<li class="chapter" data-level="5.5" data-path="propositional-logic-trees.html"><a href="propositional-logic-trees.html#solutions-1"><i class="fa fa-check"></i><b>5.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html"><i class="fa fa-check"></i><b>6</b> Predicate Logic Overview</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#language"><i class="fa fa-check"></i><b>6.1</b> Language</a></li>
+<li class="chapter" data-level="6.2" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#syntax"><i class="fa fa-check"></i><b>6.2</b> Syntax</a></li>
+<li class="chapter" data-level="6.3" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#semantics"><i class="fa fa-check"></i><b>6.3</b> Semantics</a></li>
+<li class="chapter" data-level="6.4" data-path="predicate-logic-overview.html"><a href="predicate-logic-overview.html#proofs"><i class="fa fa-check"></i><b>6.4</b> Proofs</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html"><i class="fa fa-check"></i><b>7</b> Translation for Predicate Logic</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#atomic-formulas-names-and-predicates"><i class="fa fa-check"></i><b>7.1</b> Atomic Formulas, Names and Predicates</a></li>
+<li class="chapter" data-level="7.2" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#a-practice-with-translating-with-only-predicates-and-names"><i class="fa fa-check"></i><b>7.2</b> (A) Practice with Translating with only Predicates and Names</a></li>
+<li class="chapter" data-level="7.3" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#bringing-back-the-propositional-connectives"><i class="fa fa-check"></i><b>7.3</b> Bringing Back the Propositional Connectives</a></li>
+<li class="chapter" data-level="7.4" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#b-practice-with-propositional-connectives-in-predicate-logic"><i class="fa fa-check"></i><b>7.4</b> (B) Practice with Propositional Connectives in Predicate Logic</a></li>
+<li class="chapter" data-level="7.5" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#quantifiers"><i class="fa fa-check"></i><b>7.5</b> Quantifiers</a></li>
+<li class="chapter" data-level="7.6" data-path="translation-for-predicate-logic.html"><a href="translation-for-predicate-logic.html#solutions-2"><i class="fa fa-check"></i><b>7.6</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="predicate-logic-practice-problems.html"><a href="predicate-logic-practice-problems.html"><i class="fa fa-check"></i><b>8</b> Predicate Logic Practice Problems</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="predicate-logic-practice-problems.html"><a href="predicate-logic-practice-problems.html#part-a"><i class="fa fa-check"></i><b>8.1</b> Part A</a></li>
+<li class="chapter" data-level="8.2" data-path="predicate-logic-practice-problems.html"><a href="predicate-logic-practice-problems.html#part-b"><i class="fa fa-check"></i><b>8.2</b> Part B</a></li>
+<li class="chapter" data-level="8.3" data-path="predicate-logic-practice-problems.html"><a href="predicate-logic-practice-problems.html#part-c"><i class="fa fa-check"></i><b>8.3</b> Part C</a></li>
+<li class="chapter" data-level="8.4" data-path="predicate-logic-practice-problems.html"><a href="predicate-logic-practice-problems.html#part-d"><i class="fa fa-check"></i><b>8.4</b> Part D</a></li>
+<li class="chapter" data-level="8.5" data-path="predicate-logic-practice-problems.html"><a href="predicate-logic-practice-problems.html#solutions-3"><i class="fa fa-check"></i><b>8.5</b> Solutions</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="semantics-for-quantified-formulas.html"><a href="semantics-for-quantified-formulas.html"><i class="fa fa-check"></i><b>9</b> Semantics for Quantified Formulas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="semantics-for-quantified-formulas.html"><a href="semantics-for-quantified-formulas.html#existentials"><i class="fa fa-check"></i><b>9.1</b> Existentials</a></li>
+<li class="chapter" data-level="9.2" data-path="semantics-for-quantified-formulas.html"><a href="semantics-for-quantified-formulas.html#universals"><i class="fa fa-check"></i><b>9.2</b> Universals</a></li>
+<li class="chapter" data-level="9.3" data-path="semantics-for-quantified-formulas.html"><a href="semantics-for-quantified-formulas.html#multiple-quantifiers"><i class="fa fa-check"></i><b>9.3</b> Multiple Quantifiers</a></li>
+<li class="chapter" data-level="9.4" data-path="semantics-for-quantified-formulas.html"><a href="semantics-for-quantified-formulas.html#practice-problem"><i class="fa fa-check"></i><b>9.4</b> Practice Problem:</a></li>
+<li class="chapter" data-level="9.5" data-path="semantics-for-quantified-formulas.html"><a href="semantics-for-quantified-formulas.html#solution"><i class="fa fa-check"></i><b>9.5</b> Solution</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LPS 30 Discussion Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="semantics-for-quantified-formulas" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Week 9</span> Semantics for Quantified Formulas<a href="semantics-for-quantified-formulas.html#semantics-for-quantified-formulas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>What follows will only make sense if you already know how to evaluate formulas in predicate logic without quantifiers in them. We shall begin by considering the semantics for quantified formulas:</p>
+<ul>
+<li><span class="math inline">\((\forall x)A\)</span> is true iff <span class="math inline">\(A(x:=a)\)</span> is true for all objects <span class="math inline">\(a\)</span> in the domain <span class="math inline">\(D\)</span>.</li>
+<li><span class="math inline">\((\exists x)A\)</span> is true iff <span class="math inline">\(A(x:=a)\)</span> is true for some object <span class="math inline">\(a\)</span> in the domain <span class="math inline">\(D\)</span>.</li>
+</ul>
+<p>where <span class="math inline">\(A\)</span> is just a variable (i.e., a place-holder) for any formula in predicate logic and <span class="math inline">\(A(x:=a)\)</span> is just the formula <span class="math inline">\(A\)</span> but with all the occurrences of <span class="math inline">\(x\)</span> replaced with <span class="math inline">\(a\)</span> (note that the choice of using <span class="math inline">\(A\)</span> and <span class="math inline">\(a\)</span> here is arbitrary; I could have written the condition in terms of <span class="math inline">\(B\)</span> and <span class="math inline">\(c\)</span>). We shall consider a working example throughout this section. Consider the following model:</p>
+<p><img src="Pictures/Week9-1.png" /></p>
+<p>Here, we have two monadic predicates <span class="math inline">\(G\)</span> and <span class="math inline">\(P\)</span> and one dyadic predicate <span class="math inline">\(W\)</span>. We also have a domain of three objects <span class="math inline">\(D = \{\text{Squirtle, Bulbasuar, Charmander}\}\)</span>. Let us suppose that there are no names in our language.</p>
+<div id="existentials" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Existentials<a href="semantics-for-quantified-formulas.html#existentials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let us start with existential formulas first and see how to evaluate them.</p>
+<ol style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\exists x)(Gx)\)</span>. The semantics tells us that: <span class="math inline">\((\exists x)(Gx)\)</span> is true iff <span class="math inline">\((Gx)(x:=a)\)</span> is true for some object <span class="math inline">\(a\)</span> in the domain <span class="math inline">\(D\)</span>. This just means that if there is an object in the domain and we substitute in for <span class="math inline">\(x\)</span> a name of this object and we end up with a true formula, then the existential formula is true. In our toy model, we only have three objects so we can check whether or not there is such an object by brute force:</li>
+</ol>
+<ul>
+<li>Consider Squirtle. We do not have a name for Squirtle yet in our language, so let us just use <span class="math inline">\(s\)</span> as a name for Squirtle. Then we want to know whether or not <span class="math inline">\((Gx) (x := s)\)</span> is true. <span class="math inline">\((Gx)(x:=s)\)</span> is just <span class="math inline">\(Gs\)</span>. And we see that under the <span class="math inline">\(Gx\)</span> table, the row for the object denoted by <span class="math inline">\(s\)</span> (namely, Squirtle) has a <span class="math inline">\(0\)</span>. Therefore, <span class="math inline">\((Gx) (x:=s)\)</span> is false.</li>
+<li>Consider Bulbasaur. We don’t have a name for Bulbasaur yet in our language, so let us introduce <span class="math inline">\(b\)</span> as a name for Bulbasaur. We want to know whether or not <span class="math inline">\((Gx)(x:= b)\)</span> is true. <span class="math inline">\((Gx)(x:=b)\)</span> is just <span class="math inline">\(Gb\)</span>. And we see that under the <span class="math inline">\(Gx\)</span> table, the row for the object denoted by <span class="math inline">\(b\)</span> (namely, Bulbasaur) has a 1. Therefore, <span class="math inline">\((Gx)(x:=b)\)</span> is true.</li>
+</ul>
+<p>This last condition with Bulbasaur reveals that there is such an object such that if we substitute in a name for that object for <span class="math inline">\(x\)</span>, then we end up with a true formula. This means that the existential formula <span class="math inline">\((\exists x)(Gx)\)</span> is true.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Consider <span class="math inline">\((\exists y)(Py)\)</span>. Going a bit quicker, what we are looking for is an object in the domain, such that if we put a name for that object into the <span class="math inline">\(y\)</span> position, the resulting formula is true. Simply looking at the <span class="math inline">\(Px\)</span> table, we see that there is no object that will make <span class="math inline">\(Px\)</span> true. Hence, <span class="math inline">\((\exists y)(Py)\)</span> is false.</p></li>
+<li><p>Consider <span class="math inline">\((\exists x)(\sim Px)\)</span>. Again, going quickly, we are looking for at least one object in the domain such that when we substitute in a name for that object into the <span class="math inline">\(x\)</span> position, the resulting formula is true. It turns out that <span class="math inline">\(\sim Ps\)</span> is true. Hence, <span class="math inline">\((\exists x)(\sim Px)\)</span> is true.</p></li>
+<li><p>Consider <span class="math inline">\((\exists z)(Wzs \lor Gz)\)</span>. This formula is true just in case there is some object in the domain such that when we substitute in a name for that object into the <span class="math inline">\(z\)</span> positions (notice there are two <span class="math inline">\(z\)</span> in the formula), the resulting formula is true. There are three objects and hence three formulas we need to consider (and only one of these needs to be true for the existential formula to be true):</p></li>
+</ol>
+<ul>
+<li><span class="math inline">\((Wzs \lor Gz)(x:=s) \implies (Wss \lor Gs) \implies 0\)</span></li>
+<li><span class="math inline">\((Wzs \lor Gz)(x:=b) \implies(Wbs \lor Gb) \implies 1\)</span> [Can stop here]</li>
+<li><span class="math inline">\((Wzs \lor Gz)(x:=c) \implies (Wcs \lor Gc)\)</span></li>
+</ul>
+<p>Hence, <span class="math inline">\(\exists z)(Wzs)\lor Gz)\)</span> is true. Note again, we need not check for every object in the domain. The moment you have found an object that will witness the truth of the existential, you know that the existential is true.</p>
+</div>
+<div id="universals" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Universals<a href="semantics-for-quantified-formulas.html#universals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now let us move on to universal sentences:</p>
+<ol style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\forall x)(Gx)\)</span>. According to our semantical rule, <span class="math inline">\((\forall x)(Gx)\)</span> is true iff <span class="math inline">\((Gx)(x:=a)\)</span> is true for all objects <span class="math inline">\(a\)</span> in the domain. This means that <span class="math inline">\((\forall x)(Gx)\)</span> is true just in case no matter which object we consider, if we replace the <span class="math inline">\(x\)</span> with a name for that object, we end up with a true formula. It also means that <span class="math inline">\((\forall x)(Gx)\)</span> is false just in case there exists at least one object, such that if we replace <span class="math inline">\(x\)</span> with a name for that object, we end up with a false formula. In any cases, lets begin checking the cases:</li>
+</ol>
+<ul>
+<li><span class="math inline">\((Gx)(x:= s) \implies Gs \implies 0\)</span> [Can stop here]</li>
+<li><span class="math inline">\((Gx)(x:= b) \implies Gb\)</span></li>
+<li><span class="math inline">\((Gx)(x:= c) \implies Gc\)</span></li>
+</ul>
+<p>We can stop immediately at the Squirtle case because it immediately shows that it is not the case that we can always replace <span class="math inline">\(x\)</span> with a name for any object. Hence, <span class="math inline">\((\forall x)(Gx)\)</span> is false.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\forall x)(\sim Px)\)</span>. Going quickly, let us consider the three cases:</li>
+</ol>
+<ul>
+<li><span class="math inline">\((\sim Px)(x:=s) \implies \sim Ps \implies 1\)</span></li>
+<li><span class="math inline">\((\sim Px)(x:=b) \implies \sim Pb \implies 1\)</span></li>
+<li><span class="math inline">\((\sim Px)(x:=c) \implies \sim Pc \implies 1\)</span></li>
+</ul>
+<p>We see here that no matter which object we pick, if we substitute for <span class="math inline">\(x\)</span>, a name for that object, we get a true formula. Hence, <span class="math inline">\((\forall x)(\sim Px)\)</span> is true.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\forall x)(Gx \supset Wxc)\)</span>:</li>
+</ol>
+<ul>
+<li><span class="math inline">\((Gx \supset Wxc)(x:= s) \implies (Gs \supset Wsc) \implies 1\)</span></li>
+<li><span class="math inline">\((Gx \supset Wxc)(x:= b) \implies (Gb \supset Wbc) \implies 1\)</span></li>
+<li><span class="math inline">\((Gx \supset Wxc)(x:= c) \implies (Gc \supset Wcc) \implies 1\)</span></li>
+</ul>
+<p>We see that no matter what object’s name we substitute in, the formula is true. Hence, <span class="math inline">\((\forall x)(Gx \supset Wxc)\)</span> is true.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\forall x)(Gx \supset Wcx)\)</span>:</li>
+</ol>
+<ul>
+<li><span class="math inline">\((Gx \supset Wcx)(x:= s) \implies (Gs \supset Wcs) \implies 1\)</span></li>
+<li><span class="math inline">\((Gx \supset Wcx)(x:= b) \implies (Gb \supset Wcb) \implies 0\)</span> [Can stop here]</li>
+<li><span class="math inline">\((Gx \supset Wcx)(x:= c) \implies (Gc \supset Wcc)\)</span></li>
+</ul>
+<p>We see here that substituting in a name for Bulbasaur in for <span class="math inline">\(x\)</span> results in a false formula. Hence, <span class="math inline">\((\forall x) (Gx \supset Wcx)\)</span> is false.</p>
+</div>
+<div id="multiple-quantifiers" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Multiple Quantifiers<a href="semantics-for-quantified-formulas.html#multiple-quantifiers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now we consider formulas with multiple quantifiers. The idea is exactly the same, but now you need to do a lot of book keeping:</p>
+<ol style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\forall x)((\exists y)(Wxy))\)</span>:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(((\exists y)(Wxy)))(x:=s) \implies (\exists y)(Wsy)\)</span>
+<ul>
+<li><span class="math inline">\((Wsy)(y:=s) \implies Wss \implies 0\)</span></li>
+<li><span class="math inline">\((Wsy)(y:=b) \implies Wsb \implies 1\)</span> [Can stop here: <span class="math inline">\(((\exists y)(Wxy))(x:=s) \implies 1\)</span>]</li>
+</ul></li>
+<li><span class="math inline">\(((\exists y)(Wxy)))(x:=b) \implies (\exists y)(Wby)\)</span>
+<ul>
+<li><span class="math inline">\((Wby)(y:=s) \implies Wbs \implies 0\)</span></li>
+<li><span class="math inline">\((Wby)(y:=b) \implies Wbb \implies 0\)</span></li>
+<li><span class="math inline">\((Wby)(y:=c) \implies Wbc \implies 1\)</span> [Must stop here: <span class="math inline">\(((\exists y)(Wxy))(x:=b) \implies 1\)</span>]</li>
+</ul></li>
+<li><span class="math inline">\(((\exists y)(Wxy)))(x:=c) \implies (\exists y)(Wcy)\)</span>
+<ul>
+<li><span class="math inline">\((Wcy)(y:=s) \implies Wcs \implies 1\)</span> [Can stop here: <span class="math inline">\(((\exists y)(Wxy))(x:= c) \implies 1\)</span>]$</li>
+</ul></li>
+</ul>
+<p>So, we get that no matter what object we choose for <span class="math inline">\(x\)</span>, the resulting existential formula is true. Therefore, <span class="math inline">\(\forall x\exists y (Wxy)\)</span> is true.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Consider <span class="math inline">\((\exists x)((\forall y)(Wyx))\)</span>:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(((\forall y)(Wxy))(x:= s) \implies (\forall y)(Wys)\)</span>
+<ul>
+<li><span class="math inline">\((Wys)(y:=s) \implies Wss \implies 0\)</span> [Can Stop Here: <span class="math inline">\(((\forall y)(Wyx))(x:=s) \implies 0\)</span>]</li>
+</ul></li>
+<li><span class="math inline">\(((\forall y)(Wyx))(x:=b) \implies (\forall y)(Wyb)\)</span>
+<ul>
+<li><span class="math inline">\((Wyb)(y:=s) \implies Wsb \implies 1\)</span></li>
+<li><span class="math inline">\((Wyb)(y:=b) \implies Wbb \implies 0\)</span> [Can stop here: <span class="math inline">\(((\forall y)(Wyx))(x:=b) \implies 0\)</span>]</li>
+</ul></li>
+<li><span class="math inline">\(((\forall y)(Wyx))(x:=c) \implies (\forall y)(Wyc)\)</span>
+<ul>
+<li><span class="math inline">\((Wyc)(y:=s) \implies Wsc \implies 0\)</span> [Can Stop here: <span class="math inline">\(((\forall y)(Wyx))(x:=c) \implies 0\)</span>]</li>
+</ul></li>
+</ul>
+<p>So, there is no object that makes the resulting universal formula true. Therefore, <span class="math inline">\(\exists x\forall y(Wyx)\)</span> is false.</p>
+</div>
+<div id="practice-problem" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Practice Problem:<a href="semantics-for-quantified-formulas.html#practice-problem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider the model:</p>
+<p><span class="math display">\[
+I(F) = \{\langle 0,1\rangle, \langle 1,0\rangle, \langle 1,2\rangle, \langle 2,1\rangle, \langle 2,3,\rangle, \langle 3,2\rangle, \langle 3,4\rangle, \langle 4,3\rangle \}
+\]</span>
+<span class="math display">\[
+I(L) = \{\langle 1,0,1\rangle, \langle 1,2,3\rangle,\langle 1,3,4\rangle\}
+\]</span>
+Which of the following formulas are true?</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\forall x(\exists y (Fxy))\)</span></li>
+<li><span class="math inline">\(\forall x (\forall y (Fxy \supset Fyx))\)</span></li>
+<li><span class="math inline">\(\forall x (Fxx \supset Lxxx)\)</span></li>
+<li><span class="math inline">\(\exists x \forall y \forall z(Lxyz)\)</span></li>
+<li><span class="math inline">\(\sim \forall x \forall y (Lxyx \equiv Lyxy)\)</span></li>
+</ol>
+</div>
+<div id="solution" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Solution<a href="semantics-for-quantified-formulas.html#solution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>T</li>
+<li>T</li>
+<li>T</li>
+<li>F</li>
+<li>F</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="predicate-logic-practice-problems.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-Week9Notes.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
